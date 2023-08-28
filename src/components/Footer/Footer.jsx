@@ -1,13 +1,10 @@
 import React from "react";
-// import { Link } from "react-router-dom";
-// import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
-// import { BiLogoGmail } from "react-icons/bi";
 import { navdetails } from "../../constants/NavabrData";
-import { Cards } from "../../constants/HomeData";
+
 
 const Footer = () => {
   return (
-    <footer className="relative ">
+    <footer className="relative">
       <hr className="ml-10 mr-10 mb-5 h-px bg-gray-200 border-0 dark:bg-gray-400" />
       
       <div className="md:m-16 container px-4">
