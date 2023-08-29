@@ -124,9 +124,15 @@ export const navdetails = [
     },
     {
         title: 'Call Support',
-        details:'(+971) 6533 5224 (+971) 4267 1113',
+        details:'(+971) 4267 1113',
         icons:'fas fa-phone',
         link:''
+    },
+    {
+        title: 'Dubai',
+        details:'Industrial Area 4, AL Qusais, Damascrus Street, Dubai, UAE',
+        icons:'fas fa-map-marked-alt',
+        link:'https://www.google.com/maps/search/?api=1&query=Decent printing press llc - 4th - Al Qusais Industrial Area - Al Qusais Industrial Area 4 - Dubai - United Arab Emirates'
     },
     {
         title: 'Sharjah',
@@ -134,10 +140,5 @@ export const navdetails = [
         icons:'fas fa-map-marked-alt',
         link:'https://www.google.com/maps/search/?api=1&query=Decent Printing Press LLC - Al Wahda Street - Sharjah - United Arab Emirates'
     },
-    {
-        title: 'Dubai',
-        details:'Industrial Area 4, AL Qusais, Damascrus Street, Dubai, UAE',
-        icons:'fas fa-map-marked-alt',
-        link:'https://www.google.com/maps/search/?api=1&query=Decent printing press llc - 4th - Al Qusais Industrial Area - Al Qusais Industrial Area 4 - Dubai - United Arab Emirates'
-    }
+    
 ]

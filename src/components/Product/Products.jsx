@@ -11,12 +11,9 @@ const Products = () => {
   const productsPerPage = 16;
   const totalProducts = productData.length;
 
-
-
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
   const productsToShow = productData.slice(indexOfFirstProduct, indexOfLastProduct);
-
 
   return (
     <div>

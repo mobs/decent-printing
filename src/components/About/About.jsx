@@ -13,7 +13,7 @@ const About = () => {
         <p className="md:text-lg text-sm text-red-600 font-bold text-center">
           OUR STRENGTH
         </p>
-        <p className="lg:text-6xl md:text-3xl text-lg font-extrabold text-center">
+        <p className="lg:text-5xl md:text-2xl text-sm font-extrabold text-center">
           85 Employes Round the Clock Production and , Delivery Facilities !
         </p>
         <p className="text-lg text-gray-400 text-center">

@@ -20,17 +20,17 @@ const Navbar = () => {
                 <i className={`text-3xl ${d.icons} text-orange-300`} > </i>
                 <div className='text-base font-bold ml-2 w-32'>
                     {d.title}
-                    <div className='text-sm text-gray-500'>
-                    {d.details}
+                    <div className='text-sm hover:text-red-500 text-gray-500'>
+                      {d.details}
+                  </div>
                 </div>
-                </div>
-          </span>
+            </span>
           </a>
         ))}
       </div>
     <hr className="ml-10 mr-10 h-px bg-gray-200 border-0 dark:bg-gray-400" />
     <div className='z-10'>
-    <button
+      <button
           onClick={() => setIsOpen(!isOpen)}
           data-collapse-toggle="navbar-default"
           type="button"
@@ -55,13 +55,46 @@ const Navbar = () => {
           </svg>
         </button>
         
-        <div className="hidden absolute peer-hover:flex hover:flex flex-col bg-white drop-shadow-lg">
-            <a className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white" href="#" > Home </a>
-            <a className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white" href="#" > Products </a>
-            <a className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white" href="#" > Services </a>
-            <a className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white" href="#" > About Us </a>
-            <a className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white" href="#" > Gallery </a>
-            <a className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white" href="#" > Contact Us</a>
+        <div className="z-10 hidden absolute peer-hover:flex hover:flex flex-col bg-white drop-shadow-lg">
+            <Link to='/' className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white" > Home </Link>
+            <Link to='/Products' className="w-screen px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white"> 
+              <button className='peer'> Products <i className="ml-4 fa-solid fa-angle-down"></i>  </button> 
+              <div className="hidden absolute peer-hover:flex hover:flex flex-col bg-white drop-shadow-lg">
+                { products.map((prod,idx) => (
+                  <a className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white"  key={idx}> {prod.title} </a>
+                ))}
+                
+              </div>
+            </Link>
+            <Link to='/Services' className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white">
+              <button className='peer'> Services <i className="ml-4 fa-solid fa-angle-down"></i>  </button> 
+              <div className="hidden absolute peer-hover:flex hover:flex flex-col bg-white drop-shadow-lg">
+              { services.map((service,idx) => (
+                <Link to={`${service.title}`} className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white">
+                <a  href="#" key={idx}> {service.title} </a>
+                </Link>
+              ))}
+            </div>
+            </Link>
+            <Link to='/About' className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white" > 
+              <button className='peer'> About Us <i className="ml-4 fa-solid fa-angle-down"></i>  </button>
+              <div className="hidden absolute peer-hover:flex hover:flex  flex-col bg-white drop-shadow-lg">
+              { about.map((ab,idx) => (
+                <Link to={`${ab.title}`} className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white">
+                <a  href="#" key={idx}> {ab.title} </a>
+                </Link>
+              ))}
+            </div> 
+            </Link>
+            <Link to='/Gallery' className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white" > Gallery </Link>
+            <Link to='/Contact' className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white" >
+              <button className='peer'> Contact Us <i className="ml-4 fa-solid fa-angle-down"></i>  </button>
+              <div className="hidden absolute peer-hover:flex hover:flex flex-col bg-white drop-shadow-lg">
+              { contacts.map((contact,idx) => (
+                <a className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white" href="#" key={idx}> {contact.title} </a>
+              ))}
+            </div>
+            </Link>
         </div>
         </div>
     
@@ -74,7 +107,7 @@ const Navbar = () => {
           </Link>
           <li className="block z-10 py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:border-0 md:hover:text-blue-700 md:p-0  md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
             <Link to='/Products'>
-            <button className="peer px-5 py-2 text-black">Products <i className="ml-4 fa-solid fa-angle-down"></i></button>
+            <button className="peer px-5 py-2 text-black hover:text-red-500">Products <i className="ml-4 fa-solid fa-angle-down"></i></button>
             <div className="hidden absolute peer-hover:flex hover:flex  flex-col bg-white drop-shadow-lg">
               { products.map((prod,idx) => (
                 <a className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white" href="#" key={idx}> {prod.title} </a>
@@ -85,7 +118,7 @@ const Navbar = () => {
           </li>
           <li className="block z-10 py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-red-500 md:border-0 md:hover:text-blue-700 md:p-0  md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
           <Link to='/Services'> 
-          <button className="peer px-5 py-2 text-black"> Services 
+          <button className="peer px-5 py-2 text-black hover:text-red-500"> Services 
             <i className="ml-4 fa-solid fa-angle-down"></i>
           </button> 
             <div className="hidden absolute peer-hover:flex hover:flex flex-col bg-white drop-shadow-lg">
@@ -99,7 +132,7 @@ const Navbar = () => {
           </li>
           <li className="block z-10 py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:border-0 md:hover:text-blue-700 md:p-0  md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
           <Link to='/About'>
-          <button className="peer px-5 py-2 text-black"> About Us <i className="ml-4 fa-solid fa-angle-down"></i> </button>
+          <button className="peer px-5 py-2 text-black hover:text-red-500"> About Us <i className="ml-4 fa-solid fa-angle-down"></i> </button>
             <div className="hidden absolute peer-hover:flex hover:flex  flex-col bg-white drop-shadow-lg">
               { about.map((ab,idx) => (
                 <Link to={`${ab.title}`} className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white">
@@ -114,7 +147,7 @@ const Navbar = () => {
           </li>
           <li className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:border-0 md:hover:text-blue-700 md:p-0  md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
             <Link to='/Contact'>
-          <button className="peer px-5 py-2 text-black"> Contact Us <i className="ml-4 fa-solid fa-angle-down"></i> </button>
+          <button className="peer px-5 py-2 text-black hover:text-red-500"> Contact Us <i className="ml-4 fa-solid fa-angle-down"></i> </button>
             <div className="hidden absolute peer-hover:flex hover:flex flex-col bg-white drop-shadow-lg">
               { contacts.map((contact,idx) => (
                 <a className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white" href="#" key={idx}> {contact.title} </a>

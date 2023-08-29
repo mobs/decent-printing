@@ -10,7 +10,7 @@ const Vision = () => {
       </div>
 
       <div className="mt-32 md:flex flex-col md:ml-64 md:mr-64 gap-16 text-justify m-4">
-        <p className="md:text-7xl text-4xl font-extrabold text-center">
+        <p className="md:text-5xl text-2xl underline font-extrabold text-center">
           Our Vision
         </p>
 
@@ -25,7 +25,7 @@ const Vision = () => {
           packaging to promote your products. From t
         </p>
 
-        <p className="md:text-7xl text-4xl font-extrabold text-center md:mt-0 mt-4">
+        <p className="md:text-5xl text-2xl underline font-extrabold text-center md:mt-0 mt-4">
           Our Mission
         </p>
 
@@ -41,7 +41,7 @@ const Vision = () => {
           more efficient and more friendly for the environment
         </p>
 
-        <p className="md:text-7xl text-4xl font-extrabold text-center md:mt-0 mt-4">
+        <p className="md:text-5xl text-2xl underline font-extrabold text-center md:mt-0 mt-4">
           Our Values
         </p>
         <p className="text-lg text-gray-600 font-semibold md:mt-0 mt-4">

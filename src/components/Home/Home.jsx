@@ -74,7 +74,7 @@ const Home = () => {
             
           </div>
         </div>
-        <div className='md:flex block md:text-left text-center flex-col gap-8'>
+        <div className='md:flex block md:text-justify text-center flex-col gap-8'>
               <div className='flex justify-center items-center text-red-600 font-bold text-lg'>
                 IF YOU ARE LOOKING FOR AFFORDABLE AND QUALITY DIGITAL PRINTERS IN UAE THEN WE WOULD LOVE TO HEAR FROM YOU.​
               </div>

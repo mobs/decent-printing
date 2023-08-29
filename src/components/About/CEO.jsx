@@ -1,4 +1,5 @@
 import React from "react";
+import './style.css'
 
 const CEO = () => {
   return (
@@ -10,18 +11,18 @@ const CEO = () => {
       </div>
 
       <div className="mt-32 md:flex flex-col md:ml-64 md:mr-64 gap-16">
-        <p className="md:text-7xl text-4xl font-extrabold text-center">
+        <p className="underline md:text-5xl text-2xl font-extrabold text-center">
           From CEO's Desk
         </p>
-        <p className="md:text-4xl text-xl font-bold md:text-left text-center md:mt-0 mt-4">
+        <p className="md:text-lg text-sm font-bold md:text-left text-center md:mt-0 mt-4">
           We, at, Decent Printing Press are dedicated to provide one of the
           world’s best services to our customers.
         </p>
 
-        <p className="text-2xl font-semibold md:text-left text-center md:mt-0 mt-4">
+        <p className="md:text-lg text-sm font-semibold md:text-left text-center md:mt-0 mt-4">
           With regards, <br /> CEO
         </p>
-        <p className="text-2xl font-semibold md:text-left text-center md:mt-0 mt-4">
+        <p className="md:text-lg text-sm font-semibold md:text-left text-center md:mt-0 mt-4">
           Decent Printing Press
         </p>
       </div>

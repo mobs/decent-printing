@@ -10,7 +10,7 @@ const Quality = () => {
       </div>
 
       <div className="mt-32 md:flex flex-col md:ml-64 md:mr-64 gap-16 text-justify m-4">
-        <p className="md:text-7xl text-4xl font-extrabold text-center">
+        <p className="md:text-5xl underline text-2xl font-extrabold text-center">
           Quality Policy
         </p>
 

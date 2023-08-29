@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css?family=Trirong");
+
 body, html {
     overflow-x: hidden;
+    font-family: 'Trirong', serif;
 }

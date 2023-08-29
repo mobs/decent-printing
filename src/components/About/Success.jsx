@@ -33,7 +33,7 @@ const Success = () => {
       </div>
 
       <div className="mt-32 md:flex flex-col md:ml-64 md:mr-64 gap-16 text-justify m-4">
-        <p className="md:text-7xl text-4xl font-extrabold text-center">
+        <p className="md:text-5xl text-2xl underline font-extrabold text-center">
           Success Factors
         </p>
 
@@ -46,10 +46,6 @@ const Success = () => {
             ))}
             
         </ul>
-
-        {/* <p className="text-lg text-gray-600 font-semibold md:mt-0 mt-4">
-          Decent Printing Press LLC has aim with the primary purpose of print production, litho & digital (for commercial and non commercial customers) and the supply of office products for both commercial and retail. We have been the proud holders of ISO 14001 Environmental Management Standard since 2008 and also hold ISO 9001 Quality Management Systems certificate. It is the aim of Decent Printing Press LLC Ltd to achieve the highest status in the So-go-eco/Carbon Smart reduction programme for our Spalding Operation. The scheme has achieved a 20% reduction since we started participating in 2008. To eliminate and/or minimise any harmful effects on the environment, caused by the activities of Decent Printing Press LLC.
-        </p> */}
       </div>
     </div>
   )
