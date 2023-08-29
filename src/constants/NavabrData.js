@@ -67,10 +67,6 @@ export const services = [
         title: 'Continuous Form Printing',
         link: ''
     },
-    {
-        title: 'Designing Services',
-        link: ''
-    },
 ]
 
 export const about = [

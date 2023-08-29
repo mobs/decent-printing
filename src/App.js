@@ -1,4 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Icon from "./components/Icon";
 import {
   Home,
   About,
@@ -16,7 +18,10 @@ import {
   Vision,
   Quality,
   Environmental,
-  Success
+  Success,
+  Gallery,
+  Images,
+  Videos
 } from "./components";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
@@ -45,7 +50,10 @@ function App() {
         <Route path="/Continuous Form Printing" element={<Continuous />} />
         <Route path="/Digital Printing" element={<Digital />} />
         <Route path="/Designing Services" element={<Designing />} />
+
+        <Route path='/Gallery' element={<Gallery />} />
       </Routes>
+      <Icon />
 
       <Footer />
     </BrowserRouter>

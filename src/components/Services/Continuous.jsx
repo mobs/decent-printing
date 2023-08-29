@@ -21,7 +21,7 @@ const Continuous = () => {
             </div>
           </div>
         </div>
-        <div className="md:flex block md:text-left flex-col gap-8">
+        <div className="md:flex block md:text-justify flex-col gap-8">
           <div className="flex flex-col m-4 gap-4  text-gray-500 text-lg">
             <p className="">Computer/Continious form Printings</p>
             <p>

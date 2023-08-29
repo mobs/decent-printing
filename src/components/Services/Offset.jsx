@@ -24,7 +24,7 @@ const Offset = () => {
             </div>
           </div>
         </div>
-        <div className="md:flex block md:text-left text-center flex-col gap-8">
+        <div className="md:flex block md:text-justify text-center flex-col gap-8">
           <div className="flex justify-center items-center text-gray-500 font-bold text-lg">
             Offset printing is a commonly used and simple technique that first
             involves the transfer of the inked image from a printing plate to a

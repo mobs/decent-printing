@@ -2,9 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css?family=Trirong");
+/* @import url("https://fonts.googleapis.com/css?family=Trirong"); */
+/* @import url("https://fonts.googleapis.com/css?family=Roboto"); */
+/* @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"); */
+/* @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Nunito");
+
 
 body, html {
     overflow-x: hidden;
-    font-family: 'Trirong', serif;
+    /* font-family: 'Trirong', serif; */
+    font-family: 'Nunito', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
 }

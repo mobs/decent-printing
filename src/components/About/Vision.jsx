@@ -9,20 +9,13 @@ const Vision = () => {
         <span className="text-black"> Vision, Mission & Values </span>
       </div>
 
-      <div className="mt-32 md:flex flex-col md:ml-64 md:mr-64 gap-16 text-justify m-4">
+      <div className="mt-32 md:flex flex-col md:ml-64 md:mr-64 gap-8 text-justify m-4">
         <p className="md:text-5xl text-2xl underline font-extrabold text-center">
           Our Vision
         </p>
 
         <p className="text-lg text-gray-600 font-semibold md:mt-0 mt-4">
-          To enrich lives and support businesses with meaningful and inspiring
-          prints.
-        </p>
-
-        <p className="text-lg text-gray-600 font-semibold md:mt-0 mt-4">
-          Print is everywhere, and our printers produce all kinds of printed
-          applications. From books to educate our children, to labels and
-          packaging to promote your products. From t
+        With experts from cutting edge printing technology and over long experience, We holds the position of being the first printing press centrally located in Dubai & Sharjah and a prominent printing solutions provider across UAE
         </p>
 
         <p className="md:text-5xl text-2xl underline font-extrabold text-center md:mt-0 mt-4">
@@ -30,15 +23,7 @@ const Vision = () => {
         </p>
 
         <p className="text-lg text-gray-600 font-semibold md:mt-0 mt-4">
-          To accelerate growth opportunities for professionals by offering
-          digital print solutions with uncompromised quality and productivity
-        </p>
-        <p className="text-lg text-gray-600 font-semibold md:mt-0 mt-4">
-          We help our customers to build on the opportunities of digital
-          printing, enable them to produce micro-runs with customized prints, to
-          print on-demand, only what is needed, first-time-right. This means our
-          customers can grow their business by attracting more jobs, operate
-          more efficient and more friendly for the environment
+        Upholding our reputation as a one-stop destination for all thing related to Printing Solution with top-quality products and services that ensure smooth functioning of our customer’s business.
         </p>
 
         <p className="md:text-5xl text-2xl underline font-extrabold text-center md:mt-0 mt-4">

@@ -70,8 +70,8 @@ const Navbar = () => {
               <button className='peer'> Services <i className="ml-4 fa-solid fa-angle-down"></i>  </button> 
               <div className="hidden absolute peer-hover:flex hover:flex flex-col bg-white drop-shadow-lg">
               { services.map((service,idx) => (
-                <Link to={`${service.title}`} className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white">
-                <a  href="#" key={idx}> {service.title} </a>
+                <Link to={`${service.title}`} key={idx} className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white">
+                <a > {service.title} </a>
                 </Link>
               ))}
             </div>
@@ -80,8 +80,8 @@ const Navbar = () => {
               <button className='peer'> About Us <i className="ml-4 fa-solid fa-angle-down"></i>  </button>
               <div className="hidden absolute peer-hover:flex hover:flex  flex-col bg-white drop-shadow-lg">
               { about.map((ab,idx) => (
-                <Link to={`${ab.title}`} className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white">
-                <a  href="#" key={idx}> {ab.title} </a>
+                <Link to={`${ab.title}`}key={idx} className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white">
+                <a> {ab.title} </a>
                 </Link>
               ))}
             </div> 
@@ -142,9 +142,11 @@ const Navbar = () => {
             </div>
             </Link>
           </li>
+          <Link to='/Gallery'>
           <li className="block py-3 mt-2 pl-3 pr-4 text-gray-900 rounded hover:text-red-500 md:border-0 md:p-0 ">
             GALLERY
           </li>
+          </Link>
           <li className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:border-0 md:hover:text-blue-700 md:p-0  md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
             <Link to='/Contact'>
           <button className="peer px-5 py-2 text-black hover:text-red-500"> Contact Us <i className="ml-4 fa-solid fa-angle-down"></i> </button>

@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'myFont': ['Trirong', 'serif']
+        'myFont': ['Montserret', 'sans-serif']
       },
     },
   },
