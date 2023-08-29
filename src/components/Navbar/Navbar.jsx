@@ -34,7 +34,7 @@ const Navbar = () => {
           onClick={() => setIsOpen(!isOpen)}
           data-collapse-toggle="navbar-default"
           type="button"
-          className="peer ml-8 mt-4 inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          className="peer ml-8 mt-4 inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
           aria-controls="navbar-default"
           aria-expanded="false"
         >
@@ -102,7 +102,9 @@ const Navbar = () => {
           <button className="peer px-5 py-2 text-black"> About Us <i className="ml-4 fa-solid fa-angle-down"></i> </button>
             <div className="hidden absolute peer-hover:flex hover:flex  flex-col bg-white drop-shadow-lg">
               { about.map((ab,idx) => (
-                <a className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white" href="#" key={idx}> {ab.title} </a>
+                <Link to={`${ab.title}`} className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white">
+                <a  href="#" key={idx}> {ab.title} </a>
+                </Link>
               ))}
             </div>
             </Link>

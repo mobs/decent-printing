@@ -12,3 +12,13 @@ export { default as Digital } from './Services/Digital'
 export { default as Continuous } from './Services/Continuous'
 export { default as Designing } from './Services/Designing'
 // export { default as Cart } from "./Checkout/Cart";
+
+export { default as ProductDetails } from './Product/ProductDetail'
+export { default as Checkout } from './Checkout/Checkout'
+
+export { default as CEO } from './About/CEO'
+export { default as Introduction } from './About/Introduction'
+export { default as Vision } from './About/Vision'
+export { default as Quality } from './About/Quality'
+export {  default as Environmental } from './About/Environmental'
+export { default as Success } from './About/Success'

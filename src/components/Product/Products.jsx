@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+
+
 import { productData } from '../../constants/ProductData';
 import PaginationControls from '../Pagination/PaginationControl';
 import Card from '../Card/Card';
@@ -26,9 +29,11 @@ const Products = () => {
 
       <div className='mt-8 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-1'>
         { productsToShow.map((cardData, idx) => (
+          <Link to={`/Products/${cardData.title}`}>
           <div className='' key={idx}>
             <Card data={cardData} />
           </div>
+          </Link>
         ))}
       </div>
       <div>

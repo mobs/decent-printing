@@ -67,7 +67,7 @@ const Contact = () => {
             <input
               type="email"
               id="email"
-              className="shadow-sm bg-gray-200 text-gray-200 text-sm rounded-lg block p-2 w-full"
+              className="shadow-sm bg-gray-200 text-black text-sm rounded-lg block p-2 w-full"
               placeholder="name@example.com"
               required
             />
@@ -82,7 +82,7 @@ const Contact = () => {
             <input
               type="text"
               id="subject"
-              className="shadow-sm bg-gray-200 text-gray-200 text-sm rounded-lg block p-2 w-full"
+              className="shadow-sm bg-gray-200 text-black text-sm rounded-lg block p-2 w-full"
               placeholder="Let us know how we can help you"
               required
             />
@@ -97,7 +97,7 @@ const Contact = () => {
             <textarea
               id="message"
               rows="6"
-              className="shadow-sm bg-gray-200 text-gray-200 text-sm rounded-lg block p-2 w-full"
+              className="shadow-sm bg-gray-200 text-black text-sm rounded-lg block p-2 w-full"
               placeholder="Leave a comment..."
             ></textarea>
           </div>
