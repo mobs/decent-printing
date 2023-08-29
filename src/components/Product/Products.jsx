@@ -20,9 +20,10 @@ const Products = () => {
 
   return (
     <div>
-      <div className='h-16 w-screen flex items-center justify-center bg-gray-200 text-white'>
-        <span className='text-gray-600'> Home --- </span>
-        <span className='text-black'>  Products </span>
+      <div className="h-16 w-screen flex items-center justify-center bg-gray-200 text-white">
+        <span className="text-gray-600"> Home </span>
+        <hr className="m-2 mt-4 h-px w-8 bg-black border-0" />
+        <span className="text-black"> Products </span>
       </div>
 
       <div>
