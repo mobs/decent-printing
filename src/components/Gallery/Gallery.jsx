@@ -31,12 +31,6 @@ const Gallery = () => {
             <button onClick={() => handleClick('Devices')} className={`${ tab === 'Devices' ? 'underline' : ''}`}> Devices </button>
         </div>
 
-        <div>
-          <button>
-            See Devices
-          </button>
-        </div>
-
         
         <select value={selectedCategory} onChange={handleChange} className={` ${tab === 'Devices' ? 'hidden' : 'block'} md:ml-32 m-4 border-black focus:ring-red-500 outline-4 border-blue-500`}> 
           <option disabled> Choose Category </option>
