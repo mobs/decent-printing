@@ -1,5 +1,5 @@
 import React from "react";
-import './style.css'
+import "./style.css";
 
 const CEO = () => {
   return (
@@ -20,22 +20,50 @@ const CEO = () => {
         </p>
 
         <p className="md:text-lg text-sm md:text-justify text-center md:mt-0 mt-4">
-        We aim to be leaders in the printing industry and will achieve our goals by involving our co-workers, contractors and customers in our movement of excellence.
+          We aim to be leaders in the printing industry and will achieve our
+          goals by involving our co-workers, contractors and customers in our
+          movement of excellence.
         </p>
 
         <p className="md:text-lg text-sm  md:text-justify text-center md:mt-0 mt-4">
-        We never compromise on quality or integrity and we are committed to teamwork and innovation. Our systems and equipments are constantly and continuously updated to enhance performance.
+          We never compromise on quality or integrity and we are committed to
+          teamwork and innovation. Our systems and equipments are constantly and
+          continuously updated to enhance performance.
         </p>
 
         <p className="md:text-lg text-sm  md:text-justify text-center md:mt-0 mt-4">
-        We possess well-trained professionals, including Printing specialists, designers & Production experts.
+          We possess well-trained professionals, including Printing specialists,
+          designers & Production experts.
         </p>
 
         <p className="md:text-lg text-sm font-semibold md:text-justify text-center md:mt-0 mt-4">
-          With regards, <br /> CEO
+          With regards, <br /> CEO <br /> Decent Printing Press
         </p>
-        <p className="md:text-lg text-sm font-semibold md:text-justify text-center md:mt-0 mt-4">
+        {/* <p className="md:text-lg text-sm font-semibold md:text-justify text-center md:mt-0 mt-4">
           Decent Printing Press
+        </p> */}
+      </div>
+
+      <div className="mt-32 md:flex flex-col md:ml-64 md:mr-64 gap-8 text-justify m-4">
+        <p className="hover:text-red-500 md:text-5xl text-2xl underline font-extrabold text-center">
+          Our Vision
+        </p>
+
+        <p className="text-lg text-gray-600 font-semibold md:mt-0 mt-4">
+          With experts from cutting edge printing technology and over long
+          experience, We holds the position of being the first printing press
+          centrally located in Dubai & Sharjah and a prominent printing
+          solutions provider across UAE.
+        </p>
+
+        <p className=" hover:text-red-500 md:text-5xl text-2xl underline font-extrabold text-center md:mt-0 mt-4">
+          Our Mission
+        </p>
+
+        <p className="text-lg text-gray-600 font-semibold md:mt-0 mt-4">
+          Upholding our reputation as a one-stop destination for all thing
+          related to Printing Solution with top-quality products and services
+          that ensure smooth functioning of our customer’s business.
         </p>
       </div>
     </div>

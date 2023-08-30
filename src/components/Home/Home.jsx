@@ -129,13 +129,13 @@ const Home = () => {
                     Hot Deal
                   </div>
                   <div className='flex items-centert text-3xl font-bold'>
-                    Sale Upto 40%
+                    Upto 40% OFF
                   </div>
                   <div className='flex justify-center items-center text-gray-500 text-sm'>
                     Get a special offer on your first box. FREE SHIPPING all the time.
                   </div>
                   <button className='md:mb-0 mb-4 font-bold flex underline items-center hover:text-red-500 duration-300'>
-                    Order Now
+                    Place Enquiry
                   </button>
                 </div>
 
@@ -158,7 +158,7 @@ const Home = () => {
                     Get a special offer on your first box. FREE SHIPPING all the time.
                   </div>
                   <button className='md:mb-0 mb-4 font-bold flex underline items-center hover:text-red-500 duration-300'>
-                    Order Now
+                    Place Enquiry
                   </button>
                 </div>
               </div>

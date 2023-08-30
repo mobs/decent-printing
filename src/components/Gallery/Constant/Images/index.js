@@ -1,10 +1,10 @@
-export { default as rollup1 } from './Rollup/1050942_OL5IU30.jpg'
-export { default as rollup2 } from './Rollup/1080097_7764.jpg'
-export { default as rollup3 } from './Rollup/3762133_1073.jpg'
+export { default as rollup1 } from './Rollup/roll1.png'
+export { default as rollup2 } from './Rollup/roll2.png'
+export { default as rollup3 } from './Rollup/roll3.png'
 export { default as rollup4 } from './Rollup/971187_5401.jpg'
 
 export { default as bill1 } from './Billboards/billboard1.jpg'
-export { default as bill2 } from './Billboards/billboard2.jpg'
+export { default as bill2 } from './Billboards/billboard2.png'
 export { default as bill3 } from './Billboards/billboard3.jpg'
 
 export { default as book1 } from './Booklets/booklet1.png'

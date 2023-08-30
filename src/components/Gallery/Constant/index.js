@@ -1,0 +1,6 @@
+export { default as device1 } from './Machines/1.jpg'
+export { default as device2 } from './Machines/2.jpg'
+export { default as device3 } from './Machines/3.jpg'
+export { default as device4 } from './Machines/4.jpg'
+export { default as device5 } from './Machines/5.jpg'
+export { default as device6 } from './Machines/6.jpg'

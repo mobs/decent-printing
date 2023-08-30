@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
 import Images from './Images'
 import Videos from './Videos'
+import Card from '../Card/Card'
+import { deviceData } from './Constant/GalleryData'
 import { products } from '../../constants/NavabrData'
 
 const Gallery = () => {
     const [ tab, setTab ] = useState('Images');
     const [ selectedCategory, setSelectedCategory ] = useState('Choose Category')
 
-    const handleClick = () => {
-        {
-            tab === 'Images' ? setTab('Videos') : setTab('Images')
-        }
+    const handleClick = (tab) => {
+        setTab(tab);
     }
 
     const handleChange = (e) => {
@@ -26,12 +26,19 @@ const Gallery = () => {
         </div>
 
         <div className='flex mt-8 text-center justify-center items-center gap-8 font-bold text-lg'>
-            <button onClick={handleClick} className={`${ tab === 'Images' ? 'underline' : ''}`}> Images </button>
-            <button onClick={handleClick} className={`${ tab === 'Videos' ? 'underline' : ''}`}> Videos </button>
+            <button onClick={() => handleClick('Images')} className={`${ tab === 'Images' ? 'underline' : ''}`}> Images </button>
+            <button onClick={() => handleClick('Videos')} className={`${ tab === 'Videos' ? 'underline' : ''}`}> Videos </button>
+            <button onClick={() => handleClick('Devices')} className={`${ tab === 'Devices' ? 'underline' : ''}`}> Devices </button>
+        </div>
+
+        <div>
+          <button>
+            See Devices
+          </button>
         </div>
 
         
-        <select value={selectedCategory} onChange={handleChange} className='md:ml-32 m-4 border-black focus:ring-red-500 outline-4 border-blue-500'> 
+        <select value={selectedCategory} onChange={handleChange} className={` ${tab === 'Devices' ? 'hidden' : 'block'} md:ml-32 m-4 border-black focus:ring-red-500 outline-4 border-blue-500`}> 
           <option disabled> Choose Category </option>
           <option> All </option>
           { products.map((prod,idx) => (
@@ -46,7 +53,17 @@ const Gallery = () => {
             tab === "Images" ? 
                 <Images selectedCategory={selectedCategory}/>
             :
+            tab === "Videos" ?
                 <Videos selectedCategory={selectedCategory} />    
+            :
+            <div className='mt-8 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-1'>
+            {
+              deviceData.map((data,idx) => (
+                <Card data={data} key={idx} />
+              ))
+            }
+            
+          </div>
         }
 </div>
 

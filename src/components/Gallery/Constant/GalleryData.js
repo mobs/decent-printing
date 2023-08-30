@@ -1,5 +1,6 @@
 import { rollup1, rollup2,rollup3,bill1,bill2,bill3,book1,book2,book3,broc1,broc2,broc3,card1,card2,card3,disp1,disp2,disp3,event1,event2,event3,fabric1,fabric2,fabric3,grap1,grap2,grap3,floor2,floor3,lamp1,lamp2,annual1,annual2,annual3,show1,show2,show3 } from './Images'
 import { products } from '../../../constants/NavabrData'
+import { device1, device2,device3,device4,device5,device6 } from '.'
 
 export const galleryImages = [
     {
@@ -150,4 +151,31 @@ export const galleryImages = [
         category:products[12].title,
         image:bill3
     }
+]
+
+export const deviceData = [
+    {
+        name:'device1',
+        image:device1
+    },
+    {
+        name:'device2',
+        image:device2
+    },
+    {
+        name:'device3',
+        image:device3
+    },
+    {
+        name:'device4',
+        image:device4
+    },
+    {
+        name:'device5',
+        image:device5
+    },
+    {
+        name:'device6',
+        image:device6
+    },
 ]

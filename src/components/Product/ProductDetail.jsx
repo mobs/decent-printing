@@ -35,8 +35,8 @@ const ProductDetail = () => {
           </p>
           <div className="">
             <Link to={`/Checkout/${product.title}`}>
-            <button className="md:mt-0 mt-4 p-2 bg-blue-700 rounded text-white hover:bg-red-500 ">
-              Add to Cart
+            <button className="md:mt-0 mt-4 p-2 bg-red-500 rounded text-white hover:bg-blue-700 ">
+              Place Enquiry
             </button>
             </Link>
           </div>
