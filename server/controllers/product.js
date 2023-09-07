@@ -12,18 +12,16 @@ export const getProducts = async (req, res) => {
 };
 
 export const addProduct = async (req, res) => {
-  const { title, price, brand, category, image, rating, weight, detail } =
+  let { title, category, image, inStock, offer } =
     req.body;
+  if(inStock.toLowerCase() === 'yes' || inStock.toLowerCase() === 'true') inStock = true;
 
   const newProduct = new ProductSchema({
     title,
-    price,
-    brand,
-    category,
     image,
-    rating,
-    weight,
-    detail,
+    category,
+    inStock,
+    offer
   });
   try {
     await newProduct.save();
@@ -53,7 +51,9 @@ export const deleteProduct = async ( req, res ) => {
     if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('No product with that id');
     await ProductSchema.findByIdAndRemove(id);
 
-    res.json({ message: 'Product Deleted succesfully!!! '});
+    const products = await ProductSchema.find();
+
+    res.json(products);
 
   } catch (error) {
     res.status(404).json({ message: error.message })

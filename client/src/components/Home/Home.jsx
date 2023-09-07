@@ -22,7 +22,15 @@ const Home = () => {
 
   let productsToShow = [];
   let picksProduct = [];
+  let offerProduct = [];
   const titleSet = new Set();
+
+  products.forEach((product) => {
+    const { offer } = product;
+    if(offer) offerProduct.push(product);
+  })
+
+  offerProduct = offerProduct.slice(0,2);
 
   products.forEach((product) => {
     const { title } = product;
@@ -208,6 +216,67 @@ const Home = () => {
           ))}
         </div>
       </div>
+
+
+      <div className="m-16 lg:flex block gap-4">
+        <div className="md:flex block jutify-center items-center">
+          <div className="mr-4 ">
+            <img className="rounded hover:p-4 w-[600px] duration-500" src={offerProduct[0]?.image} />
+          </div>
+          <div>
+            <div className="flex flex-col gap-8">
+              <div className="flex items-center text-red-600 font-bold text-lg">
+                Hot Deal
+              </div>
+              <div className="flex items-centert text-2xl font-bold">
+                {offerProduct[0]?.title.toUpperCase()}
+              </div>
+              <div className="flex items-centert text-3xl font-bold">
+                {offerProduct[0]?.offer}
+              </div>
+              <div className="flex justify-center items-center text-gray-500 text-sm">
+                Get a special offer on your first box. FREE SHIPPING all the
+                time.
+              </div>
+              <Link to={`/Checkout/${encodeURIComponent(offerProduct[0]?._id)}`} >
+                <button className="md:mb-0 mb-4 font-bold flex underline items-center hover:text-red-500 duration-300">
+                  Place Enquiry
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        <div className="md:flex block jutify-center items-center">
+          <div className="mr-4">
+            <img className="rounded hover:p-4 duration-500 w-[600px]" src={offerProduct[1]?.image} />
+          </div>
+          <div>
+            <div className="flex flex-col gap-8">
+              <div className="flex items-center text-red-600 font-bold text-lg">
+                New Arrival
+              </div>
+              <div className="flex items-centert text-2xl font-bold">
+                {offerProduct[1]?.title.toUpperCase()}
+              </div>
+              <div className="flex items-centert text-3xl font-bold">
+              {offerProduct[1]?.offer}
+              </div>
+              
+              <div className="flex justify-center items-center text-gray-500 text-sm">
+                Get a special offer on your first box. FREE SHIPPING all the
+                time.
+              </div>
+              <Link to={`/Checkout/${encodeURIComponent(offerProduct[1]?._id)}`} >
+                <button className="md:mb-0 mb-4 font-bold flex underline items-center hover:text-red-500 duration-300">
+                  Place Enquiry
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
       <div className="mb-16 ">
         {/* banner editing option */}

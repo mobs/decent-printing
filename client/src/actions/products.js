@@ -42,7 +42,9 @@ export const fetchProductsByCategory = (category) => async (dispatch) => {
 
 export const deleteProduct = (id) => async (dispatch) => {
   try {
-    await api.deleteProduct(id)
+    const { data } = await api.deleteProduct(id);
+
+    dispatch({ type: 'DELETE_PRODUCT', payload: data });
   } catch (error) {
     console.log(error)
   }

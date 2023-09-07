@@ -16,7 +16,7 @@ export const products = [
         link: ''
     },
     {
-        title: 'Price List / Proposal / Brochers',
+        title: 'Price List / Proposal / Brochures',
         link: ''
     },
     {

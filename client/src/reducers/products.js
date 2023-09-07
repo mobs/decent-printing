@@ -34,6 +34,11 @@ export default (state = { isLoading: true, products: []}, action) => {
         ...state,
         products: action.payload
       }
+      case "DELETE_PRODUCT":
+        return {
+          ...state,
+          products: action.payload
+        }
     default:
       return state;
   }

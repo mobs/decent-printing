@@ -1,15 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch } from 'react-redux';
 
 import { deleteProduct } from '../../actions/products'
 
 
-const ProductCard = ({ prod, setId }) => {
+const ProductCard = ({ prod, setId, setId1 }) => {
 
     const dispatch = useDispatch();
 
+    // useEffect(() => {
+
+    // }, [dispatch])
+
     const handleDelete = () => {
-      dispatch(deleteProduct(prod._id));
+      // dispatch(deleteProduct(prod._id));
+      setId1(prod._id)
     }
     
     const handleOutStock = () => {

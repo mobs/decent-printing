@@ -5,17 +5,19 @@ import AddGalleryData from "./AddGalleryData";
 import AddProduct from "./AddProduct";
 import ProductCard from "./ProductCard";
 import AddAdmin from "./AddAdmin";
-import { outOfStock } from "../../actions/products";
+import { deleteProduct, outOfStock } from "../../actions/products";
 import GalleryCard from "./GalleryCard";
 import AddBanner from "./AddBanner";
 
 const Main = ({ selectedCategory }) => {
   const [id, setId] = useState(null);
+  const [id1, setId1] = useState(null);
   const dispatch = useDispatch();
 
   useEffect(() => {
     if (id) dispatch(outOfStock(id));
-  }, [id]);
+    if(id1) dispatch(deleteProduct(id1));
+  }, [id,id1]);
 
   const { products, isLoading } = useSelector((state) => state.products);
   const { banners } = useSelector((state) => state.banner); 
@@ -23,7 +25,7 @@ const Main = ({ selectedCategory }) => {
   return isLoading ? (
     <h1> Loading... </h1>
   ) : (
-    <div className="w-screen ">
+    <div className="w-screen">
       {selectedCategory === "Add Gallery Data" ? (
         <>
           <AddGalleryData />
@@ -34,10 +36,9 @@ const Main = ({ selectedCategory }) => {
         </>
       ) : selectedCategory === "Products" ? (
         <div>
-          {/* <button></button> */}
           <div className="flex m-16 mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-between gap-10">
             {products.map((prod, idx) => (
-              <ProductCard prod={prod} setId={setId} key={idx} />
+              <ProductCard prod={prod} setId={setId} setId1={setId1} key={idx} />
             ))}
           </div>
         </div>
