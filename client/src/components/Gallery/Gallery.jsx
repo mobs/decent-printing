@@ -8,14 +8,8 @@ import { getData } from '../../actions/gallery'
 import { products } from '../../constants/NavabrData'
 
 const Gallery = () => {
-    const dispatch = useDispatch();
     const [ tab, setTab ] = useState('Images');
     const [ selectedCategory, setSelectedCategory ] = useState('Choose Category');
-
-
-    useEffect(() => {
-      dispatch(getData());
-    },[dispatch]);
 
     const { data, isLoading }  = useSelector((state) => state.gallery)
 

@@ -40,4 +40,4 @@ export { default as cont2 } from './cont2.png'
 
 export { default as whatsapp } from './whatsapp.png'
 
-export { default as bgImage } from './bg-image.png';
+export { default as bgImage } from './bg-image.jpg';

@@ -92,7 +92,6 @@ const AddProduct = () => {
                   id="offer"
                   className="shadow-sm bg-gray-200 text-black text-sm rounded-lg block p-2 w-full"
                   placeholder="Any Offer"
-                  required
                   value={productData.offer}
                   onChange={(e) =>
                     setProductData({ ...productData, offer: e.target.value })
@@ -114,8 +113,8 @@ const AddProduct = () => {
                     setProductData({ ...productData, category: e.target.value })
                   }
                 >
-                  {categories.map((cat) => (
-                    <option selected="" value={cat}>
+                  {categories.map((cat,idx) => (
+                    <option selected="" value={cat} key={idx} >
                       {" "}
                       {cat}{" "}
                     </option>

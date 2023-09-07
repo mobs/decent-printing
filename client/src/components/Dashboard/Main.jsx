@@ -5,30 +5,20 @@ import AddGalleryData from "./AddGalleryData";
 import AddProduct from "./AddProduct";
 import ProductCard from "./ProductCard";
 import AddAdmin from "./AddAdmin";
-import { getProducts, outOfStock } from "../../actions/products";
-import { getData } from "../../actions/gallery";
+import { outOfStock } from "../../actions/products";
 import GalleryCard from "./GalleryCard";
-
+import AddBanner from "./AddBanner";
 
 const Main = ({ selectedCategory }) => {
   const [id, setId] = useState(null);
-  const [id1, setId1] = useState(null);
   const dispatch = useDispatch();
 
   useEffect(() => {
     if (id) dispatch(outOfStock(id));
-    else { 
-      dispatch(getProducts());
-    }
-  }, [dispatch, id]);
+  }, [id]);
 
-  // console.log(data)
   const { products, isLoading } = useSelector((state) => state.products);
-
-  useEffect(() => {
-    dispatch(getData());
-  }, [dispatch])
-
+  const { banners } = useSelector((state) => state.banner); 
   const { data } = useSelector((state) => state.gallery);
   return isLoading ? (
     <h1> Loading... </h1>
@@ -44,28 +34,42 @@ const Main = ({ selectedCategory }) => {
         </>
       ) : selectedCategory === "Products" ? (
         <div>
-          <button></button>
+          {/* <button></button> */}
           <div className="flex m-16 mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-between gap-10">
-            { products.map((prod,idx) => (
+            {products.map((prod, idx) => (
               <ProductCard prod={prod} setId={setId} key={idx} />
             ))}
           </div>
         </div>
       ) : selectedCategory === "Add Admin" ? (
-          <> 
-            <AddAdmin /> 
-          </>
+        <>
+          <AddAdmin />
+        </>
       ) : selectedCategory === "Gallery" ? (
         <div>
-        <button></button>
-        <div className="flex m-16 mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-between gap-10">
-          { data.map((d, idx) => (
+          <button></button>
+          <div className="flex m-16 mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-between gap-10">
+            {data.map((d, idx) => (
+              <GalleryCard galleryData={d} key={idx} />
+            ))}
+          </div>
+        </div>
+      ) : selectedCategory === "Add Banner" ? (
+        <div>
+          <AddBanner />
+        </div>
+      ) : selectedCategory === "Banners" ? (
+        <>
+        <p className="font-bold text-lg text-center"> Only the Top 3 Banners will be displayed on the Home page</p>
+        <div className="block">
+          {banners.map((d, idx) => (
             <GalleryCard galleryData={d} key={idx} />
           ))}
         </div>
-      </div>
-      ) : <> Nothing </>
-    }
+        </>
+      ) : (
+        <> Nothing </>
+      )}
     </div>
   );
 };

@@ -7,7 +7,6 @@ import './navbar.css'
 import * as actionType from '../../constants/actionTypes'
 
 const Navbar = () => { 
-  const navigate = useNavigate();
   const location = useLocation();
   const dispatch = useDispatch();
   const [ isOpen, setIsOpen ] = useState(false);
@@ -28,18 +27,20 @@ const Navbar = () => {
     setUser(JSON.parse(localStorage.getItem("profile")));
   }, [location]);
 
-  const isActive = (path) =>
-    location.pathname === path ? "text-blue-500" : "";
+  // const isActive = (path) =>
+  //   location.pathname === path ? "text-blue-500" : "";
 
   
   return (
-    <nav className='border-gray-200 bg-white'>
+    <nav className='z-20 border-gray-200 '>
         <div className="mt-4 max-w-screen-xl flex flex-wrap items-top justify-between mx-auto p-4 ">
+        <Link to='/'>
         <img
             src="https://decentpp.fastnet-soft.cloud/wp-content/uploads/2022/04/LOGO-1.png"
             className="h-32"
             alt="Logo"
         />
+        </Link>
         { navdetails.map((d,idx) => (
           <a className="lg:block hidden" href={d?.link} target='_blank' key={idx}>
             <span className='flex'>
@@ -127,7 +128,7 @@ const Navbar = () => {
 
             {/* sign in button small screens */}
 
-            {user?.result ? (
+            {/* {user?.result ? (
               <>
                   {user?.result.isAuthorized ? (
                     <Link
@@ -157,7 +158,7 @@ const Navbar = () => {
                     SIGN UP
                   </button>
                 </Link>
-            )}
+            )} */}
         </div>
         </div>
     
@@ -222,7 +223,7 @@ const Navbar = () => {
             </div>
             </Link>
           </li>
-          {user?.result ? (
+          {/* {user?.result ? (
               <>
                 <li className="block py-3 mt-2 pl-3 pr-4 text-gray-900 rounded hover:text-red-500 md:border-0 md:p-0 ">
                   {user?.result.isAuthorized ? (
@@ -255,7 +256,7 @@ const Navbar = () => {
                   </button>
                 </li>
                 </Link>
-            )}
+            )} */}
           
       </ul>
     </div>

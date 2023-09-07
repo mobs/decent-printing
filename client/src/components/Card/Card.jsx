@@ -14,7 +14,7 @@ const Card = ({ data }) => {
         </div>
         <div className="p-6 flex items-center justify-center">
             <h6 className="mb-2 md:text-xl text-sm font-medium leading-tight text-gray-800">
-                { data?.dataType === 'Devices' ? <></> : <>{data.category || data.title}</> }
+                { data?.dataType === 'Devices' ? <></> : <>{data.title || data.category}</> }
                 
             </h6>
         </div>

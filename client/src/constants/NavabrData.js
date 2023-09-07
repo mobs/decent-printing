@@ -116,13 +116,13 @@ export const navdetails = [
         title: 'Email Support',
         details:'enquiry@decentppdxb.ae',
         icons:'fas fa-mail-bulk',
-        link:''
+        link:'mailto:enquiry@decentppdxb.ae'
     },
     {
         title: 'Call Support',
         details:'(+971) 4267 1113',
         icons:'fas fa-phone',
-        link:''
+        link:'tel:+97142671113'
     },
     {
         title: 'Dubai',
@@ -132,7 +132,7 @@ export const navdetails = [
     },
     {
         title: 'Sharjah',
-        details:'AL WAHDA STREET, SHARJAH, UNITED ARAB EMIRATES',
+        details:'Al Wahda Street, Sharjah, United Arab Emirates',
         icons:'fas fa-map-marked-alt',
         link:'https://www.google.com/maps/search/?api=1&query=Decent Printing Press LLC - Al Wahda Street - Sharjah - United Arab Emirates'
     },

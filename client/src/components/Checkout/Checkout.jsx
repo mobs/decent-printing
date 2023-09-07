@@ -1,21 +1,26 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { productData } from "../../constants/ProductData";
+import { useSelector } from "react-redux";
 
 const Checkout = () => {
-  const { productTitle } = useParams();
+  const { id } = useParams();
+  console.log(id)
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
   const [body, setBody] = useState(
     "Hello,\n\nI am interested in your product and would like more information.\n\nBest regards,\n[Your Name]\n[Your Contact]"
   );
 
-  const product = productData.find((p) => p.title === productTitle);
+  const { products } = useSelector((state) => state.products);
+  console.log(products)
+  const product = products.find((p) => p._id === id);
+  console.log(product);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const subject = encodeURIComponent(
-      `Regarding Your Product ${productTitle}`
+      `Regarding Your Product ${product.title}`
     );
     const recipient = "enquiry@decentppdxb.ae";
     const body = encodeURIComponent(
@@ -46,15 +51,13 @@ const Checkout = () => {
 
       <div className="lg:flex md:m-32 ml-8 mr-8 justify-between">
         <div className="md:flex gap-8 md:h-64">
-          <img className="h-48 w-48 rounded" src={product.image} />
+          <img className="h-48 w-48 rounded" src={product?.image} />
           <div className="flex flex-col w-72 gap-4">
-            <p className="flex text-lg font-bold"> {product.title} </p>
+            <p className="flex text-lg font-bold"> {product?.title} </p>
             <p className="text-lg text-gray-500">
-              {" "}
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-              tristique malesuada elit, ut facilisis tellus elementum id. Nullam
-              id consectetur diam. Pellentesque nec tristique sapien etiam non
-              augue lacus{" "}
+              This product can be desinged and printed as you want. 
+              Need more information?
+              Send the enquiry, Our team will react out to you asap.
             </p>
           </div>
         </div>

@@ -1,20 +1,17 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 import video from "../../constants/Decent2.mp4";
-import { Cards, picksData } from "../../constants/HomeData";
+import { picksData } from "../../constants/HomeData";
 import Card from "../Card/Card";
-import { banner } from "../../constants/Images";
-import { picks, hot, newArrival, banner2 } from "../../constants/Images";
-import { useDispatch, useSelector } from "react-redux";
-import { getProducts } from "../../actions/products";
+
 
 const Home = () => {
-  const dispatch = useDispatch();
+  const { products } = useSelector((state) => state.products);
+  const { banners } = useSelector((state) => state.banner);
 
-  useEffect(() => {
-    dispatch(getProducts());
-  }, [dispatch])
-
-  const { products, isLoading } = useSelector((state) => state.products);
+  const bannerToShow = banners.slice(0, 3);
 
   const videoRef = useRef(null);
 
@@ -24,18 +21,29 @@ const Home = () => {
   };
 
   let productsToShow = [];
+  let picksProduct = [];
+  const titleSet = new Set();
 
-const categorySet = new Set();
+  products.forEach((product) => {
+    const { title } = product;
+    if(!titleSet.has(title)) {
+      titleSet.add(title);
+      picksProduct.push(product);
+    }
+  });
+  picksProduct = picksProduct.slice(0,6);
 
-products.forEach((product) => {
-  const { category } = product;
-  if (!categorySet.has(category)) {
-    categorySet.add(category);
-    productsToShow.push(product);
-  }
-});
+  const categorySet = new Set();
 
-productsToShow = productsToShow.slice(0,8)
+  products.forEach((product) => {
+    const { category } = product;
+    if (!categorySet.has(category)) {
+      categorySet.add(category);
+      productsToShow.push(product);
+    }
+  });
+
+  productsToShow = productsToShow.slice(0, 8);
 
   return (
     <div className="">
@@ -58,15 +66,19 @@ productsToShow = productsToShow.slice(0,8)
           Featured Products
         </div>
         <div className="flex gap-6 font-bold">
-          <button className=" hover:underline">All</button>
-          <button className=" hover:underline">Business Cards</button>
+          <button className="underline">All</button>
         </div>
       </div>
       <div className="mt-8 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-1">
         {productsToShow.map((cardData, idx) => (
-          <div className="" key={idx}>
-            <Card data={cardData} />
-          </div>
+          <Link
+            to={`/Products/${encodeURIComponent(cardData.title)}`}
+            key={idx}
+          >
+            <div className="" key={idx}>
+              <Card data={cardData} />
+            </div>
+          </Link>
         ))}
       </div>
 
@@ -75,26 +87,48 @@ productsToShow = productsToShow.slice(0,8)
           <div id="div1" className="flex flex-col gap-8">
             <div className="transition-transform transform-gpu hover:translate-x-2 hover:translate-y-2 duration-500 h-64 w-64 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.2),0_10px_20px_-2px_rgba(0,0,0,0.2)]">
               <i className="m-8 rounded-full h-20 w-20 bg-red-300 fa-solid fa-print text-white items-center justify-center flex text-6xl"></i>
-              <p className="text-2xl m-8 font-bold">
-                {" "}
-                Pop ups/Roll ups printing{" "}
-              </p>
+              <Link
+                to={`/Products/${encodeURIComponent(
+                  "Popups/Rollups Printing"
+                )}`}
+              >
+                <p className="text-2xl m-8 font-bold">
+                  {" "}
+                  Pop ups/Roll ups printing{" "}
+                </p>
+              </Link>
             </div>
             <div className="transition-transform transform-gpu hover:translate-x-2 hover:translate-y-2 duration-500 h-64 w-64 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.2),0_10px_20px_-2px_rgba(0,0,0,0.2)]">
               <i className="m-8 rounded-full h-20 w-20 bg-red-300 fa-regular fa-window-restore text-white items-center justify-center flex text-6xl"></i>
-              <p className="text-2xl m-8 font-bold">Notepads,Annual Reports</p>
+              <Link
+                to={`/Products/${encodeURIComponent(
+                  "Notepads/Annual Reports"
+                )}`}
+              >
+                <p className="text-2xl m-8 font-bold">
+                  Notepads,Annual Reports
+                </p>
+              </Link>
             </div>
           </div>
           <div id="div2" className="gap-8 mt-16 flex flex-col">
             <div className="transition-transform transform-gpu hover:translate-x-2 hover:translate-y-2 duration-500 h-64 w-64 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.2),0_10px_20px_-2px_rgba(0,0,0,0.2)]">
               <i className="m-8 rounded-full h-20 w-20 bg-red-300 fa-solid fa-cubes text-white items-center justify-center flex text-6xl"></i>
-              <p className="text-2xl m-8 font-bold"> Graphic Design </p>
+              <Link to={`/Products/${encodeURIComponent("Graphic Design")}`}>
+                <p className="text-2xl m-8 font-bold"> Graphic Design </p>
+              </Link>
             </div>
             <div className="transition-transform transform-gpu hover:translate-x-2 hover:translate-y-2 duration-500 h-64 w-64 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.2),0_10px_20px_-2px_rgba(0,0,0,0.2)]">
               <i className="m-8 rounded-full h-20 w-20 bg-red-300 fa-solid fa-book-journal-whills text-white items-center justify-center flex text-6xl"></i>
-              <p className="text-2xl m-8 font-bold">
-                Presentation Folders,Booklets
-              </p>
+              <Link
+                to={`/Products/${encodeURIComponent(
+                  "Presentation Folders/Booklets"
+                )}`}
+              >
+                <p className="text-2xl m-8 font-bold">
+                  Presentation Folders,Booklets
+                </p>
+              </Link>
             </div>
           </div>
         </div>
@@ -122,18 +156,39 @@ productsToShow = productsToShow.slice(0,8)
         </div>
       </div>
 
-      <button className="bg-gray-500 h-72 w-screen">
-        <img src={banner} />
-      </button>
+      {/* banner editing option */}
+      <a href={bannerToShow[0]?.link}>
+        <button className="relative">
+          <img src={bannerToShow[0]?.image} />
+          <div className="absolute top-0 left-0 p-12 text-white">
+            {bannerToShow[0]?.offer && (
+              <button className="bg-red-700 p-2 rounded text-xl">
+                {bannerToShow[0]?.offer}
+              </button>
+            )}
+          </div>
+        </button>
+      </a>
 
       <div className="lg:m-16 m-4 lg:flex block">
         <div>
-          <button className="hover:p-4 duration-500">
-            <img src={picks} alt="picks" />
-          </button>
+          {/* Small Banner Data */}
+          <a href={bannerToShow[1]?.link}>
+            <button className="relative hover:p-4 duration-500">
+              <img src={bannerToShow[1]?.image} alt="picks" />
+              <div className="absolute top-0 left-0 p-12 text-white">
+                {bannerToShow[1]?.offer && (
+                  <button className="bg-red-700 p-2 rounded text-xl">
+                    {bannerToShow[1]?.offer}
+                  </button>
+                )}
+              </div>
+            </button>
+          </a>
         </div>
         <div className="hover:none mt-8 grid md:grid-cols-3 md:gap-3 grid-cols-2">
-          {picksData.map((prod, idx) => (
+          {picksProduct.map((prod, idx) => (
+            <Link to={`/Checkout/${encodeURIComponent(prod._id)}`}  >
             <div className="w-75 rounded m-8 bg-white " key={idx}>
               <div className="rounded border">
                 <img
@@ -149,61 +204,24 @@ productsToShow = productsToShow.slice(0,8)
                 </button>
               </div>
             </div>
+            </Link>
           ))}
         </div>
       </div>
 
-      <div className="m-16 lg:flex block gap-4">
-        <div className="md:flex block jutify-center items-center">
-          <div className="mr-4 ">
-            <img className="rounded hover:p-4 duration-500" src={hot} />
-          </div>
-          <div>
-            <div className="flex flex-col gap-8">
-              <div className="flex items-center text-red-600 font-bold text-lg">
-                Hot Deal
-              </div>
-              <div className="flex items-centert text-3xl font-bold">
-                Upto 40% OFF
-              </div>
-              <div className="flex justify-center items-center text-gray-500 text-sm">
-                Get a special offer on your first box. FREE SHIPPING all the
-                time.
-              </div>
-              <button className="md:mb-0 mb-4 font-bold flex underline items-center hover:text-red-500 duration-300">
-                Place Enquiry
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div className="md:flex block jutify-center items-center">
-          <div className="mr-4">
-            <img className="rounded hover:p-4 duration-500" src={newArrival} />
-          </div>
-          <div>
-            <div className="flex flex-col gap-8">
-              <div className="flex items-center text-red-600 font-bold text-lg">
-                New Arrival
-              </div>
-              <div className="flex items-centert text-3xl font-bold">
-                A superior method to print.
-              </div>
-              <div className="flex justify-center items-center text-gray-500 text-sm">
-                Get a special offer on your first box. FREE SHIPPING all the
-                time.
-              </div>
-              <button className="md:mb-0 mb-4 font-bold flex underline items-center hover:text-red-500 duration-300">
-                Place Enquiry
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div className="mb-16 ">
-        <a href="#">
-          <img src={banner2} />
+        {/* banner editing option */}
+        <a href={bannerToShow[2]?.link}>
+          <button className="relative">
+            <img src={bannerToShow[2]?.image} />
+            <div className="absolute top-0 left-0 p-12 text-white">
+              {bannerToShow[2]?.offer && (
+                <button className="bg-red-700 rounded text-xl">
+                  {bannerToShow[2]?.offer}
+                </button>
+              )}
+            </div>
+          </button>
         </a>
         <div className="md:flex m-16 mt-0 justify-between items-center">
           <button

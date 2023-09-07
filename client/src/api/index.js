@@ -31,7 +31,12 @@ export const outOfStock = (id) => API.patch(`/product/outOfStock/${id}`);
 export const signIn = (formData) => API.post("/user/signin", formData);
 export const signUp = (formData) => API.post("/user/signup", formData);
 
-// Gallery Data Api
+// Gallery related Api
 export const getData = () => API.get("/gallery/getData");
 export const addData = (newData) => API.post("/gallery/addData", newData);
 export const deleteData = (id) => API.delete(`/gallery/deleteData/${id}`)
+
+// Banner related APIs
+export const addBanner = (formData) => API.post("/banner/addBanner", formData);
+export const getBanner = () => API.get("/banner/getBanner");
+export const deleteBanner = (id) => API.delete(`/banner/deleteBanner/${id}`);

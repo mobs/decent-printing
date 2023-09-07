@@ -31,12 +31,12 @@ const ProductCard = ({ prod, setId }) => {
         </h5>
 
         <div className="flex items-center justify-between space-x-2">
-          <button onClick={handleDelete} className="bg-red-500 text-white px-2 py-1 rounded hover:bg-blue-500">
+          <button onClick={handleDelete} className="bg-red-500 text-white px-2 py-1 rounded hover:bg-blue-800">
             Delete
           </button>
           
           <button
-            className="text-white px-2 py-1 rounded bg-red-500 hover:bg-blue-500"
+            className="text-white px-2 py-1 rounded bg-red-500 hover:bg-blue-800"
             onClick={handleOutStock}
           >
             Out Of Stock

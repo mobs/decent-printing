@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom'
 import { digital } from "../../constants/Images";
 import { products } from "../../constants/NavabrData";
 
@@ -51,26 +52,34 @@ const Services = () => {
           <div id="div1" className="flex flex-col gap-8">
             <div className="transition-transform transform-gpu hover:translate-x-2 hover:translate-y-2 duration-500 h-64 w-64 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.2),0_10px_20px_-2px_rgba(0,0,0,0.2)]">
               <i className="m-8 rounded-full h-20 w-20 bg-red-300 fa-solid fa-print text-white items-center justify-center flex text-6xl"></i>
+              <Link to={`/Products/${encodeURIComponent("Popups/Rollups Printing")}`}>
               <p className="text-2xl m-8 font-bold">
                 {" "}
                 Pop ups/Roll ups printing{" "}
               </p>
+              </Link>
             </div>
             <div className="transition-transform transform-gpu hover:translate-x-2 hover:translate-y-2 duration-500 h-64 w-64 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.2),0_10px_20px_-2px_rgba(0,0,0,0.2)]">
               <i className="m-8 rounded-full h-20 w-20 bg-red-300 fa-regular fa-window-restore text-white items-center justify-center flex text-6xl"></i>
+              <Link to={`/Products/${encodeURIComponent("Notepads/Annual Reports")}`}>
               <p className="text-2xl m-8 font-bold">Notepads,Annual Reports</p>
+              </Link>
             </div>
           </div>
           <div id="div2" className="gap-8 mt-16 flex flex-col">
             <div className="transition-transform transform-gpu hover:translate-x-2 hover:translate-y-2 duration-500 h-64 w-64 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.2),0_10px_20px_-2px_rgba(0,0,0,0.2)]">
               <i className="m-8 rounded-full h-20 w-20 bg-red-300 fa-solid fa-cubes text-white items-center justify-center flex text-6xl"></i>
+              <Link to={`/Products/${encodeURIComponent("Graphic Design")}`}>
               <p className="text-2xl m-8 font-bold"> Graphic Design </p>
+              </Link>
             </div>
             <div className="transition-transform transform-gpu hover:translate-x-2 hover:translate-y-2 duration-500 h-64 w-64 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.2),0_10px_20px_-2px_rgba(0,0,0,0.2)]">
               <i className="m-8 rounded-full h-20 w-20 bg-red-300 fa-solid fa-book-journal-whills text-white items-center justify-center flex text-6xl"></i>
+              <Link to={`/Products/${encodeURIComponent("Presentation Folders/Booklets")}`} >
               <p className="text-2xl m-8 font-bold">
                 Presentation Folders,Booklets
               </p>
+              </Link>
             </div>
           </div>
         </div>

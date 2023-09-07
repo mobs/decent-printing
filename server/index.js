@@ -7,6 +7,7 @@ import { config } from "dotenv";
 import productRoute from "./routes/product.js";
 import userRoute from "./routes/user.js";
 import galleryRoute from './routes/gallery.js'
+import bannerRoute from './routes/banner.js'
 
 config({ path: "./config/config.env" });
 const app = express();
@@ -19,7 +20,7 @@ app.use(cors());
 app.use("/product", productRoute);
 app.use("/user", userRoute);
 app.use('/gallery', galleryRoute);
-
+app.use('/banner', bannerRoute);
 
 const CONNECTION_URL = process.env.CONNECTION_URL;
 

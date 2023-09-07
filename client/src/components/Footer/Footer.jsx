@@ -2,6 +2,7 @@ import React from "react";
 import { navdetails } from "../../constants/NavabrData";
 import { bgImage } from "../../constants/Images";
 import Carousel from "./Carousel";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -57,16 +58,18 @@ const Footer = () => {
               Get in touch!
             </h4>
             {navdetails.map((data, idx) => (
-              <div className="text-gray-500 font-bold m-4 mx-0" key={idx}>
+              <a href={data?.link}>
+              <div className="text-gray-500 font-bold m-4 mx-0 hover:text-red-500" key={idx}>
                 {data.title === "Sharjah" || data.title === "Dubai" ? (
                   <p className="text-black">
                     {" "}
-                    {data.title} <p> {data.details} </p>{" "}
+                    {data.title} <p  className="hover:text-red-500"> {data.details} </p>{" "}
                   </p>
                 ) : (
-                  <span> {data.details}</span>
+                  <span > {data.details}</span>
                 )}
               </div>
+              </a>
             ))}
           </div>
           <div className="w-full lg:w-6/12 px-4">
@@ -77,28 +80,28 @@ const Footer = () => {
                 </span>
                 <ul className="list-unstyled">
                   <li>
-                    <a
+                    <Link
                       to="/About"
-                      className="text-gray-700 hover:text-blueGray-800 font-semibold block pb-2 text-lg"
+                      className="text-gray-700 hover:text-red-500 font-semibold block pb-2 text-lg"
                     >
                       About Us
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
+                    <Link
                       to="/Contact"
-                      className="text-gray-700 hover:text-blueGray-800 font-semibold block pb-2 text-lg"
+                      className="text-gray-700 hover:text-red-500 font-semibold block pb-2 text-lg"
                     >
                       Contact Us
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      to="/Contact"
-                      className="text-gray-700 hover:text-blueGray-800 font-semibold block pb-2 text-lg"
+                    <Link
+                      to="/Services"
+                      className="text-gray-700 hover:text-red-500 font-semibold block pb-2 text-lg"
                     >
                       Services
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>

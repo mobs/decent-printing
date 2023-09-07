@@ -34,19 +34,18 @@ const AddGalleryData = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(galleryData)
 
     dispatch(addData(galleryData));
-    // clear();
+    clear();
   };
 
-  // const clear = () => {
-  //   setData({
-  //     category: "",
-  //     dataType: "",
-  //     data: "",
-  //   });
-  // };
+  const clear = () => {
+    setData({
+      category: "",
+      dataType: "",
+      data: "",
+    });
+  };
 
   return (
     <div>
@@ -134,12 +133,3 @@ const AddGalleryData = () => {
 
 export default AddGalleryData;
 
-// import React from 'react'
-
-// const AddGalleryData = () => {
-//   return (
-//     <div>AddGalleryData</div>
-//   )
-// }
-
-// export default AddGalleryData

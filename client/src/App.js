@@ -1,7 +1,11 @@
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Icon from "./components/Icon";
 import {
+  Navbar,
+  Footer,
   Home,
   About,
   Products,
@@ -11,7 +15,6 @@ import {
   Continuous,
   Digital,
   Designing,
-  ProductDetails,
   Checkout,
   CEO,
   Introduction,
@@ -23,23 +26,30 @@ import {
   SignIn,
   AddProduct,
   Dashboard,
-  Images,
-  Videos,
   AddGalleryData
 } from "./components";
 import "./App.css";
 
-// import AddProduct from './components/Dashboard/AddProduct'
-import Navbar from "./components/Navbar/Navbar";
-import Footer from "./components/Footer/Footer";
+import { getProducts } from "./actions/products";
+import { getData } from "./actions/gallery";
+import { getBanner } from "./actions/banner";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getProducts());
+    dispatch(getData());
+    dispatch(getBanner());
+  }, [dispatch])
+
   return (
     <BrowserRouter>
       <Navbar />
       <Routes>
         <Route path="/" exact element={<Home />} />
         <Route path="/Home" element={<Home />} />
+
         <Route path="/About" element={<About />} />
         <Route path="/From CEO's Desk" element={<CEO />} />
         <Route path="/Introduction" element={<Introduction />} />
@@ -48,10 +58,10 @@ function App() {
         <Route path="/Environmental Policy" element={<Environmental />} />
         <Route path="/SUCESS FACTORS" element={<Success />} />
 
-        <Route path="/Products" element={<Products />} />
-        <Route path="/Products/:category" element={<Products />} />
-        <Route path="/Products/:productTitle" element={<ProductDetails />} />
-        <Route path="/Checkout/:productTitle" element={<Checkout />} />
+        {/* <Route path="/Products" element={<Products />} /> */}
+        <Route path="/Products/:category?" element={<Products />} />
+        {/* <Route path="/Products/:productTitle" element={<ProductDetails />} /> */}
+        <Route path="/Checkout/:id" element={<Checkout />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Services" element={<Services />} />
         <Route path="/Offset Printing" element={<Offset />} />
