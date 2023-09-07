@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'myFont': ['Montserret', 'sans-serif']
+        'myFont': ['Source Sans Pro', 'sans-serif']
       },
     },
   },

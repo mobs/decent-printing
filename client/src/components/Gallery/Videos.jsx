@@ -10,7 +10,7 @@ const Videos = ({ data, selectedCategory }) => {
 
   return (
     <div>
-      <div className="bg-gradient-to-r from-purple-500 via-red-400 to-green-300 relative flex items-center justify-center mb-8">
+      <div className="bg-gradient-to-r from-blue-500 via-purple-300 to-red-500 relative flex items-center justify-center mb-8">
         <video
           ref={videoRef}
           onEnded={handleVideoEnded}
