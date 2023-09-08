@@ -57,7 +57,7 @@ const Checkout = () => {
             <p className="text-lg text-gray-500">
               This product can be desinged and printed as you want. 
               Need more information?
-              Send the enquiry, Our team will react out to you asap.
+              Send the enquiry, Our team will reach out to you asap.
             </p>
           </div>
         </div>

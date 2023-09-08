@@ -26,7 +26,9 @@ import {
   SignIn,
   AddProduct,
   Dashboard,
-  AddGalleryData
+  AddGalleryData,
+  Images,
+  Videos
 } from "./components";
 import "./App.css";
 
@@ -73,6 +75,7 @@ function App() {
         <Route path="/AddGalleryData" element={<AddGalleryData />} />
 
         <Route path='/Gallery' element={<Gallery />} />
+        <Route path='/Gallery/:category' element={<Images />} />
         <Route path="/SignIn"  element={<SignIn />} />
       </Routes>
       <Icon />
