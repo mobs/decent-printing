@@ -10,10 +10,7 @@ export { default as Card } from "./Card/Card";
 export { default as Offset } from './Services/Offset'
 export { default as Digital } from './Services/Digital'
 export { default as Continuous } from './Services/Continuous'
-export { default as Designing } from './Services/Designing'
-// export { default as Cart } from "./Checkout/Cart";
 
-export { default as ProductDetails } from './Product/ProductDetail'
 export { default as Checkout } from './Checkout/Checkout'
 
 export { default as CEO } from './About/CEO'

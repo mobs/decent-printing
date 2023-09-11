@@ -1,3 +1,6 @@
+import trade from './Trade License.pdf'
+import vat from './VAT Certificate.pdf'
+
 export const products = [
     {
         title: 'Popups/Rollups Printing',
@@ -98,6 +101,36 @@ export const about = [
         title: 'Credentials',
         link: ''
     }
+]
+
+export const credentials = [
+    {
+        title: 'Trade License',
+        data: trade
+    },
+    {
+        title: 'VAT Certificate',
+        data: vat
+    },
+    {
+        title: 'Profile',
+        data: "https://drive.google.com/uc?export=download&id=1FYQMWNz8OaVDwiVpkVfbCbQFbN-hquUE"
+    }
+]
+
+export const getInTouch = [
+    {
+        title: 'New Enquiry',
+        data: ''
+    },
+    {
+        title: 'Complaint',
+        data: ''
+    },
+    {
+        title: 'Suggestion',
+        data: ''
+    },
 ]
 
 export const contacts = [

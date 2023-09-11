@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import video from "../../constants/Decent2.mp4";
-import { picksData } from "../../constants/HomeData";
 import Card from "../Card/Card";
 
 
@@ -39,6 +38,7 @@ const Home = () => {
       picksProduct.push(product);
     }
   });
+  
   picksProduct = picksProduct.slice(0,6);
 
   const categorySet = new Set();
@@ -55,7 +55,7 @@ const Home = () => {
 
   return (
     <div className="">
-      <div className="flex justify-center items-center overflow-hidden h-[800px] bg-gradient-to-r from-blue-500 via-purple-300 to-red-500 ">
+      <div className="flex justify-center items-center overflow-hidden h-[800px] bg-gradient-to-br bg-gradient-stops-[2.11%, 34.14%, 68.81%, 105.05%] from-[#ff869f] via-[#fa988a] via-[#f19a73] to-[#ffd0b1]">
         <video
           ref={videoRef}
           onEnded={handleVideoEnded}
@@ -90,11 +90,11 @@ const Home = () => {
         ))}
       </div>
 
-      <div className="lg:m-32 m-2 p-4 lg:gap-32 gap-2 md:flex block justify-center">
-        <div className="gap-8 md:flex block jusitfy-center items-center">
+      <div className="lg:m-24 m-2 p-4 lg:gap-32 gap-2 lg:flex block justify-center">
+        <div className="gap-8 lg:flex block jusitfy-center items-center">
           <div id="div1" className="flex flex-col gap-8">
-            <div className="transition-transform transform-gpu hover:translate-x-2 hover:translate-y-2 duration-500 h-64 w-64 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.2),0_10px_20px_-2px_rgba(0,0,0,0.2)]">
-              <i className="m-8 rounded-full h-20 w-20 bg-red-300 fa-solid fa-print text-white items-center justify-center flex text-6xl"></i>
+            <div className="transition-transform transform-gpu hover:translate-x-2 hover:translate-y-2 duration-500 lg:h-64 lg:w-64 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.2),0_10px_20px_-2px_rgba(0,0,0,0.2)]">
+              <i className="m-8 rounded-full h-24 w-24 bg-gradient-to-br bg-gradient-stops-[2.11%, 34.14%, 68.81%, 105.05%] from-[#ff869f] via-[#fa988a] via-[#f19a73] to-[#ffd0b1] fa-solid fa-print text-white items-center justify-center flex text-6xl"></i>
               <Link
                 to={`/Products/${encodeURIComponent(
                   "Popups/Rollups Printing"
@@ -106,8 +106,8 @@ const Home = () => {
                 </p>
               </Link>
             </div>
-            <div className="transition-transform transform-gpu hover:translate-x-2 hover:translate-y-2 duration-500 h-64 w-64 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.2),0_10px_20px_-2px_rgba(0,0,0,0.2)]">
-              <i className="m-8 rounded-full h-20 w-20 bg-red-300 fa-regular fa-window-restore text-white items-center justify-center flex text-6xl"></i>
+            <div className="transition-transform transform-gpu hover:translate-x-2 hover:translate-y-2 duration-500 lg:h-64 lg:w-64 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.2),0_10px_20px_-2px_rgba(0,0,0,0.2)]">
+              <i className="m-8 rounded-full h-24 w-24 bg-gradient-to-br bg-gradient-stops-[2.11%, 34.14%, 68.81%, 105.05%] from-[#ff869f] via-[#fa988a] via-[#f19a73] to-[#ffd0b1] fa-regular fa-window-restore text-white items-center justify-center flex text-6xl"></i>
               <Link
                 to={`/Products/${encodeURIComponent(
                   "Notepads/Annual Reports"
@@ -120,14 +120,14 @@ const Home = () => {
             </div>
           </div>
           <div id="div2" className="gap-8 mt-16 flex flex-col">
-            <div className="transition-transform transform-gpu hover:translate-x-2 hover:translate-y-2 duration-500 h-64 w-64 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.2),0_10px_20px_-2px_rgba(0,0,0,0.2)]">
-              <i className="m-8 rounded-full h-20 w-20 bg-red-300 fa-solid fa-cubes text-white items-center justify-center flex text-6xl"></i>
+            <div className="transition-transform transform-gpu hover:translate-x-2 hover:translate-y-2 duration-500 lg:h-64 lg:w-64 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.2),0_10px_20px_-2px_rgba(0,0,0,0.2)]">
+              <i className="m-8 rounded-full h-24 w-24 bg-gradient-to-br bg-gradient-stops-[2.11%, 34.14%, 68.81%, 105.05%] from-[#ff869f] via-[#fa988a] via-[#f19a73] to-[#ffd0b1] fa-solid fa-cubes text-white items-center justify-center flex text-6xl"></i>
               <Link to={`/Products/${encodeURIComponent("Graphic Design")}`}>
                 <p className="text-2xl m-8 font-bold"> Graphic Design </p>
               </Link>
             </div>
-            <div className="transition-transform transform-gpu hover:translate-x-2 hover:translate-y-2 duration-500 h-64 w-64 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.2),0_10px_20px_-2px_rgba(0,0,0,0.2)]">
-              <i className="m-8 rounded-full h-20 w-20 bg-red-300 fa-solid fa-book-journal-whills text-white items-center justify-center flex text-6xl"></i>
+            <div className="transition-transform transform-gpu hover:translate-x-2 hover:translate-y-2 duration-500 lg:h-64 lg:w-64 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.2),0_10px_20px_-2px_rgba(0,0,0,0.2)]">
+              <i className="m-8 rounded-full h-24 w-24 bg-gradient-to-br bg-gradient-stops-[2.11%, 34.14%, 68.81%, 105.05%] from-[#ff869f] via-[#fa988a] via-[#f19a73] to-[#ffd0b1] fa-solid fa-book-journal-whills text-white items-center justify-center flex text-6xl"></i>
               <Link
                 to={`/Products/${encodeURIComponent(
                   "Presentation Folders/Booklets"
@@ -140,15 +140,15 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="md:flex block md:text-justify text-center flex-col gap-8">
+        <div className="lg:flex block lg:text-justify text-center flex-col gap-8 lg:mt-0 md:mt-6">
           <div className="flex justify-center items-center text-red-600 font-bold text-lg">
             IF YOU ARE LOOKING FOR AFFORDABLE AND QUALITY DIGITAL PRINTERS IN
             UAE THEN WE WOULD LOVE TO HEAR FROM YOU.​
           </div>
-          <div className="flex justify-center items-centert text-6xl font-extrabold">
+          <div className="flex justify-center items-center md:text-5xl sm:text-xl font-extrabold">
             WE COLOR YOUR BUSINESS
           </div>
-          <div className="flex justify-center items-center text-gray-500 text-lg">
+          <div className="flex justify-center items-center text-gray-500 text-xl">
             We are full edge printing house work towards quality assurance to
             gain your customer satisfaction.Quality control is practised at
             every stage of production,instilling awareness of quality among all
@@ -167,7 +167,7 @@ const Home = () => {
       {/* banner editing option */}
       <a href={bannerToShow[0]?.link}>
         <button className="relative">
-          <img src={bannerToShow[0]?.image} />
+          <img src={bannerToShow[0]?.image} alt="banner 1" />
           <div className="absolute top-0 left-0 p-12 text-white">
             {bannerToShow[0]?.offer && (
               <button className="bg-red-700 p-2 rounded text-xl">
@@ -183,7 +183,7 @@ const Home = () => {
           {/* Small Banner Data */}
           <a href={bannerToShow[1]?.link}>
             <button className="relative hover:p-4 duration-500">
-              <img src={bannerToShow[1]?.image} alt="picks" />
+              <img src={bannerToShow[1]?.image} alt="picks1" />
               <div className="absolute top-0 left-0 p-12 text-white">
                 {bannerToShow[1]?.offer && (
                   <button className="bg-red-700 p-2 rounded text-xl">
@@ -202,7 +202,7 @@ const Home = () => {
                 <img
                   className="aspect-sqaure md:h-64  "
                   src={prod?.image}
-                  alt="image"
+                  alt="picks2"
                   style={{ objectFit: "cover" }}
                 />
               </div>
@@ -221,7 +221,7 @@ const Home = () => {
       <div className="m-16 lg:flex block gap-4">
         <div className="md:flex block jutify-center items-center">
           <div className="mr-4 ">
-            <img className="rounded hover:p-4 w-[600px] duration-500" src={offerProduct[0]?.image} />
+            <img className="rounded hover:p-4 w-[600px] duration-500" src={offerProduct[0]?.image} alt="offer1"/>
           </div>
           <div>
             <div className="flex flex-col gap-8">
@@ -249,7 +249,7 @@ const Home = () => {
 
         <div className="md:flex block jutify-center items-center">
           <div className="mr-4">
-            <img className="rounded hover:p-4 duration-500 w-[600px]" src={offerProduct[1]?.image} />
+            <img className="rounded hover:p-4 duration-500 w-[600px]" src={offerProduct[1]?.image} alt="offer2"/>
           </div>
           <div>
             <div className="flex flex-col gap-8">
@@ -282,7 +282,7 @@ const Home = () => {
         {/* banner editing option */}
         <a href={bannerToShow[2]?.link}>
           <button className="relative">
-            <img src={bannerToShow[2]?.image} />
+            <img src={bannerToShow[2]?.image} alt="banner2"/>
             <div className="absolute top-0 left-0 p-12 text-white">
               {bannerToShow[2]?.offer && (
                 <button className="bg-red-700 rounded text-xl">

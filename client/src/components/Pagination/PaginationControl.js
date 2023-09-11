@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 function PaginationControls({ currentPage, productsPerPage, totalProducts, onPageChange }) {
     const totalPages = Math.ceil(totalProducts / productsPerPage);
   

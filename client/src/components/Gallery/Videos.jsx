@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 
-const Videos = ({ data, selectedCategory }) => {
+const Videos = () => {
   const videoRef = useRef(null);
 
   const handleVideoEnded = () => {
@@ -10,7 +10,7 @@ const Videos = ({ data, selectedCategory }) => {
 
   return (
     <div>
-      <div className="bg-gradient-to-r from-blue-500 via-purple-300 to-red-500 relative flex items-center justify-center mb-8">
+      <div className="bg-gradient-to-br bg-gradient-stops-[2.11%, 34.14%, 68.81%, 105.05%] from-[#ff869f] via-[#fa988a] via-[#f19a73] to-[#ffd0b1] relative flex items-center justify-center mb-8">
         <video
           ref={videoRef}
           onEnded={handleVideoEnded}

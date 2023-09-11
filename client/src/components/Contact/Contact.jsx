@@ -1,9 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom';
 
 const Contact = () => {
+  const { section } = useParams();
   const [ formData, setFormData ] = useState({
     email:"", subject:"", message:""
   });
+
+  useEffect(() => {
+    // Scroll to the target section specified in the URL parameter
+    const targetSection = document.querySelector(`#${section}`);
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [section]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -56,7 +66,7 @@ const Contact = () => {
         </div>
       </div>
 
-      <div> 
+      <div id='location'> 
         <p className='text-5xl font-extrabold text-center mb-4'> Dubai Qusais </p>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.318638255191!2d55.39308888109223!3d25.293496420018744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5ddfe3c442e9%3A0x74776015436db781!2sDECENT%20PRINTING%20PRESS%20LLC.!5e0!3m2!1sen!2sin!4v1693254268485!5m2!1sen!2sin" 
           className='w-screen h-96' allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
@@ -72,7 +82,7 @@ const Contact = () => {
         </iframe>
       </div>
 
-      <p className='text-center text-5xl font-bold m-16'> Send a Message </p>
+      <p className='text-center text-5xl font-bold m-16' id='message'> Send a Message </p>
       <div className='md:flex justify-center items-center md:m-0 m-2'>
         
         <form action="#" onSubmit={handleSubmit} className="space-y-8 md:w-96 w-auto">

@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import { productData } from "../../constants/ProductData";
 import { useSelector } from "react-redux";
 
 const Checkout = () => {
   const { id } = useParams();
-  console.log(id)
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
   const [body, setBody] = useState(
@@ -13,9 +11,7 @@ const Checkout = () => {
   );
 
   const { products } = useSelector((state) => state.products);
-  console.log(products)
   const product = products.find((p) => p._id === id);
-  console.log(product);
 
   const handleSubmit = (e) => {
     e.preventDefault();

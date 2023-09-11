@@ -1,7 +1,6 @@
 import React from "react";
 import { navdetails } from "../../constants/NavabrData";
-import { bgImage } from "../../constants/Images";
-import Carousel from "./Carousel";
+import { logo } from "../../constants/Images";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -13,7 +12,7 @@ const Footer = () => {
         <div className="md:flex justify-between block md:text-justify text-center ">
           <div className="">
             <img
-              src="https://decentpp.fastnet-soft.cloud/wp-content/uploads/2022/04/LOGO-1.png"
+              src={logo}
               className="h-32"
               alt="Logo"
             />
@@ -63,7 +62,7 @@ const Footer = () => {
                 {data.title === "Sharjah" || data.title === "Dubai" ? (
                   <p className="text-black">
                     {" "}
-                    {data.title} <p  className="hover:text-red-500"> {data.details} </p>{" "}
+                    {data.title} <p  className="hover:text-red-500 font-thin"> {data.details} </p>{" "}
                   </p>
                 ) : (
                   <span > {data.details}</span>
@@ -78,11 +77,11 @@ const Footer = () => {
                 <span className="block uppercase text-gray-700 text-xl font-bold mb-2">
                   Quick Links
                 </span>
-                <ul className="list-unstyled">
+                <ul className="list-unstyled font-medium">
                   <li>
                     <Link
                       to="/About"
-                      className="text-gray-700 hover:text-red-500 font-semibold block pb-2 text-lg"
+                      className="text-gray-700 hover:text-red-500  block pb-2 text-lg"
                     >
                       About Us
                     </Link>
@@ -90,7 +89,7 @@ const Footer = () => {
                   <li>
                     <Link
                       to="/Contact"
-                      className="text-gray-700 hover:text-red-500 font-semibold block pb-2 text-lg"
+                      className="text-gray-700 hover:text-red-500 block pb-2 text-lg"
                     >
                       Contact Us
                     </Link>
@@ -98,7 +97,7 @@ const Footer = () => {
                   <li>
                     <Link
                       to="/Services"
-                      className="text-gray-700 hover:text-red-500 font-semibold block pb-2 text-lg"
+                      className="text-gray-700 hover:text-red-500 block pb-2 text-lg"
                     >
                       Services
                     </Link>

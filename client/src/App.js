@@ -14,7 +14,6 @@ import {
   Offset,
   Continuous,
   Digital,
-  Designing,
   Checkout,
   CEO,
   Introduction,
@@ -28,7 +27,6 @@ import {
   Dashboard,
   AddGalleryData,
   Images,
-  Videos
 } from "./components";
 import "./App.css";
 
@@ -46,7 +44,8 @@ function App() {
   }, [dispatch])
 
   return (
-    <BrowserRouter>
+    <div className="font-outfit">
+    <BrowserRouter >
       <Navbar />
       <Routes>
         <Route path="/" exact element={<Home />} />
@@ -64,12 +63,12 @@ function App() {
         <Route path="/Products/:category?" element={<Products />} />
         {/* <Route path="/Products/:productTitle" element={<ProductDetails />} /> */}
         <Route path="/Checkout/:id" element={<Checkout />} />
-        <Route path="/Contact" element={<Contact />} />
+        <Route path="/Contact/:section?" element={<Contact />} />
         <Route path="/Services" element={<Services />} />
         <Route path="/Offset Printing" element={<Offset />} />
         <Route path="/Continuous Form Printing" element={<Continuous />} />
         <Route path="/Digital Printing" element={<Digital />} />
-        <Route path="/Designing Services" element={<Designing />} />
+        {/* <Route path="/Designing Services" element={<Designing />} /> */}
         <Route path="Dashboard" element={<Dashboard />} />
         <Route path="/Addproduct" element={<AddProduct />} />
         <Route path="/AddGalleryData" element={<AddGalleryData />} />
@@ -82,6 +81,7 @@ function App() {
 
       <Footer />
     </BrowserRouter>
+    </div>
   );
 }
 

@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'myFont': ['Source Sans Pro', 'sans-serif']
+        'outfit': ['Outfit', 'sans']
       },
     },
   },
