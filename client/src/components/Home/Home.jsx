@@ -2,13 +2,23 @@ import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
+import "./animate.css";
 import video from "../../constants/Decent2.mp4";
 import Card from "../Card/Card";
-
 
 const Home = () => {
   const { products } = useSelector((state) => state.products);
   const { banners } = useSelector((state) => state.banner);
+
+  const getRandomPosition = () => ({
+    top: `${Math.random() * 100}%`,
+    left: `${Math.random() * 100}%`,
+  });
+
+  const getRandomPosition1 = () => ({
+    top: `${Math.random() * 100}%`,
+    right: `${Math.random() * 100}%`,
+  });
 
   const bannerToShow = banners.slice(0, 3);
 
@@ -26,20 +36,20 @@ const Home = () => {
 
   products.forEach((product) => {
     const { offer } = product;
-    if(offer) offerProduct.push(product);
-  })
+    if (offer) offerProduct.push(product);
+  });
 
-  offerProduct = offerProduct.slice(0,2);
+  offerProduct = offerProduct.slice(0, 2);
 
   products.forEach((product) => {
     const { title } = product;
-    if(!titleSet.has(title)) {
+    if (!titleSet.has(title)) {
       titleSet.add(title);
       picksProduct.push(product);
     }
   });
-  
-  picksProduct = picksProduct.slice(0,6);
+
+  picksProduct = picksProduct.slice(0, 6);
 
   const categorySet = new Set();
 
@@ -90,8 +100,118 @@ const Home = () => {
         ))}
       </div>
 
-      <div className="lg:m-24 m-2 p-4 lg:gap-32 gap-2 lg:flex block justify-center">
+      <div className="relative lg:m-12 m-2 p-4 lg:gap-12 gap-2 lg:flex block justify-center">
+        <div className="absolute inset-0 z-0">
+          <div className="image absolute w-6 h-6 opacity-50 bg-blue-500 rounded-full"></div>
+          <div
+            className="animate-circles absolute w-6 h-6 opacity-50 bg-purple-500 rounded-full"
+            style={getRandomPosition()}
+          ></div>
+          <div
+            className="animate-circles absolute w-6 h-6 opacity-50 bg-red-300 rounded-full"
+            style={getRandomPosition()}
+          ></div>
+          <div
+            className="animate-circles absolute w-6 h-6 opacity-50 bg-orange-500 rounded-full"
+            style={getRandomPosition()}
+          ></div>
+          <div
+            className="animate-circles absolute w-12 h-12 opacity-50 bg-purple-300 rounded-full"
+            style={getRandomPosition()}
+          ></div>
+          <div
+            className="animate-circles absolute w-12 h-12 opacity-50 bg-red-300 rounded-full"
+            style={getRandomPosition()}
+          ></div>
+          <div
+            className="animate-circles absolute w-12 h-12 opacity-50 bg-yellow-300 rounded-full"
+            style={getRandomPosition()}
+          ></div>
+          <div
+            className="animate-circles absolute w-12 h-12 opacity-50 bg-gray-300 rounded-full"
+            style={getRandomPosition()}
+          ></div>
+          <div
+            className="animate-circles absolute w-6 h-6 opacity-50 bg-green-300 rounded-full"
+            style={getRandomPosition()}
+          ></div>
+          <div
+            className="animate-circles absolute w-6 h-6 opacity-50 bg-gray-300 rounded-full"
+            style={getRandomPosition()}
+          ></div>
+          <div
+            className="animate-circles absolute w-6 h-6 opacity-50 bg-purple-800 rounded-full"
+            style={getRandomPosition()}
+          ></div>
+          <div
+            className="animate-circles absolute w-6 h-6 opacity-50 bg-red-800 rounded-full"
+            style={getRandomPosition()}
+          ></div>
+          <div
+            className="animate-circles absolute w-6 h-6 opacity-50 bg-brown-500 rounded-full"
+            style={getRandomPosition()}
+          ></div>
+          <div
+            className="animate-circles absolute w-6 h-6 opacity-50 bg-gray-600 rounded-full"
+            style={getRandomPosition()}
+          ></div>
+
+          <div
+            className="animate-circles absolute w-6 h-6 opacity-50 bg-purple-500 rounded-full"
+            style={getRandomPosition1()}
+          ></div>
+          <div
+            className="animate-circles absolute w-6 h-6 opacity-50 bg-red-300 rounded-full"
+            style={getRandomPosition1()}
+          ></div>
+          <div
+            className="animate-circles absolute w-6 h-6 opacity-50 bg-orange-500 rounded-full"
+            style={getRandomPosition1()}
+          ></div>
+          <div
+            className="animate-circles absolute w-12 h-12 opacity-50 bg-purple-300 rounded-full"
+            style={getRandomPosition1()}
+          ></div>
+          <div
+            className="animate-circles absolute w-12 h-12 opacity-50 bg-red-300 rounded-full"
+            style={getRandomPosition1()}
+          ></div>
+          <div
+            className="animate-circles absolute w-12 h-12 opacity-50 bg-yellow-300 rounded-full"
+            style={getRandomPosition1()}
+          ></div>
+          <div
+            className="animate-circles absolute w-12 h-12 opacity-50 bg-gray-300 rounded-full"
+            style={getRandomPosition1()}
+          ></div>
+          <div
+            className="animate-circles absolute w-6 h-6 opacity-50 bg-green-300 rounded-full"
+            style={getRandomPosition1()}
+          ></div>
+          <div
+            className="animate-circles absolute w-6 h-6 opacity-50 bg-gray-300 rounded-full"
+            style={getRandomPosition1()}
+          ></div>
+          <div
+            className="animate-circles absolute w-6 h-6 opacity-50 bg-purple-800 rounded-full"
+            style={getRandomPosition1()}
+          ></div>
+          <div
+            className="animate-circles absolute w-6 h-6 opacity-50 bg-red-800 rounded-full"
+            style={getRandomPosition1()}
+          ></div>
+          <div
+            className="animate-circles absolute w-6 h-6 opacity-50 bg-brown-500 rounded-full"
+            style={getRandomPosition1()}
+          ></div>
+          <div
+            className="animate-circles absolute w-6 h-6 opacity-50 bg-gray-600 rounded-full"
+            style={getRandomPosition1()}
+          ></div>
+        </div>
+        <div className='absolute h-[50em] w-[50em] mr-[80%] rounded-full bg-purple-300 opacity-25'></div>
         <div className="gap-8 lg:flex block jusitfy-center items-center">
+          
           <div id="div1" className="flex flex-col gap-8">
             <div className="transition-transform transform-gpu hover:translate-x-2 hover:translate-y-2 duration-500 lg:h-64 lg:w-64 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.2),0_10px_20px_-2px_rgba(0,0,0,0.2)]">
               <i className="m-8 rounded-full h-24 w-24 bg-gradient-to-br bg-gradient-stops-[2.11%, 34.14%, 68.81%, 105.05%] from-[#ff869f] via-[#fa988a] via-[#f19a73] to-[#ffd0b1] fa-solid fa-print text-white items-center justify-center flex text-6xl"></i>
@@ -140,12 +260,13 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="lg:flex block lg:text-justify text-center flex-col gap-8 lg:mt-0 md:mt-6">
+
+        <div className="lg:flex relative block lg:text-left text-center flex-col gap-8 lg:mt-0 md:mt-6">
           <div className="flex justify-center items-center text-red-600 font-bold text-lg">
             IF YOU ARE LOOKING FOR AFFORDABLE AND QUALITY DIGITAL PRINTERS IN
             UAE THEN WE WOULD LOVE TO HEAR FROM YOU.​
           </div>
-          <div className="flex justify-center items-center md:text-5xl sm:text-xl font-extrabold">
+          <div className="flex justify-center items-center md:text-6xl sm:text-xl font-extrabold">
             WE COLOR YOUR BUSINESS
           </div>
           <div className="flex justify-center items-center text-gray-500 text-xl">
@@ -196,32 +317,35 @@ const Home = () => {
         </div>
         <div className="hover:none mt-8 grid md:grid-cols-3 md:gap-3 grid-cols-2">
           {picksProduct.map((prod, idx) => (
-            <Link to={`/Checkout/${encodeURIComponent(prod._id)}`}  >
-            <div className="w-75 rounded m-8 bg-white " key={idx}>
-              <div className="rounded border">
-                <img
-                  className="aspect-sqaure md:h-64  "
-                  src={prod?.image}
-                  alt="picks2"
-                  style={{ objectFit: "cover" }}
-                />
+            <Link to={`/Checkout/${encodeURIComponent(prod._id)}`}>
+              <div className="w-75 rounded m-8 bg-white " key={idx}>
+                <div className="rounded border">
+                  <img
+                    className="aspect-sqaure md:h-64  "
+                    src={prod?.image}
+                    alt="picks2"
+                    style={{ objectFit: "cover" }}
+                  />
+                </div>
+                <div className="p-6 flex items-center justify-center">
+                  <button className="mb-2 text-xl font-medium leading-tight text-gray-600 hover:text-red-500">
+                    {prod.title}
+                  </button>
+                </div>
               </div>
-              <div className="p-6 flex items-center justify-center">
-                <button className="mb-2 text-xl font-medium leading-tight text-gray-600 hover:text-red-500">
-                  {prod.title}
-                </button>
-              </div>
-            </div>
             </Link>
           ))}
         </div>
       </div>
 
-
       <div className="m-16 lg:flex block gap-4">
         <div className="md:flex block jutify-center items-center">
           <div className="mr-4 ">
-            <img className="rounded hover:p-4 w-[600px] duration-500" src={offerProduct[0]?.image} alt="offer1"/>
+            <img
+              className="rounded hover:p-4 w-[600px] duration-500"
+              src={offerProduct[0]?.image}
+              alt="offer1"
+            />
           </div>
           <div>
             <div className="flex flex-col gap-8">
@@ -238,7 +362,9 @@ const Home = () => {
                 Get a special offer on your first box. FREE SHIPPING all the
                 time.
               </div>
-              <Link to={`/Checkout/${encodeURIComponent(offerProduct[0]?._id)}`} >
+              <Link
+                to={`/Checkout/${encodeURIComponent(offerProduct[0]?._id)}`}
+              >
                 <button className="md:mb-0 mb-4 font-bold flex underline items-center hover:text-red-500 duration-300">
                   Place Enquiry
                 </button>
@@ -249,7 +375,11 @@ const Home = () => {
 
         <div className="md:flex block jutify-center items-center">
           <div className="mr-4">
-            <img className="rounded hover:p-4 duration-500 w-[600px]" src={offerProduct[1]?.image} alt="offer2"/>
+            <img
+              className="rounded hover:p-4 duration-500 w-[600px]"
+              src={offerProduct[1]?.image}
+              alt="offer2"
+            />
           </div>
           <div>
             <div className="flex flex-col gap-8">
@@ -260,14 +390,16 @@ const Home = () => {
                 {offerProduct[1]?.title.toUpperCase()}
               </div>
               <div className="flex items-centert text-3xl font-bold">
-              {offerProduct[1]?.offer}
+                {offerProduct[1]?.offer}
               </div>
-              
+
               <div className="flex justify-center items-center text-gray-500 text-sm">
                 Get a special offer on your first box. FREE SHIPPING all the
                 time.
               </div>
-              <Link to={`/Checkout/${encodeURIComponent(offerProduct[1]?._id)}`} >
+              <Link
+                to={`/Checkout/${encodeURIComponent(offerProduct[1]?._id)}`}
+              >
                 <button className="md:mb-0 mb-4 font-bold flex underline items-center hover:text-red-500 duration-300">
                   Place Enquiry
                 </button>
@@ -277,12 +409,11 @@ const Home = () => {
         </div>
       </div>
 
-
       <div className="mb-16 ">
         {/* banner editing option */}
         <a href={bannerToShow[2]?.link}>
           <button className="relative">
-            <img src={bannerToShow[2]?.image} alt="banner2"/>
+            <img src={bannerToShow[2]?.image} alt="banner2" />
             <div className="absolute top-0 left-0 p-12 text-white">
               {bannerToShow[2]?.offer && (
                 <button className="bg-red-700 rounded text-xl">

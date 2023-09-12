@@ -1,5 +1,5 @@
-import trade from './Trade License.pdf'
-import vat from './VAT Certificate.pdf'
+// import trade from './Trade License.pdf'
+// import vat from './VAT Certificate.pdf'
 
 export const products = [
     {
@@ -106,15 +106,18 @@ export const about = [
 export const credentials = [
     {
         title: 'Trade License',
-        data: trade
+        // data: trade
+        data: 'https://drive.google.com/file/d/1SkaUwwKrKrMm3PQbXm9wBVG2tdKGDZ8f/view?usp=drive_link'
     },
     {
         title: 'VAT Certificate',
-        data: vat
+        // data: vat
+        data: 'https://drive.google.com/file/d/1giALO44y-Atk4asMgMjxoZDFZRHXE--8/view?usp=drive_link'
     },
     {
         title: 'Profile',
-        data: "https://drive.google.com/uc?export=download&id=1FYQMWNz8OaVDwiVpkVfbCbQFbN-hquUE"
+        data: 'https://drive.google.com/file/d/1FYQMWNz8OaVDwiVpkVfbCbQFbN-hquUE/view?usp=drive_link'
+        // data: "https://drive.google.com/uc?export=download&id=1FYQMWNz8OaVDwiVpkVfbCbQFbN-hquUE"
     }
 ]
 

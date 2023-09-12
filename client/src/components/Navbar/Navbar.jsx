@@ -169,8 +169,9 @@ const Navbar = () => {
                         <div className="z-30 ml-48 -my-9 w-56 bg-white hidden absolute peer-hover:flex hover:flex flex-col text-black drop-shadow-lg">
                           {credentials.map((crd, idx) => (
                             <a
-                              href={crd.data}
-                              download={crd.title}
+                              // href={crd.data}
+                              onClick={() => window.open(crd.data)}
+                              // download={crd.title}
                               target="_blank"
                               rel="noopener noreferrer"
                               key={idx}
@@ -308,10 +309,11 @@ const Navbar = () => {
                         <div className="z-30 ml-48 -my-9 w-56 bg-white hidden absolute peer-hover:flex hover:flex flex-col text-black drop-shadow-lg">
                           {credentials.map((crd, idx) => (
                             <a
-                              href={crd.data}
-                              download={crd.title}
-                              target="_blank"
-                              rel="noopener noreferrer"
+                              href='#'
+                              // download={crd.title}
+                              onClick={()=>window.open(crd.data, '_blank')}
+                              // target="_blank"
+                              // rel="noopener noreferrer"
                               key={idx}
                               className="px-5 py-3 peer text-gray-900 hover:bg-red-500 hover:text-white"
                             >
