@@ -6,6 +6,7 @@ export { default as Products } from "./Product/Products";
 export { default as Services } from "./Services/Services.jsx"
 export { default as Footer } from "./Footer/Footer";
 export { default as Card } from "./Card/Card";
+export { default as Carousel } from './Carousel/Carousel'
 
 export { default as Offset } from './Services/Offset'
 export { default as Digital } from './Services/Digital'

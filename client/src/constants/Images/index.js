@@ -10,3 +10,10 @@ export { default as cont2 } from './cont2.png'
 
 export { default as whatsapp } from './whatsapp.png'
 export { default as logo } from './logo.png'
+
+export { default as banner1 } from './Banner1.bmp'
+export { default as banner2 } from './Banner 2.jpg'
+export { default as banner3 } from './Banner 3.jpg'
+export { default as banner4 } from './Banner 4.jpg'
+export{ default as banner } from './banner last.png'
+export { default as contact } from './contact.png'

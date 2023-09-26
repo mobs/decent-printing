@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import Images from "./Images";
 import Videos from "./Videos";
-import Card from "../Card/Card";
-
 
 const Gallery = () => {
   const [tab, setTab] = useState("Images");
@@ -11,7 +9,7 @@ const Gallery = () => {
   const { data } = useSelector((state) => state.gallery);
 
   const videos = data.filter((d) => d.dataType === "Videos");
-  const devices = data.filter((d) => d.dataType === "Devices");
+  // const devices = data.filter((d) => d.dataType === "Devices");
 
   const handleClick = (tab) => {
     setTab(tab);
@@ -40,26 +38,27 @@ const Gallery = () => {
           {" "}
           Videos{" "}
         </button>
-        <button
+        {/* <button
           onClick={() => handleClick("Devices")}
           className={`${tab === "Devices" ? "underline" : ""}`}
         >
           {" "}
           Devices{" "}
-        </button>
+        </button> */}
       </div>
 
       <div>
         {tab === "Images" ? (
           <Images />
-        ) : tab === "Videos" ? (
-          <Videos data={videos} />
         ) : (
-          <div className="mt-8 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-1">
-            {devices.map((data, idx) => (
-              <Card data={data} key={idx} />
-            ))}
-          </div>
+          <Videos data={videos} />
+        
+        // : (
+        //   <div className="mt-8 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-1">
+        //     {devices.map((data, idx) => (
+        //       <Card data={data} key={idx} />
+        //     ))}
+        //   </div>
         )}
       </div>
     </div>

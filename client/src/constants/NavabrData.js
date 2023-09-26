@@ -1,74 +1,144 @@
-// import trade from './Trade License.pdf'
-// import vat from './VAT Certificate.pdf'
+// export const products = [
+//     {
+//         title: 'Popups/Rollups Printing',
+//         link: ''
+//     },
+//     {
+//         title: 'Graphic Design',
+//         link: ''
+//     },
+//     {
+//         title: 'Notepads/Annual Reports',
+//         link: ''
+//     },
+//     {
+//         title: 'Presentation Folders/Booklets',
+//         link: ''
+//     },
+//     {
+//         title: 'Price List / Proposal / Brochures',
+//         link: ''
+//     },
+//     {
+//         title: 'Bussiness Cards / Calendars',
+//         link: ''
+//     },
+//     {
+//         title: 'Fabric Print / Screen Printing',
+//         link: ''
+//     },
+//     {
+//         title: 'Floor Graphics',
+//         link: ''
+//     },
+//     {
+//         title: 'Lamp Posts',
+//         link: ''
+//     },
+//     {
+//         title: 'Exhibitions & Events',
+//         link: ''
+//     },
+//     {
+//         title: 'Display Stands',
+//         link: ''
+//     },
+//     {
+//         title: 'Showroom Glass Branding',
+//         link: ''
+//     },
+//     {
+//         title: 'Billboards',
+//         link: ''
+//     }
+
+// ]
 
 export const products = [
     {
-        title: 'Popups/Rollups Printing',
-        link: ''
+        title: 'Designing Work'
     },
     {
-        title: 'Graphic Design',
-        link: ''
+        title: 'Printing Packaging'
     },
     {
-        title: 'Notepads/Annual Reports',
-        link: ''
-    },
-    {
-        title: 'Presentation Folders/Booklets',
-        link: ''
-    },
-    {
-        title: 'Price List / Proposal / Brochures',
-        link: ''
-    },
-    {
-        title: 'Bussiness Cards / Calendars',
-        link: ''
-    },
-    {
-        title: 'Fabric Print / Screen Printing',
-        link: ''
-    },
-    {
-        title: 'Floor Graphics',
-        link: ''
-    },
-    {
-        title: 'Lamp Posts',
-        link: ''
-    },
-    {
-        title: 'Exhibitions & Events',
-        link: ''
-    },
-    {
-        title: 'Display Stands',
-        link: ''
-    },
-    {
-        title: 'Showroom Glass Branding',
-        link: ''
-    },
-    {
-        title: 'Billboards',
-        link: ''
+        title: 'Commercial Printing'
     }
-
 ]
+
+export const Packaging = [
+    {
+        title: 'Date Box'
+    },
+    {
+        title: 'Cake Box'
+    },
+    {
+        title: 'Burger Box'
+    },
+    {
+        title: 'Perfume Box'
+    },
+    {
+        title: 'Chocolate Box'
+    },
+    {
+        title: 'Paper Bags'
+    },
+    {
+        title: 'Lunch Box'
+    },
+    {
+        title: 'Miscellaneous'
+    }
+]
+
+export const Commercial = [
+    {
+        title: 'Bussiness Card'
+    },
+    {
+        title: 'Letter Head'
+    },
+    {
+        title: 'Flyers'
+    },
+    {
+        title: 'Menus'
+    },
+    {
+        title: 'Brochures'
+    },
+    {
+        title: 'Envelope'
+    },
+    {
+        title: 'Booklets'
+    },
+    {
+        title: 'Diaries'
+    },
+    {
+        title: 'NCR Books'
+    },
+    {
+        title: 'Continuous Computer Forms'
+    },
+    {
+        title: 'Miscellaneous'
+    },
+]
+
 
 export const services = [
     {
         title: 'Offset Printing',
-        link: ''
     },
     {
         title: 'Digital Printing',
-        link: ''
     },
     {
         title: 'Continuous Form Printing',
-        link: ''
     },
 ]
 

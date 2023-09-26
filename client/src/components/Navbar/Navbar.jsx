@@ -11,6 +11,8 @@ import {
   navdetails,
   credentials,
   getInTouch,
+  Commercial,
+  Packaging,
 } from "../../constants/NavabrData";
 import { logo } from "../../constants/Images";
 import "./navbar.css";
@@ -99,28 +101,67 @@ const Navbar = () => {
         <div className="z-10 hidden absolute peer-hover:flex hover:flex flex-col bg-white drop-shadow-lg">
           <Link
             to="/"
-            className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white"
+            className="w-screen px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white"
           >
             {" "}
             Home{" "}
           </Link>
+
           <Link
             to="/Products"
-            className="w-screen px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white"
+            className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white"
           >
             <button className="peer">
-              {" "}
-              Products <i className="ml-4 fa-solid fa-angle-down"></i>{" "}
+              Products <i className="ml-4 fa-solid fa-angle-down"></i>
             </button>
             <div className="hidden absolute peer-hover:flex hover:flex flex-col bg-white drop-shadow-lg">
               {products.map((prod, idx) => (
-                <Link
-                  to={`/Products/${encodeURIComponent(prod.title)}`}
-                  className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white"
-                  key={idx}
-                >
-                  <a> {prod.title} </a>
-                </Link>
+                <>
+                  {prod.title === "Designing Work" ? (
+                    <Link
+                      to={`/Products/${encodeURIComponent(prod.title)}`}
+                      className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white"
+                      href=""
+                      key={idx}
+                    >
+                      {prod.title}
+                    </Link>
+                  ) : prod.title === "Commercial Printing" ? (
+                    <div className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white">
+                      <span className="peer"> </span>
+                      <button className="peer"> {prod.title} </button>
+                      <i className="peer pl-24 w-28 fa-solid fa-angle-right "></i>
+                      <div className="z-30 ml-48 -my-9 w-56 bg-white hidden absolute peer-hover:flex hover:flex flex-col text-black drop-shadow-lg">
+                        {Commercial.map((comm, idx) => (
+                          <Link
+                            to={`/Products/${encodeURIComponent(comm.title)}`}
+                            key={idx}
+                            className="px-5 py-3 peer text-gray-900 hover:bg-red-500 hover:text-white"
+                          >
+                            <button> {comm.title} </button>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white">
+                      <span className="peer"> </span>
+                      <button className="peer"> {prod.title} </button>
+                      <i className="peer pl-24 w-28 fa-solid fa-angle-right "></i>
+                      <div className="z-30 ml-48 -my-9 w-56 bg-white hidden absolute peer-hover:flex hover:flex flex-col text-black drop-shadow-lg">
+                        {Packaging.map((pack, idx) => (
+                          <Link
+                            to={`/Products/${encodeURIComponent(pack.title)}`}
+                            key={idx}
+                            className="px-5 py-3 peer text-gray-900 hover:bg-red-500 hover:text-white"
+                          >
+                            <button> {pack.title} </button>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </>
               ))}
             </div>
           </Link>
@@ -145,48 +186,49 @@ const Navbar = () => {
               ))}
             </div>
           </Link>
-          <a href="/About" className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white">
-              <button className="peer">
-                {" "}
-                About Us <i className="ml-4 fa-solid fa-angle-down"></i>{" "}
-              </button>
-              <div className="hidden absolute peer-hover:flex hover:flex flex-col bg-white drop-shadow-lg">
-                {about.map((ab, idx) => (
-                  <>
-                    {ab.title !== "Credentials" ? (
-                      <Link
-                        to={`${ab.title}`}
-                        key={idx}
-                        className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white"
-                      >
-                        <p> {ab.title} </p>
-                      </Link>
-                    ) : (
-                      <div className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white">
-                        <span className="peer"> </span>
-                        <button className="peer"> {ab.title} </button>
-                        <i className="peer pl-24 w-28 fa-solid fa-angle-right "></i>
-                        <div className="z-30 ml-48 -my-9 w-56 bg-white hidden absolute peer-hover:flex hover:flex flex-col text-black drop-shadow-lg">
-                          {credentials.map((crd, idx) => (
-                            <a
-                              // href={crd.data}
-                              onClick={() => window.open(crd.data)}
-                              // download={crd.title}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              key={idx}
-                              className="px-5 py-3 peer text-gray-900 hover:bg-red-500 hover:text-white"
-                            >
-                              <button>{crd.title} </button>
-                            </a>
-                          ))}
-                        </div>
+          <a
+            href="/About"
+            className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white"
+          >
+            <button className="peer">
+              {" "}
+              About Us <i className="ml-4 fa-solid fa-angle-down"></i>{" "}
+            </button>
+            <div className="hidden absolute peer-hover:flex hover:flex flex-col bg-white drop-shadow-lg">
+              {about.map((ab, idx) => (
+                <>
+                  {ab.title !== "Credentials" ? (
+                    <Link
+                      to={`${ab.title}`}
+                      key={idx}
+                      className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white"
+                    >
+                      <p> {ab.title} </p>
+                    </Link>
+                  ) : (
+                    <div className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white">
+                      <span className="peer"> </span>
+                      <button className="peer"> {ab.title} </button>
+                      <i className="peer pl-24 w-28 fa-solid fa-angle-right "></i>
+                      <div className="z-30 ml-48 -my-9 w-56 bg-white hidden absolute peer-hover:flex hover:flex flex-col text-black drop-shadow-lg">
+                        {credentials.map((crd, idx) => (
+                          <a
+                            onClick={() => window.open(crd.data)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            key={idx}
+                            className="px-5 py-3 peer text-gray-900 hover:bg-red-500 hover:text-white"
+                          >
+                            <button>{crd.title} </button>
+                          </a>
+                        ))}
                       </div>
-                    )}
-                  </>
-                ))}
-              </div>
-            </a>
+                    </div>
+                  )}
+                </>
+              ))}
+            </div>
+          </a>
           <Link
             to="/Gallery"
             className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white"
@@ -194,43 +236,47 @@ const Navbar = () => {
             {" "}
             Gallery{" "}
           </Link>
-          <Link to="/Contact" className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white">
-              <button className="peer">
-                Contact Us <i className="ml-4 fa-solid fa-angle-down"></i>
-              </button>
-              <div className="hidden absolute peer-hover:flex hover:flex flex-col bg-white drop-shadow-lg">
-                {contacts.map((contact, idx) => (
-                  <>
-                    { contact.title === 'Our Locations' ?
-                      <Link to='/Contact/location'
-                        className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white"
-                        href=""
-                        key={idx}
-                      >
-                        {contact.title}
-                      </Link>  
-                    :
+          <Link
+            to="/Contact"
+            className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white"
+          >
+            <button className="peer">
+              Contact Us <i className="ml-4 fa-solid fa-angle-down"></i>
+            </button>
+            <div className="hidden absolute peer-hover:flex hover:flex flex-col bg-white drop-shadow-lg">
+              {contacts.map((contact, idx) => (
+                <>
+                  {contact.title === "Our Locations" ? (
+                    <Link
+                      to="/Contact/location"
+                      className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white"
+                      href=""
+                      key={idx}
+                    >
+                      {contact.title}
+                    </Link>
+                  ) : (
                     <div className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white">
-                    <span className="peer"> </span>
-                    <button className="peer"> {contact.title} </button>
-                    <i className="peer pl-24 w-28 fa-solid fa-angle-right "></i>
-                    <div className="z-30 ml-48 -my-9 w-56 bg-white hidden absolute peer-hover:flex hover:flex flex-col text-black drop-shadow-lg">
-                      {getInTouch.map((crd, idx) => (
-                        <Link
-                          to='/Contact/message'
-                          key={idx}
-                          className="px-5 py-3 peer text-gray-900 hover:bg-red-500 hover:text-white"
-                        >
-                          <button> {crd.title} </button>
-                        </Link>
-                      ))}
+                      <span className="peer"> </span>
+                      <button className="peer"> {contact.title} </button>
+                      <i className="peer pl-24 w-28 fa-solid fa-angle-right "></i>
+                      <div className="z-30 ml-48 -my-9 w-56 bg-white hidden absolute peer-hover:flex hover:flex flex-col text-black drop-shadow-lg">
+                        {getInTouch.map((crd, idx) => (
+                          <Link
+                            to="/Contact/message"
+                            key={idx}
+                            className="px-5 py-3 peer text-gray-900 hover:bg-red-500 hover:text-white"
+                          >
+                            <button> {crd.title} </button>
+                          </Link>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                  }
-                  </>
-                ))}
-              </div>
-            </Link>
+                  )}
+                </>
+              ))}
+            </div>
+          </Link>
         </div>
       </div>
 
@@ -244,24 +290,71 @@ const Navbar = () => {
               HOME
             </li>
           </Link>
-          <li className="block z-10 py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:border-0 md:hover:text-blue-700 md:p-0  md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+
+          <li className="z-10 block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:border-0 md:hover:text-blue-700 md:p-0  md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
             <Link to="/Products">
               <button className="peer px-5 py-2 text-black hover:text-red-500">
                 PRODUCTS <i className="ml-4 fa-solid fa-angle-down"></i>
               </button>
-              <div className="hidden absolute peer-hover:flex hover:flex  flex-col bg-white drop-shadow-lg">
+              <div className="hidden absolute peer-hover:flex hover:flex flex-col bg-white drop-shadow-lg">
                 {products.map((prod, idx) => (
-                  <Link
-                    to={`/Products/${encodeURIComponent(prod.title)}`}
-                    className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white"
-                    key={idx}
-                  >
-                    <a> {prod.title} </a>
-                  </Link>
+                  <>
+                    {prod.title === "Designing Work" ? (
+                      <Link
+                        to={`/Products/${encodeURIComponent(prod.title)}`}
+                        className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white"
+                        href=""
+                        key={idx}
+                      >
+                        {prod.title}
+                      </Link>
+                    ) : prod.title === "Commercial Printing" ? (
+                      <Link
+                        to={`/Products/${encodeURIComponent(prod.title)}`}
+                        className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white"
+                      >
+                        <span className="peer"> </span>
+                        <button className="peer"> {prod.title} </button>
+                        <i className="peer pl-24 w-28 fa-solid fa-angle-right "></i>
+                        <div className="z-30 ml-48 -my-9 w-56 bg-white hidden absolute peer-hover:flex hover:flex flex-col text-black drop-shadow-lg">
+                          {Commercial.map((comm, idx) => (
+                            <Link
+                              to={`/Products/${encodeURIComponent(comm.title)}`}
+                              key={idx}
+                              className="px-5 py-3 peer text-gray-900 hover:bg-red-500 hover:text-white"
+                            >
+                              <button> {comm.title} </button>
+                            </Link>
+                          ))}
+                        </div>
+                      </Link>
+                    ) : (
+                      <Link
+                        to={`/Products/${encodeURIComponent(prod.title)}`}
+                        className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white"
+                      >
+                        <span className="peer"> </span>
+                        <button className="peer"> {prod.title} </button>
+                        <i className="peer pl-24 w-28 fa-solid fa-angle-right "></i>
+                        <div className="z-30 ml-48 -my-9 w-56 bg-white hidden absolute peer-hover:flex hover:flex flex-col text-black drop-shadow-lg">
+                          {Packaging.map((pack, idx) => (
+                            <Link
+                              to={`/Products/${encodeURIComponent(pack.title)}`}
+                              key={idx}
+                              className="px-5 py-3 peer text-gray-900 hover:bg-red-500 hover:text-white"
+                            >
+                              <button> {pack.title} </button>
+                            </Link>
+                          ))}
+                        </div>
+                      </Link>
+                    )}
+                  </>
                 ))}
               </div>
             </Link>
           </li>
+
           <li className="block z-10 py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-red-500 md:border-0 md:hover:text-blue-700 md:p-0  md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
             <Link to="/Services">
               <button className="peer px-5 py-2 text-black hover:text-red-500">
@@ -309,11 +402,8 @@ const Navbar = () => {
                         <div className="z-30 ml-48 -my-9 w-56 bg-white hidden absolute peer-hover:flex hover:flex flex-col text-black drop-shadow-lg">
                           {credentials.map((crd, idx) => (
                             <a
-                              href='#'
-                              // download={crd.title}
-                              onClick={()=>window.open(crd.data, '_blank')}
-                              // target="_blank"
-                              // rel="noopener noreferrer"
+                              href="#"
+                              onClick={() => window.open(crd.data, "_blank")}
                               key={idx}
                               className="px-5 py-3 peer text-gray-900 hover:bg-red-500 hover:text-white"
                             >
@@ -341,31 +431,35 @@ const Navbar = () => {
               <div className="hidden absolute peer-hover:flex hover:flex flex-col bg-white drop-shadow-lg">
                 {contacts.map((contact, idx) => (
                   <>
-                    { contact.title === 'Our Locations' ?
-                      <Link to='/Contact/location'
+                    {contact.title === "Our Locations" ? (
+                      <Link
+                        to="/Contact/location"
                         className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white"
                         href=""
                         key={idx}
                       >
                         {contact.title}
-                      </Link>  
-                    :
-                    <Link to='/Contact/message' className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white">
-                    <span className="peer"> </span>
-                    <button className="peer"> {contact.title} </button>
-                    <i className="peer pl-24 w-28 fa-solid fa-angle-right "></i>
-                    <div className="z-30 ml-48 -my-9 w-56 bg-white hidden absolute peer-hover:flex hover:flex flex-col text-black drop-shadow-lg">
-                      {getInTouch.map((crd, idx) => (
-                        <div 
-                          key={idx}
-                          className="px-5 py-3 peer text-gray-900 hover:bg-red-500 hover:text-white"
-                        >
-                          <button> {crd.title} </button>
+                      </Link>
+                    ) : (
+                      <Link
+                        to="/Contact/message"
+                        className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white"
+                      >
+                        <span className="peer"> </span>
+                        <button className="peer"> {contact.title} </button>
+                        <i className="peer pl-24 w-28 fa-solid fa-angle-right "></i>
+                        <div className="z-30 ml-48 -my-9 w-56 bg-white hidden absolute peer-hover:flex hover:flex flex-col text-black drop-shadow-lg">
+                          {getInTouch.map((crd, idx) => (
+                            <div
+                              key={idx}
+                              className="px-5 py-3 peer text-gray-900 hover:bg-red-500 hover:text-white"
+                            >
+                              <button> {crd.title} </button>
+                            </div>
+                          ))}
                         </div>
-                      ))}
-                    </div>
-                  </Link>
-                  }
+                      </Link>
+                    )}
                   </>
                 ))}
               </div>
