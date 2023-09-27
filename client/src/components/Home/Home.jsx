@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useRef } from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { GrCertificate } from'react-icons/gr'
@@ -31,6 +31,16 @@ const Home = () => {
   const handleVideoEnded = () => {
     videoRef.current.currentTime = 0;
     videoRef.current.play();
+  };
+
+  const handleVideoClick = () => {
+    const video = videoRef.current;
+
+    if (video.paused) {
+      video.play();
+    } else {
+      video.pause();
+    }
   };
 
   let productsToShow = [];
@@ -72,11 +82,11 @@ const Home = () => {
       <Carousel />
 
       <div className="flex flex-col items-center">
-        <p className="absolute font-extrabold md:text-9xl text-5xl opacity-10">
+        <p className="font-Sofia absolute font-extrabold md:text-9xl text-5xl opacity-10">
           {" "}
           Features{" "}
         </p>
-        <div className="text-center md:mb-12 mb-4 md:text-lg text-xs font-bold text-red-600">
+        <div className="font-Sofia text-center md:mb-12 mb-4 md:text-lg text-xs font-bold text-red-600">
           Features
         </div>
 
@@ -163,8 +173,8 @@ const Home = () => {
       <div className="flex justify-center items-center overflow-hidden h-[800px] bg-gradient-to-br bg-gradient-stops-[2.11%, 34.14%, 68.81%, 105.05%] from-[#ff869f] via-[#fa988a] via-[#f19a73] to-[#ffd0b1]">
         <video
           ref={videoRef}
+          onClick={handleVideoClick}
           onEnded={handleVideoEnded}
-          autoPlay
           muted
           className="h-[85%] w-screen shadow-[0_2px_15px_-3px_rgba(0,0,0,0.5),0_10px_20px_-2px_rgba(0,0,0,0.5)]"
         >
@@ -175,7 +185,7 @@ const Home = () => {
         </video>
       </div>
       <div className="mt-8 flex flex-col justify-item items-center gap-6">
-        <div className="md:text-sm text-xs font-bold text-red-600">
+        <div className="font-Sofia md:text-lg text-xs font-bold text-red-600">
           Recent Works
         </div>
         <div className="md:text-6xl text-sm md:font-extrabold font-bold">
@@ -401,13 +411,13 @@ const Home = () => {
           <a href={bannerToShow[1]?.link}>
             <button className="relative hover:p-4 duration-500">
               <img src={bannerToShow[1]?.image} alt="picks1" />
-              <div className="absolute top-0 left-0 p-12 text-white">
+              {/* <div className="absolute top-0 left-0 p-12 text-white">
                 {bannerToShow[1]?.offer && (
                   <button className="bg-red-700 p-2 rounded text-xl">
                     {bannerToShow[1]?.offer}
                   </button>
                 )}
-              </div>
+              </div> */}
             </button>
           </a>
         </div>
@@ -436,7 +446,7 @@ const Home = () => {
           <div className="mr-4">
             <img
               className="rounded hover:p-4 duration-500 "
-              src={offerProduct[1]?.image}
+              src={offerProduct[0]?.image}
               alt="offer2"
             />
           </div>
@@ -554,33 +564,34 @@ const Home = () => {
             </div>
           </button>
         </a>
-
+        
+        <Link to='/Products'>
           <button className="relative">
             <img src={banner} alt="banner2" className="w-screen" />
             
           </button>
-
+          </Link>
         <div className="bg-gradient-to-br bg-gradient-stops-[2.11%, 34.14%, 68.81%, 105.05%] from-[#ff869f] via-[#fa988a] via-[#f19a73] to-[#ffd0b1] w-screen md:h-72 h-full md:flex block justify-between items-center " >
           <div className="md:ml-32 md:mb-0 mb-16 flex flex-col text-center font-extrabold">
             <i className="text-6xl fa-regular fa-newspaper mb-4"></i>
-            <NumberCounter num={1500} int={100} />
+            <NumberCounter num={5000} int={250} />
             <p className="text-xl"> + Projects Done </p>
           </div>
           
           <div className="md:mb-0 mb-16 flex flex-col text-center font-extrabold">
             <i className="fa-regular fa-face-grin-stars text-6xl mb-4"></i>
-            <NumberCounter num={250} int={25} />
+            <NumberCounter num={3000} int={150} />
             <p className="text-xl"> + Happy Customers </p>
           </div>
 
           <div className="md:mb-0 mb-16 flex flex-col text-center font-extrabold">
                 <i className="fa-solid fa-people-group text-6xl mb-4"></i>
-                <NumberCounter num={120} int={10} />
+                <NumberCounter num={85} int={5} />
                 <p className="text-xl"> + Experts Team </p>
           </div>
           <div className="md:mb-0 mb-16 md:mr-32 flex flex-col text-center font-extrabold">
                 <i className="flex text-6xl text-center items-center justify-center mb-4"> <GrCertificate /> </i>
-                <NumberCounter num={50} int={5} />
+                <NumberCounter num={30} int={2} />
                 <p className="text-xl"> + Years of Experience </p>
           </div>
         </div>

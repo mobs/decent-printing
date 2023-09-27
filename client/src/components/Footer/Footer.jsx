@@ -1,138 +1,140 @@
 import React from "react";
 import { navdetails } from "../../constants/NavabrData";
-import { logo } from "../../constants/Images";
+import { logo1 } from "../../constants/Images";
 import { Link } from "react-router-dom";
+import { BsArrowRightCircle } from 'react-icons/bs'
 
 const Footer = () => {
   return (
-    <footer className="relative bg-gray-200">
-      <hr className="ml-10 mr-10 mb-5 h-px bg-gray-200 border-0 dark:bg-gray-400" />
+    <footer className="bg-black md:flex block text-white justify-between p-8">
+      {/* <hr className="ml-10 mr-10 mb-5 h-px bg-gray-200 border-0 dark:bg-gray-400" /> */}
 
-      <div className="md:m-16 container px-4 z-20">
-        <div className="md:flex justify-between block md:text-justify text-center ">
-          <div className="">
-            <img
-              src={logo}
-              className="h-32"
-              alt="Logo"
-            />
-            <div className="mt-6 lg:mb-0 mb-6">
-              <button
-                className="bg-white text-gray-700 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-                type="button"
-              >
-                <a
-                  className="flex justify-center items-center"
-                  href="https://www.twitter.com"
-                >
-                  <i className="fa-brands fa-twitter"></i>
-                </a>
-              </button>
-              <button
-                className="bg-white text-gray-700 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-                type="button"
-              >
-                <a
-                  className="flex justify-center items-center"
-                  href="https://www.facebook.com"
-                >
-                  <i className="fa-brands fa-facebook-f"></i>
-                </a>
-              </button>
-              <button
-                className="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-                type="button"
-              >
-                <a
-                  className="flex justify-center items-center"
-                  href="https://www.youtube.com"
-                >
-                  <i className="fa-brands fa-youtube"></i>
-                </a>
-              </button>
-            </div>
-          </div>
-          <div className="w-full lg:w-6/12 md:px-32">
-            <h4 className="text-3xl font-semibold text-gray-700">
-              Get in touch!
-            </h4>
-            {navdetails.map((data, idx) => (
+      {/* logo */}
+      <div className="lg:ml-32 md:ml-24 ml-0 flex flex-col">
+        <img
+          src={logo1}
+          className="h-32 w-48"
+          alt="Logo"
+        />
+        {/* <p className="text-sm text-justify w-64">
+          We take this opportunity to introduce DECENT PRINTING PRESS L.L.C, as one of the leading companies delivering total printing solutions, specialized in graphic designing, offset printing, digital printing, packing material and binding.
+        </p> */}
+        <div className="w-64">
+        {navdetails.map((data, idx) => (
               <a href={data?.link}>
-              <div className="text-gray-500 font-bold m-4 mx-0 hover:text-red-500" key={idx}>
+              <div className="text-white font-bold m-4 mx-0 hover:text-red-500" key={idx}>
                 {data.title === "Sharjah" || data.title === "Dubai" ? (
-                  <p className="text-black">
-                    {" "}
-                    {data.title} <p  className="hover:text-red-500 font-thin"> {data.details} </p>{" "}
-                  </p>
+                  <div className="flex gap-4">
+                     <i
+                      className={`text-lg ${data.icons} bg-red-500 text-transparent bg-clip-text text-5xl`}
+                    >
+                    </i>
+                    <div >
+                      <p>
+                        {data.title}
+                      </p>
+                      <p className="font-Sofia">
+                        {data.details}
+                      </p>
+                    </div>
+                  </div>
                 ) : (
-                  <span > {data.details}</span>
+                  <div className="flex gap-4">
+                     <i
+                      className={`text-lg ${data.icons} bg-red-500 text-transparent bg-clip-text text-5xl`}
+                    >
+                    </i>
+                    <p>
+                      {data.details}
+                    </p>
+                  </div>
                 )}
               </div>
               </a>
             ))}
-          </div>
-          <div className="w-full lg:w-6/12 px-4">
-            <div className="flex items-top mb-6">
-              <div className="w-full lg:ml-64 md:ml-24">
-                <span className="block uppercase text-gray-700 text-xl font-bold mb-2">
-                  Quick Links
-                </span>
-                <ul className="list-unstyled font-medium">
-                  <li>
-                    <Link
-                      to="/About"
-                      className="text-gray-700 hover:text-red-500  block pb-2 text-lg"
-                    >
-                      About Us
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/Contact"
-                      className="text-gray-700 hover:text-red-500 block pb-2 text-lg"
-                    >
-                      Contact Us
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/Services"
-                      className="text-gray-700 hover:text-red-500 block pb-2 text-lg"
-                    >
-                      Services
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          {/* <div className="">
-            <Carousel />
-          </div> */}
-        </div>
-        <hr className="my-6 border-blueGray-300" />
-        <div className="flex flex-wrap items-center md:justify-between justify-center">
-          <div className="w-full md:w-4/12 px-4 mx-auto text-center">
-            <div className="text-sm text-blueGray-500 font-semibold py-1">
-              Copyright © <span id="get-current-year"> 2023 </span>
-              <a
-                href="https://www.creative-tim.com/product/notus-js"
-                className="text-blueGray-500 hover:text-gray-800"
-                target="_blank"
-              />
-              Decent Printing Press,
-              <a
-                href="https://www.creative-tim.com?ref=njs-profile"
-                className="text-blueGray-500 hover:text-blueGray-800"
-              >
-                <span> UAE </span>
-              </a>
-            </div>
-          </div>
         </div>
       </div>
-    </footer>
-  );
-};
 
+      {/* quick links  */}
+      <div className="flex flex-col mt-8">
+        <p className="text-xl font-bold "> Quick Links </p>
+        <ul className="">
+          <li className="flex mt-2 gap-4">
+            <BsArrowRightCircle className="mt-1 text-red-500"/>
+            <Link to='/About' className="font-Sofia hover:text-red-500">
+              About Us
+            </Link>
+          </li>
+
+          <li className="flex mt-2 gap-4">
+            <BsArrowRightCircle className="mt-1 text-red-500"/>
+            <Link to='/Contact' className="font-Sofia hover:text-red-500">
+              Contact Us
+            </Link>
+          </li>
+
+          <li className="flex mt-2 gap-4">
+            <BsArrowRightCircle className="mt-1 text-red-500"/>
+            <Link to='/Introduction' className="font-Sofia hover:text-red-500">
+              Introduction
+            </Link>
+          </li>
+
+          <li className="flex mt-2 gap-4">
+            <BsArrowRightCircle className="mt-1 text-red-500"/>
+            <Link to='/Vision,%20Mission%20and%20Values' className="font-Sofia hover:text-red-500">
+              Vision, Mission & Values
+            </Link>
+          </li>
+
+          <li className="flex mt-2 gap-4">
+            <BsArrowRightCircle className="mt-1 text-red-500"/>
+            <Link to='/Quality%20Policy' className="font-Sofia hover:text-red-500">
+              Quality Policy
+            </Link>
+          </li>
+
+          <li className="flex mt-2 gap-4">
+            <BsArrowRightCircle className="mt-1 text-red-500"/>
+            <Link to='/Environmental%20Policy' className="font-Sofia hover:text-red-500">
+              Environmental Policy
+            </Link>
+          </li>
+        </ul>
+      </div>
+
+      {/* services  */}
+      <div className="mt-8">
+      <p className="text-xl font-bold"> Our Services </p>
+        <ul className="">
+          <li className="flex mt-2 gap-4">
+            <BsArrowRightCircle className="mt-1 text-red-500"/>
+            <Link to='/Offset%20Printing' className="font-Sofia hover:text-red-500">
+              Offset Printing
+            </Link>
+          </li>
+
+          <li className="flex mt-2 gap-4">
+            <BsArrowRightCircle className="mt-1 text-red-500"/>
+            <Link to='/Digital%20Printing' className="font-Sofia hover:text-red-500">
+              Digital Printing
+            </Link>
+          </li>
+
+          <li className="flex mt-2 gap-4 lg:mr-32 md:mr-24 mr-0">
+            <BsArrowRightCircle className="mt-1 text-red-500"/>
+            <Link to='/Continuous%20Form%20Printing' className="font-Sofia hover:text-red-500">
+              Continuous Form Printing
+            </Link>
+          </li>
+        </ul>
+      </div>
+
+      {/* newsletter */}
+      {/* <div className="mr-8">
+        Newsletters
+      </div> */}
+    </footer>
+  )
+}
 export default Footer;

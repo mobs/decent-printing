@@ -5,7 +5,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'outfit': ['Outfit', 'sans']
+        sans: ['Outfit', 'ui-sans', 'system-ui'],        
+        Cedarville: ['Cedarville Cursive', 'ui-serif', 'Georgia'],
+        Arizonia: ['Arizonia', 'ui-monospace', 'Menlo'],
+        Sofia: ['Sofia','cursive']
       },
     },
   },

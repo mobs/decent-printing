@@ -1,9 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css2?family=Outfit&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Outfit+Sans:wght@400;500&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&family=Cedarville+Cursive&family=Outfit&family=Sofia&display=swap');
+
 
 body, html {
     overflow-x: hidden;
+    font-family: 'Arizonia', cursive;
+    font-family: 'Sofia', cursive;
+    font-family: 'Cedarville Cursive', cursive;
     font-family: 'Outfit', sans;
+    
 }

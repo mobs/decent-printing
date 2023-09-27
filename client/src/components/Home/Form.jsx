@@ -26,22 +26,25 @@ const Form = () => {
   return (
     <div className="bg-[#1a1e5d] lg:flex block overflow-hidden mt-16 md:ml-32 md:mr-32 ">
       {/* <div className="flex-1 bg-gray-300 p-4 transform -skew-x-6"> */}
-      <img src={contact} alt="Image" className="object-cover" />
+      <img src={contact} alt="Image" className="lg:w-[60%] md:w-[100%] w-auto"  />
       {/* </div> */}
 
       <div className="bg-[#1a1e5] text-white mt-16">
         <p
-          className="lg:text-left text-center text-3xl font-bold lg:ml-16 mt-4 w-full"
+          className="text-left text-3xl font-bold md:ml-4 ml-4 mt-4 w-full"
           id="message"
         >
-          {" "}
-          Feel free to connect with us!!!{" "}
+          If You Have Any Questions
         </p>
-        <div className="md:flex justify-center items-center md:m-0 m-2">
+        <p className="text-left text-3xl font-bold md:ml-4 ml-4 mt-4 w-full"
+          id="message">
+          Connect With Us
+        </p>
+        <div className="lg:flex justify-center items-center lg:m-0 m-2">
           <form
             action="#"
             onSubmit={handleSubmit}
-            className="mt-8 space-y-8 md:w-96 w-auto md:mb-4"
+            className="mt-8 space-y-8 w-auto md:mb-4"
           >
             <div>
               <label for="email" className="block mb-2 text-sm font-medium">

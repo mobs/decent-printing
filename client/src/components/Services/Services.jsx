@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from 'react-router-dom'
 import { digital } from "../../constants/Images";
 import { products } from "../../constants/NavabrData";
+import { banner, digitalPrinting, cont1, offset1, digital1 } from "../../constants/Images";
+
 
 const Services = () => {
   return (
@@ -13,7 +15,7 @@ const Services = () => {
       </div>
 
       <div className="md:flex flex-col gap-8 mt-8 md:ml-64 md:mr-64 m-8 justify-center items-center">
-        <div className="flex items-center justify-center text-center text-red-600 font-bold md:text-lg text-xs">
+        <div className="font-Sofia flex items-center justify-center text-center text-red-600 font-bold md:text-lg text-xs">
           WE ARE PROFESSIONALS
         </div>
         <div className=" text-center md:text-5xl text-lg font-bold">
@@ -30,10 +32,10 @@ const Services = () => {
         <div className="md:flex flex-col m-8">
           <img src={digital} alt="digital"/>
         </div>
-        <div className="md:flex flex-col m-8">
+        <div className="md:flex flex-col m-8 justify-center">
           <ul>
             {products.map((prod, idx) => (
-              <li className="ml-4 m-2 text-gray-700" key={idx}>
+              <li className="ml-4 m-2 text-gray-700 lg:text-xl text-sm font-Sofia" key={idx}>
                 {" "}
                 &gt; {prod.title}{" "}
               </li>
@@ -47,7 +49,98 @@ const Services = () => {
         services that represent their brand What’s more, we do it right!
       </p>
 
-      <div className="lg:m-32 m-2 p-4 lg:gap-32 gap-2 md:flex block justify-center">
+      <div className="flex flex-col items-center">
+        <p className="font-Sofia absolute font-extrabold md:text-9xl text-5xl opacity-10">
+          {" "}
+          Features{" "}
+        </p>
+        <div className="font-Sofia text-center md:mb-12 mb-4 md:text-lg text-xs font-bold text-red-600">
+          Features
+        </div>
+
+        <div className="text-center font-extrabold md:text-5xl text-xl">
+          Our Best Features
+        </div>
+      </div>
+
+      <div className="relative lg:m-8 m-2 p-4 lg:gap-12 gap-2 lg:flex block justify-center">
+        <div className="gap-8 lg:flex block jusitfy-center items-center">
+          <div id="div1" className="flex flex-col gap-8">
+            <div className="transition-transform transform-gpu hover:translate-x-2 hover:translate-y-2 duration-500 lg:w-64 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.2),0_10px_20px_-2px_rgba(0,0,0,0.2)]">
+              <i className="m-8 rounded h-24 w-24 bg-gradient-to-br bg-gradient-stops-[2.11%, 34.14%, 68.81%, 105.05%] from-[#ff869f] via-[#fa988a] via-[#f19a73] to-[#ffd0b1] text-white items-center justify-center flex">
+              <img src={digitalPrinting} className="h-full w-full p-2" alt="features" />
+
+              </i>
+              <Link
+                to={`/Products/${encodeURIComponent(
+                  "Popups/Rollups Printing"
+                )}`}
+              >
+                <p className="text-xl m-8 font-bold"> Designing Services</p>
+                <p className="text-sm m-8 ">
+                  Our Professional graphic designing that provides innovative
+                  and customized visual creative solutions to help bussinesses
+                </p>
+              </Link>
+            </div>
+          </div>
+          <div id="div2" className="gap-8 mt-16 flex flex-col">
+            <div className="transition-transform transform-gpu hover:translate-x-2 hover:translate-y-2 duration-500 lg:w-64 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.2),0_10px_20px_-2px_rgba(0,0,0,0.2)]">
+              <div className="m-8 rounded h-24 w-24 bg-gradient-to-br bg-gradient-stops-[2.11%, 34.14%, 68.81%, 105.05%] from-[#ff869f] via-[#fa988a] via-[#f19a73] to-[#ffd0b1] items-center justify-center flex ">
+              <img src={digital1} className="p-2 h-full w-full" alt="features" />
+              </div>
+              <Link to={`/Products/${encodeURIComponent("Graphic Design")}`}>
+                <p className="text-xl m-8 font-bold"> Digital Printing</p>
+                <p className="text-sm m-8">
+                  Our Digital Printing services that guarantee precision, high
+                  resolution, and top quality finishing.
+                </p>
+              </Link>
+            </div>
+          </div>
+          <div id="div2" className="gap-8 lg:mt-0 mt-16 flex flex-col">
+            {" "}
+            <div className="transition-transform transform-gpu hover:translate-x-2 hover:translate-y-2 duration-500 lg:w-64 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.2),0_10px_20px_-2px_rgba(0,0,0,0.2)]">
+              <i className="m-8 rounded h-24 w-24 bg-gradient-to-br bg-gradient-stops-[2.11%, 34.14%, 68.81%, 105.05%] from-[#ff869f] via-[#fa988a] via-[#f19a73] to-[#ffd0b1] items-center justify-center flex">
+              <img src={cont1} className="h-full w-full p-2" alt="features" />
+              </i>
+              <Link
+                to={`/Products/${encodeURIComponent(
+                  "Notepads/Annual Reports"
+                )}`}
+              >
+                <p className="text-xl m-8 font-bold">
+                  Continuous Form Printing
+                </p>
+                <p className="text-sm m-8">
+                  Decent Printing Press offers ultimate quality and solutions in
+                  your all computer forms needs.
+                </p>
+              </Link>
+            </div>
+          </div>
+          <div id="div2" className="gap-8 mt-16 flex flex-col">
+            <div className="transition-transform transform-gpu hover:translate-x-2 hover:translate-y-2 duration-500 lg:w-64 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.2),0_10px_20px_-2px_rgba(0,0,0,0.2)]">
+              <i className="m-8 rounded h-24 w-24 bg-gradient-to-br bg-gradient-stops-[2.11%, 34.14%, 68.81%, 105.05%] from-[#ff869f] via-[#fa988a] via-[#f19a73] to-[#ffd0b1] items-center justify-center flex">
+              <img src={offset1} className="h-full w-full p-2" alt="features" />
+              </i>
+              <Link
+                to={`/Products/${encodeURIComponent(
+                  "Presentation Folders/Booklets"
+                )}`}
+              >
+                <p className="text-xl m-8 font-bold">Offset Printing</p>
+                <p className="text-sm m-8">
+                  Best Quality Offset Prints and Products at the most
+                  cost-effective rates.
+                </p>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* <div className="lg:m-32 m-2 p-4 lg:gap-32 gap-2 md:flex block justify-center">
         <div className="gap-8 md:flex block jusitfy-center items-center">
           <div id="div1" className="flex flex-col gap-8">
             <div className="transition-transform transform-gpu hover:translate-x-2 hover:translate-y-2 duration-500 h-64 w-64 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.2),0_10px_20px_-2px_rgba(0,0,0,0.2)]">
@@ -105,7 +198,7 @@ const Services = () => {
             heat process (toner) or UV curing process (ink)
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
