@@ -3,8 +3,27 @@ import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { banner1, banner2, banner3, banner4 } from "../../constants/Images";
 
+import './style.css'
+
 const Carousel = () => {
-    const data = [banner1, banner2, banner3, banner4];
+    const data = [
+      {
+        image: banner1,
+        link: '/Contact'
+      },
+      {
+        image: banner2,
+        link: '/Products'
+      },
+      {
+        image: banner3,
+        link: '/Products'
+      },
+      {
+        image: banner4,
+        link: '/Products'
+      }
+    ]
     const maxScrollWidth = useRef(0);
     const [currentIndex, setCurrentIndex] = useState(0);
     const carousel = useRef(null);
@@ -102,15 +121,15 @@ const Carousel = () => {
           {data.map((banner, index) => {
             return (
               <div key={index} className="carousel-item relative snap-start">
-                <a
-                  className="flex bg-origin-padding bg-left-top  bg-no-repeat z-0 w-screen"
+                <Link to={banner.link}
+                  className=" flex bg-origin-padding bg-left-top  bg-no-repeat z-0 w-screen"
                 >
                   <img
-                    src={banner}
+                    src={banner.image}
                     alt={banner.link}
-                    className=" h-full w-screen"
+                    className="h-[40rem] w-screen"
                   />
-                </a>
+                </Link>
               </div>
             );
           })}

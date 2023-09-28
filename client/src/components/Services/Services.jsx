@@ -72,11 +72,11 @@ const Services = () => {
 
               </i>
               <Link
-                to={`/Products/${encodeURIComponent(
-                  "Popups/Rollups Printing"
+                to={`/${encodeURIComponent(
+                  "Designing Services"
                 )}`}
               >
-                <p className="text-xl m-8 font-bold"> Designing Services</p>
+                <p className="hover:text-red-500 text-xl m-8 font-bold"> Designing Services</p>
                 <p className="text-sm m-8 ">
                   Our Professional graphic designing that provides innovative
                   and customized visual creative solutions to help bussinesses
@@ -89,8 +89,8 @@ const Services = () => {
               <div className="m-8 rounded h-24 w-24 bg-gradient-to-br bg-gradient-stops-[2.11%, 34.14%, 68.81%, 105.05%] from-[#ff869f] via-[#fa988a] via-[#f19a73] to-[#ffd0b1] items-center justify-center flex ">
               <img src={digital1} className="p-2 h-full w-full" alt="features" />
               </div>
-              <Link to={`/Products/${encodeURIComponent("Graphic Design")}`}>
-                <p className="text-xl m-8 font-bold"> Digital Printing</p>
+              <Link to={`/${encodeURIComponent("Digital Printing")}`}>
+                <p className="hover:text-red-500 text-xl m-8 font-bold"> Digital Printing</p>
                 <p className="text-sm m-8">
                   Our Digital Printing services that guarantee precision, high
                   resolution, and top quality finishing.
@@ -105,11 +105,11 @@ const Services = () => {
               <img src={cont1} className="h-full w-full p-2" alt="features" />
               </i>
               <Link
-                to={`/Products/${encodeURIComponent(
-                  "Notepads/Annual Reports"
+                to={`/${encodeURIComponent(
+                  "Continuous Form Printing"
                 )}`}
               >
-                <p className="text-xl m-8 font-bold">
+                <p className="hover:text-red-500 text-xl m-8 font-bold">
                   Continuous Form Printing
                 </p>
                 <p className="text-sm m-8">
@@ -125,11 +125,11 @@ const Services = () => {
               <img src={offset1} className="h-full w-full p-2" alt="features" />
               </i>
               <Link
-                to={`/Products/${encodeURIComponent(
-                  "Presentation Folders/Booklets"
+                to={`/${encodeURIComponent(
+                  "Offset Printing"
                 )}`}
               >
-                <p className="text-xl m-8 font-bold">Offset Printing</p>
+                <p className="hover:text-red-500 text-xl m-8 font-bold">Offset Printing</p>
                 <p className="text-sm m-8">
                   Best Quality Offset Prints and Products at the most
                   cost-effective rates.
