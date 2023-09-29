@@ -1,10 +1,17 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { GrCertificate } from'react-icons/gr'
+import { GrCertificate } from "react-icons/gr";
+import { AiFillPlayCircle } from "react-icons/ai";
 
 import "./animate.css";
-import { banner, digitalPrinting, cont1, offset1, digital1 } from "../../constants/Images";
+import {
+  banner,
+  digitalPrinting,
+  cont1,
+  offset1,
+  digital1,
+} from "../../constants/Images";
 import Card from "../Card/Card";
 import Carousel from "../Carousel/Carousel";
 import NumberCounter from "./Counter";
@@ -13,6 +20,14 @@ import Form from "./Form";
 const Home = () => {
   const { products } = useSelector((state) => state.products);
   const { banners } = useSelector((state) => state.banner);
+
+  const [showPlayer, setShowPlayer] = useState(false);
+
+  const handlePlayClick = () => {
+    setShowPlayer(true);
+  };
+  const vimeoVideoUrl =
+    "https://player.vimeo.com/video/869555322?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&title=false&byline=false&portrait=false";
 
   // const getRandomPosition = () => ({
   //   top: `${Math.random() * 100}%`,
@@ -25,23 +40,6 @@ const Home = () => {
   // });
 
   const bannerToShow = banners.slice(0, 3);
-
-  const videoRef = useRef(null);
-
-  const handleVideoEnded = () => {
-    videoRef.current.currentTime = 0;
-    videoRef.current.play();
-  };
-
-  const handleVideoClick = () => {
-    const video = videoRef.current;
-
-    if (video.paused) {
-      video.play();
-    } else {
-      video.pause();
-    }
-  };
 
   let productsToShow = [];
   let picksProduct = [];
@@ -99,15 +97,17 @@ const Home = () => {
           <div id="div1" className="flex flex-col gap-8">
             <div className="transition-transform transform-gpu hover:translate-x-2 hover:translate-y-2 duration-500 lg:w-64 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.2),0_10px_20px_-2px_rgba(0,0,0,0.2)]">
               <i className="m-8 rounded h-24 w-24 bg-gradient-to-br bg-gradient-stops-[2.11%, 34.14%, 68.81%, 105.05%] from-[#ff869f] via-[#fa988a] via-[#f19a73] to-[#ffd0b1] text-white items-center justify-center flex">
-              <img src={digitalPrinting} className="h-full w-full p-2" alt="features" />
-
+                <img
+                  src={digitalPrinting}
+                  className="h-full w-full p-2"
+                  alt="features"
+                />
               </i>
-              <Link
-                to={`/${encodeURIComponent(
-                  "Designing Services"
-                )}`}
-              >
-                <p className="text-xl m-8 font-bold hover:text-red-500"> Designing Services</p>
+              <Link to={`/${encodeURIComponent("Designing Services")}`}>
+                <p className="text-xl m-8 font-bold hover:text-red-500">
+                  {" "}
+                  Designing Services
+                </p>
                 <p className="text-sm m-8 ">
                   Our Professional graphic designing that provides innovative
                   and customized visual creative solutions to help bussinesses
@@ -118,12 +118,17 @@ const Home = () => {
           <div id="div2" className="gap-8 mt-16 flex flex-col">
             <div className="transition-transform transform-gpu hover:translate-x-2 hover:translate-y-2 duration-500 lg:w-64 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.2),0_10px_20px_-2px_rgba(0,0,0,0.2)]">
               <div className="m-8 rounded h-24 w-24 bg-gradient-to-br bg-gradient-stops-[2.11%, 34.14%, 68.81%, 105.05%] from-[#ff869f] via-[#fa988a] via-[#f19a73] to-[#ffd0b1] items-center justify-center flex ">
-              <img src={digital1} className="p-2 h-full w-full" alt="features" />
+                <img
+                  src={digital1}
+                  className="p-2 h-full w-full"
+                  alt="features"
+                />
               </div>
-              <Link to={`/${encodeURIComponent(
-                  "Digital Printing"
-                )}`}>
-                <p className="text-xl m-8 font-bold hover:text-red-500"> Digital Printing</p>
+              <Link to={`/${encodeURIComponent("Digital Printing")}`}>
+                <p className="text-xl m-8 font-bold hover:text-red-500">
+                  {" "}
+                  Digital Printing
+                </p>
                 <p className="text-sm m-8">
                   Our Digital Printing services that guarantee precision, high
                   resolution, and top quality finishing.
@@ -135,13 +140,9 @@ const Home = () => {
             {" "}
             <div className="transition-transform transform-gpu hover:translate-x-2 hover:translate-y-2 duration-500 lg:w-64 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.2),0_10px_20px_-2px_rgba(0,0,0,0.2)]">
               <i className="m-8 rounded h-24 w-24 bg-gradient-to-br bg-gradient-stops-[2.11%, 34.14%, 68.81%, 105.05%] from-[#ff869f] via-[#fa988a] via-[#f19a73] to-[#ffd0b1] items-center justify-center flex">
-              <img src={cont1} className="h-full w-full p-2" alt="features" />
+                <img src={cont1} className="h-full w-full p-2" alt="features" />
               </i>
-              <Link
-                to={`/${encodeURIComponent(
-                  "Continuous Form Printing"
-                )}`}
-              >
+              <Link to={`/${encodeURIComponent("Continuous Form Printing")}`}>
                 <p className="hover:text-red-500 text-xl m-8 font-bold">
                   Continuous Form Printing
                 </p>
@@ -155,14 +156,16 @@ const Home = () => {
           <div id="div2" className="gap-8 mt-16 flex flex-col">
             <div className="transition-transform transform-gpu hover:translate-x-2 hover:translate-y-2 duration-500 lg:w-64 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.2),0_10px_20px_-2px_rgba(0,0,0,0.2)]">
               <i className="m-8 rounded h-24 w-24 bg-gradient-to-br bg-gradient-stops-[2.11%, 34.14%, 68.81%, 105.05%] from-[#ff869f] via-[#fa988a] via-[#f19a73] to-[#ffd0b1] items-center justify-center flex">
-              <img src={offset1} className="h-full w-full p-2" alt="features" />
+                <img
+                  src={offset1}
+                  className="h-full w-full p-2"
+                  alt="features"
+                />
               </i>
-              <Link
-                to={`/${encodeURIComponent(
-                  "Offset Printing"
-                )}`}
-              >
-                <p className="hover:text-red-500 text-xl m-8 font-bold">Offset Printing</p>
+              <Link to={`/${encodeURIComponent("Offset Printing")}`}>
+                <p className="hover:text-red-500 text-xl m-8 font-bold">
+                  Offset Printing
+                </p>
                 <p className="text-sm m-8">
                   Best Quality Offset Prints and Products at the most
                   cost-effective rates.
@@ -172,20 +175,34 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-center items-center overflow-hidden h-[800px] bg-gradient-to-br bg-gradient-stops-[2.11%, 34.14%, 68.81%, 105.05%] from-[#ff869f] via-[#fa988a] via-[#f19a73] to-[#ffd0b1]">
-        <video
-          ref={videoRef}
-          onClick={handleVideoClick}
-          onEnded={handleVideoEnded}
-          muted
-          className="h-[85%] w-screen shadow-[0_2px_15px_-3px_rgba(0,0,0,0.5),0_10px_20px_-2px_rgba(0,0,0,0.5)]"
-        >
-          <source
-            src="https://drive.google.com/uc?export=download&id=14vRfhHpM5P17TpQAzYzKpy680B-MdQ8k"
-            type="video/mp4"
-          />
-        </video>
+      <div className="flex justify-center items-center overflow-hidden h-[500px] bg-gradient-to-br bg-gradient-stops-[2.11%, 34.14%, 68.81%, 105.05%] from-[#ff869f] via-[#fa988a] via-[#f19a73] to-[#ffd0b1]">
+        {!showPlayer ? (
+          <button
+            onClick={handlePlayClick}
+            className="text-white px-4 py-2 transition"
+            // onMouseEnter={handleMouseEnter}
+            // style={{ position: 'relative' }}
+          >
+            <AiFillPlayCircle className="md:hover:text-9xl hover:text-red-800 md:text-8xl hover:text-7xl text-6xl text-red-500" />
+          </button>
+        ) : (
+          <div className="md:w-[80%] w-[100%] h-[100%] relative ">
+            <iframe
+              src={vimeoVideoUrl}
+              frameborder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              style={{
+                top: "0",
+                left: "0",
+                width: "100%",
+                height: "100%",
+              }}
+              title="Decent2"
+            ></iframe>
+          </div>
+        )}
       </div>
+
       <div className="mt-8 flex flex-col justify-item items-center gap-6">
         <div className="font-Sofia md:text-lg text-xs font-bold text-red-600">
           Recent Works
@@ -566,20 +583,19 @@ const Home = () => {
             </div>
           </button>
         </a>
-        
-        <Link to='/Products'>
+
+        <Link to="/Products">
           <button className="relative">
             <img src={banner} alt="banner2" className="w-screen" />
-            
           </button>
-          </Link>
-        <div className="bg-gradient-to-br bg-gradient-stops-[2.11%, 34.14%, 68.81%, 105.05%] from-[#ff869f] via-[#fa988a] via-[#f19a73] to-[#ffd0b1] w-screen md:h-72 h-full md:flex block justify-between items-center " >
+        </Link>
+        <div className="bg-gradient-to-br bg-gradient-stops-[2.11%, 34.14%, 68.81%, 105.05%] from-[#ff869f] via-[#fa988a] via-[#f19a73] to-[#ffd0b1] w-screen md:h-72 h-full md:flex block justify-between items-center ">
           <div className="md:ml-32 md:mb-0 mb-16 flex flex-col text-center font-extrabold">
             <i className="text-6xl fa-regular fa-newspaper mb-4"></i>
             <NumberCounter num={5000} int={250} />
             <p className="text-xl"> + Projects Done </p>
           </div>
-          
+
           <div className="md:mb-0 mb-16 flex flex-col text-center font-extrabold">
             <i className="fa-regular fa-face-grin-stars text-6xl mb-4"></i>
             <NumberCounter num={3000} int={150} />
@@ -587,14 +603,17 @@ const Home = () => {
           </div>
 
           <div className="md:mb-0 mb-16 flex flex-col text-center font-extrabold">
-                <i className="fa-solid fa-people-group text-6xl mb-4"></i>
-                <NumberCounter num={85} int={5} />
-                <p className="text-xl"> + Experts Team </p>
+            <i className="fa-solid fa-people-group text-6xl mb-4"></i>
+            <NumberCounter num={85} int={5} />
+            <p className="text-xl"> + Experts Team </p>
           </div>
           <div className="md:mb-0 mb-16 md:mr-32 flex flex-col text-center font-extrabold">
-                <i className="flex text-6xl text-center items-center justify-center mb-4"> <GrCertificate /> </i>
-                <NumberCounter num={30} int={2} />
-                <p className="text-xl"> + Years of Experience </p>
+            <i className="flex text-6xl text-center items-center justify-center mb-4">
+              {" "}
+              <GrCertificate />{" "}
+            </i>
+            <NumberCounter num={30} int={2} />
+            <p className="text-xl"> + Years of Experience </p>
           </div>
         </div>
         <Form />

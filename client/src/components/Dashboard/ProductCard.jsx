@@ -40,12 +40,12 @@ const ProductCard = ({ prod, setId, setId1 }) => {
             Delete
           </button>
           
-          <button
+          {/* <button
             className="text-white px-2 py-1 rounded bg-red-500 hover:bg-blue-800"
             onClick={handleOutStock}
           >
             Out Of Stock
-          </button>
+          </button> */}
         </div>
       </div>
     </div>

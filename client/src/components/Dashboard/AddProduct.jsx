@@ -6,20 +6,8 @@ import { addNewProduct } from "../../actions/products";
 
 const AddProduct = () => {
   const categories = [
-    "Select Category",
-    "Popups/Rollups Printing",
-    "Graphic Design",
-    "Notepads/Annual Reports",
-    "Presentation Folders/Booklets",
-    "Price List / Proposal / Brochures",
-    "Bussiness Cards / Calendars",
-    "Fabric Print / Screen Printing",
-    "Floor Graphics",
-    "Lamp Posts",
-    "Exhibitions & Events",
-    "Display Stands",
-    "Showroom Glass Branding",
-    "Billboards",
+    "Select Category","Designing Work",
+    "Date Box","Cake Box","Burger Box", "Perfume Box", "Chocolate Box", "Paper Bags", "Lunch Box", "Bussiness Card","Letter Head", "Flyers", "Menus", "Brochures", "Envelope", "Booklets", "Diaries", "NCR Books","Continuous Computer Forms", "Miscellaneous"
   ];
 
   const [productData, setProductData] = useState({

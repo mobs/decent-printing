@@ -127,7 +127,7 @@ const Carousel = () => {
                   <img
                     src={banner.image}
                     alt={banner.link}
-                    className="h-[40rem] w-screen"
+                    className="h-auto w-screen"
                   />
                 </Link>
               </div>
