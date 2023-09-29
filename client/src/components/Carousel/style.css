@@ -1,4 +1,4 @@
-
+/* 
 .animate1 {
     animation: bounce 2s 1s 1 forwards;
 
@@ -22,4 +22,15 @@
   .animate.show {
     opacity: 1;
   }
+   */
+
+   .slide-animation {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 3s ease-in-out, transform 2s ease-in-out;
+  }
   
+  .slide-animation.active {
+    opacity: 1;
+    transform: translateY(0);
+  }

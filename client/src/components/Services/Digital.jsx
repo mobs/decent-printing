@@ -22,7 +22,7 @@ const Digital = () => {
             </div>
           </div>
         </div>
-        <div className="md:flex block md:text-justify text-center flex-col gap-8">
+        <div className="md:flex block md:text-justify text-center flex-col gap-8 justify-center">
           <div className="flex justify-center flex-col m-4 gap-4 items-center text-gray-500 text-lg">
             <p className="">
             We are a one-stop-shop for all large format printing requirements. Banners to vehicle branding, wallpapers to window stickers, we digitally print everything in-house.

@@ -3,20 +3,20 @@ import { cont1, cont2 } from "../../constants/Images";
 
 const Continuous = () => {
   return (
-    <div>
+    <div className="">
       <div className="h-16 w-screen flex items-center justify-center bg-gray-200 text-white">
         <span className="text-gray-600"> Home </span>
         <hr className="m-2 mt-4 h-px w-8 bg-black border-0" />
         <span className="text-black"> Continuous Form Printing </span>
       </div>
 
-      <div className="lg:m-32 m-2 p-4 lg:gap-24 gap-2 md:flex block justify-center">
-        <div className="gap-8 md:flex block jusitfy-center items-center">
-          <div id="div1" className="flex flex-col gap-8">
+      <div className="lg:m-16 m-2 p-4 lg:gap-24 gap-2 md:flex block justify-center">
+        <div className="gap-8 md:flex block items-between">
+          <div id="div1" className="flex flex-col gap-8 justify-between">
             <div className="h-[400px] md:w-[600px] transition-transform transform-gpu hover:translate-x-2 hover:translate-y-2 duration-500 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.2),0_10px_20px_-2px_rgba(0,0,0,0.2)]">
               <img src={cont1} alt="cont1"/>
             </div>
-            <div className="h-[400px] md:w-[600px] transition-transform transform-gpu hover:translate-x-2 hover:translate-y-2 duration-500 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.2),0_10px_20px_-2px_rgba(0,0,0,0.2)]">
+            <div className="h-[400px] md:w-[600px] overflow-hidden transition-transform transform-gpu hover:translate-x-2 hover:translate-y-2 duration-500 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.2),0_10px_20px_-2px_rgba(0,0,0,0.2)]">
               <img src={cont2} alt="cont2" />
             </div>
           </div>

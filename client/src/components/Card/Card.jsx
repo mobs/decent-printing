@@ -13,7 +13,7 @@ const Card = ({ data, length, page }) => {
       </div>
       <div className="p-6 flex items-center text-center justify-center">
         <h6 className="mb-2 md:text-xl text-sm font-medium leading-tight text-gray-800">
-          {data?.dataType === "Devices" ? (
+          {/* {data?.dataType === "Devices" ? (
             <></>
           ) : data?.dataType ? (
             page === "Category" ? (
@@ -25,8 +25,25 @@ const Card = ({ data, length, page }) => {
               </>
             )
           ) : (
-            <>{data.title || data.category}</>
-          )}
+            <>{data.category || data.title} ({length})</>
+          )} */}
+          {
+            data.dataType ? (
+              page === "Category" ? (
+                <> {data.title} </>
+              ) : (
+                <> {data.category} ({length}) </>
+              )
+            ) : (
+              page === "Category" ? (
+                <> {data.title} </>
+              ) : length ? (
+                <> {data.category} ({length}) </>
+              ) : (
+                <>{data.category}</>
+              )
+            )
+          }
         </h6>
       </div>
     </div>

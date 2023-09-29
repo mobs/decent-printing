@@ -10,9 +10,9 @@ const Offset = () => {
         <span className="text-black"> Offset Printing </span>
       </div>
 
-      <div className="lg:m-32 m-2 p-4 lg:gap-24 gap-2 md:flex block justify-center">
-        <div className="gap-8 md:flex block jusitfy-center items-center">
-          <div id="div1" className="flex flex-col gap-8">
+      <div className="lg:m-16 m-2 p-4 lg:gap-24 gap-2 md:flex block justify-center">
+        <div className="gap-8 md:flex block items-between">
+          <div id="div1" className="justify-between flex flex-col gap-8">
             <div className="h-[400px] md:w-[600px] transition-transform transform-gpu hover:translate-x-2 hover:translate-y-2 duration-500 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.2),0_10px_20px_-2px_rgba(0,0,0,0.2)]">
               <img src={offset1} alt="offset1"/>
             </div>
@@ -24,8 +24,8 @@ const Offset = () => {
             </div>
           </div>
         </div>
-        <div className="md:flex block md:text-justify text-center flex-col gap-8">
-          <div className="flex justify-center items-center text-gray-500 font-bold text-lg">
+        <div className="md:flex block md:text-justify text-center flex-col gap-8 justify-center">
+          <div className="flex justify-center items-center text-gray-500 font-bold lg:text-lg text-sm">
             Offset printing is a commonly used and simple technique that first
             involves the transfer of the inked image from a printing plate to a
             rubber blanket and then to the printing surface (either paper or
@@ -38,10 +38,10 @@ const Offset = () => {
             craft project, rely on our expertise to produce professional
             printing results every time.
           </div>
-          <div className="flex justify-center items-centert text-6xl font-extrabold">
+          <div className="flex justify-center items-centert text-4xl font-extrabold">
             HOW IT WORKS?
           </div>
-          <div className="flex justify-center flex-col m-4 gap-4 items-center text-gray-500 text-lg">
+          <div className="flex justify-center flex-col m-4 gap-4 items-center text-gray-500 lg:text-lg text-sm">
             <p className="">
               One of the most cost-effective printing techniques is the sheet
               fed offset printing press. Some of their main features include
@@ -66,7 +66,7 @@ const Offset = () => {
               wasted for plates and inks.
             </p>
           </div>
-          <div className="flex justify-center items-center text-center text-4xl font-extrabold">
+          <div className="flex justify-center items-center text-center text-2xl font-extrabold">
             BEST QUALITY OFFSET PRINTS AND PRODUCTS AT THE MOST COST-EFFECTIVE
             RATES
           </div>

@@ -6,6 +6,10 @@ import { banner1, banner2, banner3, banner4 } from "../../constants/Images";
 import './style.css'
 
 const Carousel = () => {
+  const [autoDirection, setAutoDirection] = useState(1); // 1 for forward, -1 for backward
+  const [direction, setDirection] = useState(1); // 1 for forward, -1 for backward
+
+
     const data = [
       {
         image: banner1,
@@ -36,7 +40,7 @@ const Carousel = () => {
   
     const moveNext = () => {
         if (
-          currentIndex < 4
+          currentIndex <= 3
         ) {
           setCurrentIndex((prevState) => prevState + 1);
         }
@@ -67,6 +71,29 @@ const Carousel = () => {
         ? carousel.current.scrollWidth - carousel.current.offsetWidth
         : 0;
     }, []);
+
+    useEffect(() => {
+      const autoSlideInterval = setInterval(() => {
+        if (direction === 1) {
+          moveNext();
+        } else {
+          movePrev();
+        }
+      }, 5000); // Change slide every 5 seconds (adjust as needed)
+  
+      return () => {
+        clearInterval(autoSlideInterval);
+      };
+    }, [currentIndex, direction]);
+  
+    // Toggle the auto slide direction between forward and backward
+    useEffect(() => {
+      if (currentIndex === 0) {
+        setDirection(1); // If at the beginning, switch to forward
+      } else if (currentIndex === data.length - 1) {
+        setDirection(-1); // If at the end, switch to backward
+      }
+    }, [currentIndex, data.length]);
 
   return (
     <div className="carousel my-12 mx-auto">
@@ -115,19 +142,25 @@ const Carousel = () => {
         </div>
         <div
           ref={carousel}
-          className="carousel-container bg-white relative flex gap-5 overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0"
+          className=" carousel-container bg-white relative flex gap-5 overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0"
         >
 
           {data.map((banner, index) => {
             return (
-              <div key={index} className="carousel-item relative snap-start">
+              <div key={index} 
+              className={`carousel-item relative snap-start slide-animation ${
+                index === currentIndex ? "active" : ""
+              }`}
+
+              // className="carousel-item relative snap-start"
+              >
                 <Link to={banner.link}
-                  className=" flex bg-origin-padding bg-left-top  bg-no-repeat z-0 w-screen"
+                  className="flex bg-origin-padding bg-left-top  bg-no-repeat z-0 w-screen"
                 >
                   <img
                     src={banner.image}
                     alt={banner.link}
-                    className="h-auto w-screen"
+                    className="lg:h-[650px] w-screen"
                   />
                 </Link>
               </div>

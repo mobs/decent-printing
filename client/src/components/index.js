@@ -8,6 +8,7 @@ export { default as Footer } from "./Footer/Footer";
 export { default as Card } from "./Card/Card";
 export { default as Carousel } from './Carousel/Carousel'
 
+export { default as Designing } from './Services/Designing'
 export { default as Offset } from './Services/Offset'
 export { default as Digital } from './Services/Digital'
 export { default as Continuous } from './Services/Continuous'

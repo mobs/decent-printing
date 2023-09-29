@@ -11,6 +11,7 @@ import {
   Products,
   Contact,
   Services,
+  Designing,
   Offset,
   Continuous,
   Digital,
@@ -65,6 +66,7 @@ function App() {
         <Route path="/Checkout/:id" element={<Checkout />} />
         <Route path="/Contact/:section?" element={<Contact />} />
         <Route path="/Services" element={<Services />} />
+        <Route path="/Designing Services" element={<Designing />} />
         <Route path="/Offset Printing" element={<Offset />} />
         <Route path="/Continuous Form Printing" element={<Continuous />} />
         <Route path="/Digital Printing" element={<Digital />} />

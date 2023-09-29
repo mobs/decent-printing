@@ -132,6 +132,9 @@ export const Commercial = [
 
 export const services = [
     {
+        title: 'Designing Services'
+    },
+    {
         title: 'Offset Printing',
     },
     {

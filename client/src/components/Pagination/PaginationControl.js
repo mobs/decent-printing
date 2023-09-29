@@ -8,6 +8,7 @@ function PaginationControls({ currentPage, productsPerPage, totalProducts, onPag
     };
   
     return (
+      totalPages  ?
       <div className="flex justify-center items-center text-black">
         <button className="hidden md:block text-lg font-bold hover:text-red-500" onClick={() => handlePageChange(currentPage - 1)}>Previous</button>
         {Array.from({ length: totalPages }, (_, index) => (
@@ -21,6 +22,19 @@ function PaginationControls({ currentPage, productsPerPage, totalProducts, onPag
         ))}
         <button className="hidden md:block text-lg font-bold hover:text-red-500" onClick={() => handlePageChange(currentPage + 1)}>Next</button>
       </div>
+      : (
+      <div className="flex justify-center items-center text-black">
+      <button className="hidden md:block text-lg font-bold hover:text-red-500" onClick={() => handlePageChange(currentPage - 1)}>Previous</button>
+      
+        <button className={`${
+          currentPage === 1 ? "bg-red-400 text-white" : "" } 
+          md:m-6 md:p-2 m-2 p-2 text-lg font-bold hover:text-red-500`}  
+      >
+          1
+        </button>
+      <button className="hidden md:block text-lg font-bold hover:text-red-500" onClick={() => handlePageChange(currentPage + 1)}>Next</button>
+    </div>
+      )
     );
   }
 

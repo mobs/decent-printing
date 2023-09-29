@@ -1,33 +1,46 @@
-import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
-import { Link, useParams } from 'react-router-dom'
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import { Link, useParams } from "react-router-dom";
 
-import PaginationControls from '../Pagination/PaginationControl';
-import Card from '../Card/Card';
+import PaginationControls from "../Pagination/PaginationControl";
+import Card from "../Card/Card";
 
 const Products = () => {
   const { category } = useParams();
 
   const { products, isLoading } = useSelector((state) => state.products);
-  let filteredProducts
-  if(category){
-    filteredProducts = products.filter((product) => product.category === category);
+  let filteredProducts;
+
+  const groupedProducts = products.reduce((acc, product) => {
+    const category = product.category;
+    if (!acc[category]) {
+      acc[category] = [];
+    }
+    acc[category].push(product);
+    return acc;
+  }, {});
+
+  if (category) {
+    filteredProducts = groupedProducts[category];
   } else {
     filteredProducts = products;
   }
 
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 16;
-  const totalProducts = filteredProducts.length;
+  const totalProducts = groupedProducts.length;
 
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
 
+  const productsToShow = filteredProducts.slice(
+    indexOfFirstProduct,
+    indexOfLastProduct
+  );
 
-  const productsToShow = filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct);
-
-  return (
-    isLoading ? <h1> Loading... </h1> :
+  return isLoading ? (
+    <h1> Loading... </h1>
+  ) : (
     <div>
       <div className="h-16 w-screen flex items-center justify-center bg-gray-200 text-white">
         <span className="text-gray-600"> Home </span>
@@ -36,17 +49,34 @@ const Products = () => {
       </div>
 
       <div>
-
-      <div className='mt-8 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-1'>
-        { productsToShow.map((cardData, idx) => (
+        <div className="mt-8 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-1">
+          {/* { productsToShow.map((cardData, idx) => (
           <Link to={`/Checkout/${encodeURIComponent(cardData._id)}`} key={idx}>
           <div className=''>
             <Card data={cardData} />
           </div>
           </Link>
-        ))}
-      </div>
-      <div>
+        ))} */}
+
+          {category ? (
+            <>
+              {productsToShow.map((data, idx) => (
+                <Card data={data} page="Category" key={idx} />
+              ))}
+            </>
+          ) : (
+            Object.keys(groupedProducts).map((category, idx) => (
+              <Link to={`/Products/${encodeURIComponent(category)}`} key={idx}>
+                <Card
+                  page=""
+                  data={groupedProducts[category][0]}
+                  length={groupedProducts[category].length}
+                />
+              </Link>
+            ))
+          )}
+        </div>
+        <div>
           <PaginationControls
             currentPage={currentPage}
             productsPerPage={productsPerPage}
@@ -56,7 +86,7 @@ const Products = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Products
+export default Products;

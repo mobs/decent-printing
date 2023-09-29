@@ -175,7 +175,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-center items-center overflow-hidden h-[500px] bg-gradient-to-br bg-gradient-stops-[2.11%, 34.14%, 68.81%, 105.05%] from-[#ff869f] via-[#fa988a] via-[#f19a73] to-[#ffd0b1]">
+      <div className="videoBg flex justify-center items-center overflow-hidden h-[500px] bg-gradient-to-br bg-gradient-stops-[2.11%, 34.14%, 68.81%, 105.05%] from-[#ff869f] via-[#fa988a] via-[#f19a73] to-[#ffd0b1]">
         {!showPlayer ? (
           <button
             onClick={handlePlayClick}

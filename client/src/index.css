@@ -13,3 +13,9 @@ body, html {
     font-family: 'Outfit', sans;
     
 }
+
+.videoBg{
+    background-image: url("./constants/Images/banner3\ bg.png");
+    background-position: center;
+    background-size: cover;
+}
