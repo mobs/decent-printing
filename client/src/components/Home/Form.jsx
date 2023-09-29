@@ -24,12 +24,12 @@ const Form = () => {
   };
 
   return (
-    <div className="bg-[#1a1e5d] lg:flex block overflow-hidden mt-16 md:ml-32 md:mr-32 ">
+    <div className="bg-[#1a1e5d] lg:flex block overflow-hidden mt-16 md:ml-32 md:mr-32 justify-between ">
       {/* <div className="flex-1 bg-gray-300 p-4 transform -skew-x-6"> */}
-      <img src={contact} alt="Image" className="lg:w-[60%] md:w-[100%] w-auto"  />
+      <img src={contact} alt="Image" className="lg:w-[40%] md:w-[100%] w-auto"  />
       {/* </div> */}
 
-      <div className="bg-[#1a1e5] text-white mt-16">
+      <div className="bg-[#1a1e5] text-white mt-8 lg:mr-[15%]">
         <p
           className="text-left text-3xl font-bold md:ml-4 ml-4 mt-4 w-full"
           id="message"
@@ -44,7 +44,7 @@ const Form = () => {
           <form
             action="#"
             onSubmit={handleSubmit}
-            className="mt-8 space-y-8 w-auto md:mb-4"
+            className="mt-8 space-y-8 w-full md:mb-4"
           >
             <div>
               <label for="email" className="block mb-2 text-sm font-medium">
@@ -54,7 +54,7 @@ const Form = () => {
                 type="email"
                 id="email"
                 value={formData.email}
-                className="shadow-sm bg-gray-200 text-black text-sm rounded-lg block p-2 w-full"
+                className="shadow-sm bg-[#1a1e5d] text-white border-2 border-gray-200 text-sm rounded-lg block p-2 w-full"
                 placeholder="name@example.com"
                 onChange={(e) =>
                   setFormData({ ...formData, email: e.target.value })
@@ -70,7 +70,7 @@ const Form = () => {
                 type="text"
                 id="subject"
                 value={formData.subject}
-                className="shadow-sm bg-gray-200 text-black text-sm rounded-lg block p-2 w-full"
+                className="shadow-sm bg-[#1a1e5d] text-white text-sm border-2 border-gray-200 rounded-lg block p-2 w-full"
                 placeholder="Let us know how we can help you"
                 onChange={(e) =>
                   setFormData({ ...formData, subject: e.target.value })
@@ -86,7 +86,7 @@ const Form = () => {
                 id="message"
                 rows="6"
                 value={formData.message}
-                className="shadow-sm bg-gray-200 text-black text-sm rounded-lg block p-2 w-full"
+                className="shadow-sm bg-[#1a1e5d] text-white text-sm border-2 border-gray-200 rounded-lg block p-2 w-full"
                 placeholder="Leave a comment..."
                 onChange={(e) =>
                   setFormData({ ...formData, message: e.target.value })

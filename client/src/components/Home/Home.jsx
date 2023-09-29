@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { GrCertificate } from "react-icons/gr";
-import { AiFillPlayCircle } from "react-icons/ai";
+import {BsPlayFill} from 'react-icons/bs'
 
 import "./animate.css";
 import {
@@ -179,11 +179,9 @@ const Home = () => {
         {!showPlayer ? (
           <button
             onClick={handlePlayClick}
-            className="text-white px-4 py-2 transition"
-            // onMouseEnter={handleMouseEnter}
-            // style={{ position: 'relative' }}
+            className="text-white border-2 border-gray-300 rounded-full p-4"
           >
-            <AiFillPlayCircle className="md:hover:text-9xl hover:text-red-800 md:text-8xl hover:text-7xl text-6xl text-red-500" />
+            <BsPlayFill className="p-2 hover:scale-150 bg-yellow-500 rounded-full transition-all duration-500 md:text-7xl text-6xl" />
           </button>
         ) : (
           <div className="md:w-[80%] w-[100%] h-[100%] relative ">
@@ -204,11 +202,11 @@ const Home = () => {
       </div>
 
       <div className="mt-8 flex flex-col justify-item items-center gap-6">
-        <div className="font-Sofia md:text-lg text-xs font-bold text-red-600">
+        <div className="font-Sofia md:text-xl text-sm font-bold text-red-600">
           Recent Works
         </div>
-        <div className="md:text-6xl text-sm md:font-extrabold font-bold">
-          Our Products
+        <div className="md:text-6xl text-lg md:font-extrabold font-bold">
+          Our Projects
         </div>
       </div>
       <div className="mt-8 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-1">
