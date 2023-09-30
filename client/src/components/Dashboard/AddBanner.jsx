@@ -15,6 +15,9 @@ const AddBanner = () => {
       e.preventDefault();
 
       dispatch(addBanner(bannerData));
+      setTimeout(() => {
+        alert("Banner added successfully!!!")
+      }, 2000);
       clear();
     };
 

@@ -14,19 +14,20 @@ const Main = ({ selectedCategory }) => {
   const [id1, setId1] = useState(null);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    if (id) {
-      products = products.filter((product) => product.id !== id);
-      dispatch(outOfStock(id));
-    }
-    
-    if(id1) dispatch(deleteProduct(id1));
-  }, [id,id1]);
-
-  const { products, isLoading } = useSelector((state) => state.products);
+  let { products, isLoading } = useSelector((state) => state.products);
   const { banners } = useSelector((state) => state.banner); 
   const { data } = useSelector((state) => state.gallery);
 
+  useEffect(() => {
+    if (id1) {
+      products = products.filter((product) => product.id !== id1);
+      dispatch(deleteProduct(id1)); 
+      setTimeout(() => {
+        alert("Product deleted successfully!!!")
+      }, 2000);
+    }
+    if(id) dispatch(outOfStock(id));
+  }, [id,id1,products]);
 
   return isLoading ? (
     <h1> Loading... </h1>

@@ -79,7 +79,7 @@ const Carousel = () => {
         } else {
           movePrev();
         }
-      }, 5000); // Change slide every 5 seconds (adjust as needed)
+      }, 8000); // Change slide every 5 seconds (adjust as needed)
   
       return () => {
         clearInterval(autoSlideInterval);
@@ -151,8 +151,6 @@ const Carousel = () => {
               className={`carousel-item relative snap-start slide-animation ${
                 index === currentIndex ? "active" : ""
               }`}
-
-              // className="carousel-item relative snap-start"
               >
                 <Link to={banner.link}
                   className="flex bg-origin-padding bg-left-top  bg-no-repeat z-0 w-screen"

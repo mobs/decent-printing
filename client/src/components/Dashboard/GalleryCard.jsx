@@ -10,6 +10,9 @@ const GalleryCard = ({ galleryData }) => {
 
     const handleDelete = () => {
       dispatch(deleteData(galleryData._id));
+      setTimeout(() => {
+        alert("Image deleted successfully!!!")
+      }, 2000);
     }
     
 

@@ -20,11 +20,14 @@ export const getProducts = () => async (dispatch) => {
   }
 };
 
-export const addNewProduct = (product) => async (dispatch) => {
+export const addNewProduct = (product) => async (dispatch, getState) => {
   try {
     const { data } = await api.addProduct(product);
 
-    dispatch({ type: CREATE, payload: data });
+    const currentProds = getState().products.products;
+    const updatedProds = [...currentProds, data]
+
+    dispatch({ type: CREATE, payload: updatedProds });
   } catch (error) {
     console.log(error.message);
   }

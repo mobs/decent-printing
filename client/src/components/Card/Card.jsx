@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Card = ({ data, length, page }) => {
   return (
@@ -36,7 +37,7 @@ const Card = ({ data, length, page }) => {
               )
             ) : (
               page === "Category" ? (
-                <> {data.title} </>
+                <Link to={`/Checkout/${encodeURIComponent(data._id)}`}> {data.title} </Link>
               ) : length ? (
                 <> {data.category} ({length}) </>
               ) : (

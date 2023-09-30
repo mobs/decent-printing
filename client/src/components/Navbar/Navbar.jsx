@@ -57,7 +57,7 @@ const Navbar = () => {
           >
             <span className="flex">
               <i
-                className={`text-3xl ${d.icons} bg-gradient-to-br bg-gradient-stops-[2.11%, 34.14%, 68.81%, 105.05%] from-[#ff869f] via-[#fa988a] via-[#f19a73] to-[#ffd0b1] text-transparent bg-clip-text text-5xl`}
+                className={`text-3xl ${d.icons} bg-gradient-to-br bg-gradient-stops-[2.11%, 34.14%, 68.81%, 105.05%] from-[#ff869f] via-[#fa988a] via-[#f19a73] to-[#ffd0b1] bg-[#1a1e5d] text-transparent bg-clip-text text-5xl`}
               >
                 {" "}
               </i>
@@ -321,7 +321,7 @@ const Navbar = () => {
                             <Link
                               to={`/Products/${encodeURIComponent(comm.title)}`}
                               key={idx}
-                              className="px-5 py-3 peer text-gray-900 hover:bg-red-500 hover:text-white"
+                              className="px-2 py-3 peer text-gray-900 hover:bg-red-500 hover:text-white"
                             >
                               <button> {comm.title} </button>
                             </Link>

@@ -36,6 +36,9 @@ const AddGalleryData = () => {
     e.preventDefault();
 
     dispatch(addData(galleryData));
+    setTimeout(() => {
+      alert("Image added successfully!!!")
+    }, 2000);
     clear();
   };
 

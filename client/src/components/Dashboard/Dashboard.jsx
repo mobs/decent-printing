@@ -2,15 +2,11 @@ import React, { useState } from 'react'
 
 import Sidebar from './Sidebar'
 import Main from './Main'
-import { useSelector } from 'react-redux'
 
 const Dashboard = () => {
   const [ selectedCategory, setSelectedCategory ] = useState('Products')
 
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
-  console.log(user)
-
-
   
   return (
     user?.result.isAuthorized ? 

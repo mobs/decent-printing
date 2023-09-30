@@ -27,16 +27,25 @@ const Products = () => {
   }
 
   const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 16;
-  const totalProducts = groupedProducts.length;
+  const [currPage, setCurrPage] = useState(1);
+  const productsPerPage = 12;
+  const totalProducts = Object.keys(groupedProducts).length;
 
-  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfLastProduct = category ? currPage * productsPerPage : currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
 
   const productsToShow = filteredProducts.slice(
     indexOfFirstProduct,
     indexOfLastProduct
   );
+  const categoryKeys = category ? [category] : Object.keys(groupedProducts);
+  const keysToShow = categoryKeys.slice(indexOfFirstProduct, indexOfLastProduct);
+
+  // Create a new object containing only the selected categories and their products
+  const groupedProductsToShow = keysToShow.reduce((acc, categoryKey) => {
+    acc[categoryKey] = groupedProducts[categoryKey];
+    return acc;
+  }, {});
 
   return isLoading ? (
     <h1> Loading... </h1>
@@ -50,14 +59,6 @@ const Products = () => {
 
       <div>
         <div className="mt-8 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-1">
-          {/* { productsToShow.map((cardData, idx) => (
-          <Link to={`/Checkout/${encodeURIComponent(cardData._id)}`} key={idx}>
-          <div className=''>
-            <Card data={cardData} />
-          </div>
-          </Link>
-        ))} */}
-
           {category ? (
             <>
               {productsToShow.map((data, idx) => (
@@ -65,7 +66,7 @@ const Products = () => {
               ))}
             </>
           ) : (
-            Object.keys(groupedProducts).map((category, idx) => (
+            Object.keys(groupedProductsToShow).map((category, idx) => (
               <Link to={`/Products/${encodeURIComponent(category)}`} key={idx}>
                 <Card
                   page=""
@@ -77,12 +78,21 @@ const Products = () => {
           )}
         </div>
         <div>
-          <PaginationControls
-            currentPage={currentPage}
-            productsPerPage={productsPerPage}
-            totalProducts={totalProducts}
-            onPageChange={setCurrentPage}
-          />
+          {
+            category ? 
+              <PaginationControls
+                currentPage={currPage}
+                productsPerPage={productsPerPage}
+                totalProducts={groupedProducts[category].length}
+                onPageChange={setCurrPage}
+              /> :
+              <PaginationControls
+                currentPage={currentPage}
+                productsPerPage={productsPerPage}
+                totalProducts={totalProducts}
+                onPageChange={setCurrentPage}
+              />
+          }
         </div>
       </div>
     </div>

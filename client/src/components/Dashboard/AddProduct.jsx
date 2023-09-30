@@ -24,6 +24,9 @@ const AddProduct = () => {
     e.preventDefault();
 
     dispatch(addNewProduct(productData));
+    setTimeout(() => {
+      alert("Product added successfully")
+    }, 3000);
     clear();
   };
 
