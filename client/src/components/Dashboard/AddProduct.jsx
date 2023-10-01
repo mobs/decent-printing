@@ -6,8 +6,26 @@ import { addNewProduct } from "../../actions/products";
 
 const AddProduct = () => {
   const categories = [
-    "Select Category","Designing Work",
-    "Date Box","Cake Box","Burger Box", "Perfume Box", "Chocolate Box", "Paper Bags", "Lunch Box", "Bussiness Card","Letter Head", "Flyers", "Menus", "Brochures", "Envelope", "Booklets", "Diaries", "NCR Books","Continuous Computer Forms", "Miscellaneous"
+    "Select Category",
+    "Designing Work",
+    "Date Box",
+    "Cake Box",
+    "Burger Box",
+    "Perfume Box",
+    "Chocolate Box",
+    "Paper Bags",
+    "Lunch Box",
+    "Bussiness Card",
+    "Letter Head",
+    "Flyers",
+    "Menus",
+    "Brochures",
+    "Envelope",
+    "Booklets",
+    "Diaries",
+    "NCR Books",
+    "Continuous Computer Forms",
+    "Miscellaneous",
   ];
 
   const [productData, setProductData] = useState({
@@ -25,7 +43,7 @@ const AddProduct = () => {
 
     dispatch(addNewProduct(productData));
     setTimeout(() => {
-      alert("Product added successfully")
+      alert("Product added successfully");
     }, 3000);
     clear();
   };
@@ -44,12 +62,12 @@ const AddProduct = () => {
     <div>
       <section className="bg-smokewhite">
         <div className="py-8 px-4 mx-auto max-w-2xl lg:py-16">
-          <h2 className='text-center text-5xl font-bold m-16'>
+          <h2 className="text-center text-5xl font-bold m-16">
             Add a new product
           </h2>
 
-        <div className='md:flex justify-center items-center md:m-0 m-2'> 
-          <form onSubmit={handleSubmit} className="space-y-8 md:w-96 w-auto">
+          <div className="md:flex justify-center items-center md:m-0 m-2">
+            <form onSubmit={handleSubmit} className="space-y-8 md:w-96 w-auto">
               <div>
                 <label
                   for="name"
@@ -92,7 +110,8 @@ const AddProduct = () => {
               <div className="w-full">
                 <label
                   for="category"
-                  className="block mb-2 text-sm font-medium text-gray-600" >
+                  className="block mb-2 text-sm font-medium text-gray-600"
+                >
                   Category
                 </label>
                 <select
@@ -104,8 +123,8 @@ const AddProduct = () => {
                     setProductData({ ...productData, category: e.target.value })
                   }
                 >
-                  {categories.map((cat,idx) => (
-                    <option selected="" value={cat} key={idx} >
+                  {categories.map((cat, idx) => (
+                    <option selected="" value={cat} key={idx}>
                       {" "}
                       {cat}{" "}
                     </option>
@@ -115,7 +134,8 @@ const AddProduct = () => {
               <div className="sm:col-span-2">
                 <label
                   for="stock"
-                  className="block mb-2 text-sm font-medium text-gray-600"                >
+                  className="block mb-2 text-sm font-medium text-gray-600"
+                >
                   Stock
                 </label>
                 <input
@@ -144,13 +164,13 @@ const AddProduct = () => {
                 />
               </div>
 
-            <button
-              type="submit"
-              className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-red-500 sm:w-fit hover:bg-primary-800"
+              <button
+                type="submit"
+                className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-red-500 sm:w-fit hover:bg-primary-800"
               >
-              Add product
-            </button>
-          </form>
+                Add product
+              </button>
+            </form>
           </div>
         </div>
       </section>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import FileBase from "react-file-base64";
 
@@ -7,23 +7,28 @@ import { addData } from "../../actions/gallery";
 const AddGalleryData = () => {
   const categories = [
     "Select Category",
-    "Popups/Rollups Printing",
-    "Graphic Design",
-    "Notepads/Annual Reports",
-    "Presentation Folders/Booklets",
-    "Price List / Proposal / Brochures",
-    "Bussiness Cards / Calendars",
-    "Fabric Print / Screen Printing",
-    "Floor Graphics",
-    "Lamp Posts",
-    "Exhibitions & Events",
-    "Display Stands",
-    "Showroom Glass Branding",
-    "Billboards",
-    "Device"
+    "Designing Work",
+    "Date Box",
+    "Cake Box",
+    "Burger Box",
+    "Perfume Box",
+    "Chocolate Box",
+    "Paper Bags",
+    "Lunch Box",
+    "Bussiness Card",
+    "Letter Head",
+    "Flyers",
+    "Menus",
+    "Brochures",
+    "Envelope",
+    "Booklets",
+    "Diaries",
+    "NCR Books",
+    "Continuous Computer Forms",
+    "Miscellaneous",
   ];
 
-  const dataTypes = ["Select", "Images", "Videos", "Devices"];
+  const dataTypes = ["Select", "Images", "Videos"];
 
   const dispatch = useDispatch();
   const [ galleryData, setData] = useState({

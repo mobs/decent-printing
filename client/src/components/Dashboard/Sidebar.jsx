@@ -189,7 +189,7 @@ const Sidebar = ({ setSelectedCategory }) => {
           <li>
             <button
               onClick={() => setSelectedCategory("Add Admin")}
-              className="flex items-center p-2 text-gray-600 rounded-lg hover:text-white hover:bg-gray-100 dark:hover:bg-red-500 group"
+              className="flex items-center p-2 text-gray-600 rounded-lg hover:text-white hover:bg-red-500 group"
             >
               <RiAdminFill size={22} />
               <span className="flex-1 ml-3 whitespace-nowrap">Add Admin</span>
@@ -200,7 +200,7 @@ const Sidebar = ({ setSelectedCategory }) => {
             <Link to='/Home'>
             <button
               onClick={logout}
-              className="flex w-full items-center p-2 text-white rounded-lg dark:bg-red-500 group"
+              className="flex w-full items-center p-2 text-white rounded-lg bg-red-500 group"
             >
               <RiLogoutCircleFill size={22} />
               <span className="flex-1 ml-3 whitespace-nowrap">Logout</span>

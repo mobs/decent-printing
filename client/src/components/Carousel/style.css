@@ -1,36 +1,8 @@
-/* 
-.animate1 {
-    animation: bounce 2s 1s 1 forwards;
-
-    @keyframes bounce {
-        0%, 100% {
-            transform: translateY(-25%);
-            animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-        }
-        50% {
-            transform: translateY(0);
-            animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-        }
-    }
+.slide-animation {
+  opacity: 0;
+  transition: opacity 3s ease-in-out, transform 2s ease-in-out;
 }
 
-.animate {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-  }
-  
-  .animate.show {
-    opacity: 1;
-  }
-   */
-
-   .slide-animation {
-    opacity: 0;
-    transform: translateY(100%);
-    transition: opacity 3s ease-in-out, transform 2s ease-in-out;
-  }
-  
-  .slide-animation.active {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.slide-animation.active {
+  opacity: 1;
+}

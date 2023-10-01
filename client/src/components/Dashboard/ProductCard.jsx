@@ -6,14 +6,9 @@ import { deleteProduct } from '../../actions/products'
 
 const ProductCard = ({ prod, setId, setId1 }) => {
 
-    const dispatch = useDispatch();
-
-    // useEffect(() => {
-
-    // }, [dispatch])
+    // const dispatch = useDispatch();
 
     const handleDelete = () => {
-      // dispatch(deleteProduct(prod._id));
       setId1(prod._id)
     }
     
@@ -25,9 +20,10 @@ const ProductCard = ({ prod, setId, setId1 }) => {
     <div className="relative block bg-white hover:translate-x-2 hover:translate-y-2 duration-300 hover:shadow-[0_2px_15px_-3px_rgba(0,0,0,0.5),0_10px_20px_-2px_rgba(0,0,0,0.5)] ">
         <div>
           <img
-            className="shadow-[0_2px_15px_-3px_rgba(0,0,0,0.5),0_10px_20px_-2px_rgba(0,0,0,0.5)] md:min-h-[300px] md:max-h-[300px] md:min-w-[100%] lg:max-w-[100%] lg:min-w-[363px] max-h-[120px] min-h-[247px] max-w-[120px] min-w-[247px]"
+            className="shadow-[0_2px_15px_-3px_rgba(0,0,0,0.5),0_10px_20px_-2px_rgba(0,0,0,0.5)] aspect-square"
             src={prod?.image}
             alt="product image"
+            style={{ objectFit: "cover" }}
           />
         </div>
       <div className="p-6">

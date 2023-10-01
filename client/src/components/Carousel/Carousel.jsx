@@ -79,7 +79,7 @@ const Carousel = () => {
         } else {
           movePrev();
         }
-      }, 8000); // Change slide every 5 seconds (adjust as needed)
+      }, 15000); // Change slide every 5 seconds (adjust as needed)
   
       return () => {
         clearInterval(autoSlideInterval);
