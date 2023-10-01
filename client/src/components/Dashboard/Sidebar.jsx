@@ -197,7 +197,7 @@ const Sidebar = ({ setSelectedCategory }) => {
           </li>
 
           <li>
-            <Link to='/Home'>
+            <Link to='/SignIn'>
             <button
               onClick={logout}
               className="flex w-full items-center p-2 text-white rounded-lg bg-red-500 group"

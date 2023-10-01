@@ -6,7 +6,6 @@ import { banner1, banner2, banner3, banner4 } from "../../constants/Images";
 import './style.css'
 
 const Carousel = () => {
-  const [autoDirection, setAutoDirection] = useState(1); // 1 for forward, -1 for backward
   const [direction, setDirection] = useState(1); // 1 for forward, -1 for backward
 
 

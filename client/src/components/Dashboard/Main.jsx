@@ -15,7 +15,6 @@ const Main = ({ selectedCategory }) => {
   const dispatch = useDispatch();
 
   let { products, isLoading } = useSelector((state) => state.products);
-  console.log(products)
   const { banners } = useSelector((state) => state.banner); 
   const { data } = useSelector((state) => state.gallery);
 
@@ -56,7 +55,6 @@ const Main = ({ selectedCategory }) => {
         </>
       ) : selectedCategory === "Gallery" ? (
         <div>
-          {/* <button></button> */}
           <div className="flex m-16 mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-between gap-10">
             {data.map((d, idx) => (
               <GalleryCard galleryData={d} key={idx} />

@@ -212,7 +212,7 @@ const Home = () => {
       <div className="mt-8 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-1">
         {productsToShow.map((cardData, idx) => (
           <Link
-            to={`/Products/${encodeURIComponent(cardData.title)}`}
+            to={`/Products/${encodeURIComponent(cardData.category)}`}
             key={idx}
           >
             <div className="" key={idx}>
@@ -423,47 +423,22 @@ const Home = () => {
       </a> */}
 
       <div className="lg:m-16 m-4 lg:flex block">
-        <div>
+        <div className="flex-1">
           {/* Small Banner Data */}
           <a href={bannerToShow[1]?.link}>
             <button className="relative hover:p-4 duration-500">
               <img src={bannerToShow[1]?.image} alt="picks1" />
-              {/* <div className="absolute top-0 left-0 p-12 text-white">
-                {bannerToShow[1]?.offer && (
-                  <button className="bg-red-700 p-2 rounded text-xl">
-                    {bannerToShow[1]?.offer}
-                  </button>
-                )}
-              </div> */}
+              
             </button>
           </a>
         </div>
-        {/* <div className=" mt-8 grid md:grid-cols-3 md:gap-3 grid-cols-2"> */}
-        {/* {picksProduct.map((prod, idx) => (
-            <Link to={`/Checkout/${encodeURIComponent(prod._id)}`}>
-              <div className="w-75 rounded m-8 bg-white " key={idx}>
-                <div className="rounded border">
-                  <img
-                    className="aspect-sqaure md:h-64  "
-                    src={prod?.image}
-                    alt="picks2"
-                    style={{ objectFit: "cover" }}
-                  />
-                </div>
-                <div className="p-6 flex items-center justify-center">
-                  <button className="mb-2 text-xl font-medium leading-tight text-gray-600 hover:text-red-500">
-                    {prod.title}
-                  </button>
-                </div>
-              </div>
-            </Link>
-          ))} */}
+        
 
-        <div className="ml-16 md:flex block jutify-center items-center">
-          <div className="mr-4">
+        <div className="flex-1 ml-16 md:flex block jutify-center items-center ">
+          <div className="mr-4 w-[110%] ">
             <img
               className="rounded hover:p-4 duration-500 "
-              src={offerProduct[0]?.image}
+              src={offerProduct[1]?.image}
               alt="offer2"
             />
           </div>
@@ -476,7 +451,7 @@ const Home = () => {
                 {offerProduct[1]?.title.toUpperCase()}
               </div>
               <div className="flex items-centert text-3xl font-bold">
-                {offerProduct[1]?.offer}
+                {/* {offerProduct[1]?.offer} */}
               </div>
 
               <div className="flex justify-center items-center text-gray-500 text-sm">
