@@ -2,14 +2,18 @@ import React from "react";
 import { useDispatch } from 'react-redux';
 
 import { deleteData } from "../../actions/gallery";
+import { deleteBanner } from "../../actions/banner";
 
 
-const GalleryCard = ({ galleryData }) => {
+const GalleryCard = ({ page, galleryData }) => {
 
     const dispatch = useDispatch();
 
     const handleDelete = () => {
-      dispatch(deleteData(galleryData._id));
+      if(page === "Gallery")
+        dispatch(deleteData(galleryData._id));
+      if(page === "Banners")
+        dispatch(deleteBanner(galleryData._id))
       setTimeout(() => {
         alert("Image deleted successfully!!!")
       }, 2000);

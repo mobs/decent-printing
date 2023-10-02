@@ -34,7 +34,7 @@ const Products = () => {
   const indexOfLastProduct = category ? currPage * productsPerPage : currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
 
-  const productsToShow = filteredProducts.slice(
+  const productsToShow = filteredProducts && filteredProducts.slice(
     indexOfFirstProduct,
     indexOfLastProduct
   );
@@ -61,17 +61,17 @@ const Products = () => {
         <div className="mt-8 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-1">
           {category ? (
             <>
-              {productsToShow.map((data, idx) => (
+              {productsToShow?.map((data, idx) => (
                 <Card data={data} page="Category" key={idx} />
               ))}
             </>
           ) : (
-            Object.keys(groupedProductsToShow).map((category, idx) => (
+            Object.keys(groupedProductsToShow)?.map((category, idx) => (
               <Link to={`/Products/${encodeURIComponent(category)}`} key={idx}>
                 <Card
                   page=""
                   data={groupedProducts[category][0]}
-                  length={groupedProducts[category].length}
+                  length={groupedProducts[category]?.length}
                 />
               </Link>
             ))
@@ -83,7 +83,7 @@ const Products = () => {
               <PaginationControls
                 currentPage={currPage}
                 productsPerPage={productsPerPage}
-                totalProducts={groupedProducts[category].length}
+                totalProducts={groupedProducts[category]?.length}
                 onPageChange={setCurrPage}
               /> :
               <PaginationControls

@@ -57,7 +57,7 @@ const Main = ({ selectedCategory }) => {
         <div>
           <div className="flex m-16 mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-between gap-10">
             {data.map((d, idx) => (
-              <GalleryCard galleryData={d} key={idx} />
+              <GalleryCard page="Gallery" galleryData={d} key={idx} />
             ))}
           </div>
         </div>
@@ -67,10 +67,10 @@ const Main = ({ selectedCategory }) => {
         </div>
       ) : selectedCategory === "Banners" ? (
         <>
-        <p className="font-bold text-lg text-center"> Only the Top 3 Banners will be displayed on the Home page</p>
+        <p className="font-bold text-lg text-center"> Only the Top 4 Banners will be displayed on the Home page(See the Home Page for reference) </p>
         <div className="block">
           {banners.map((d, idx) => (
-            <GalleryCard galleryData={d} key={idx} />
+            <GalleryCard page="Banners" galleryData={d} key={idx} />
           ))}
         </div>
         </>

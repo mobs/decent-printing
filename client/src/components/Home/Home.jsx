@@ -6,7 +6,6 @@ import {BsPlayFill} from 'react-icons/bs'
 
 import "./animate.css";
 import {
-  banner,
   digitalPrinting,
   cont1,
   offset1,
@@ -39,7 +38,8 @@ const Home = () => {
   //   right: `${Math.random() * 100}%`,
   // });
 
-  const bannerToShow = banners.slice(0, 3);
+  const bannerToShow = banners.slice(0, 4);
+  console.log(bannerToShow)
 
   let productsToShow = [];
   let picksProduct = [];
@@ -425,12 +425,12 @@ const Home = () => {
       <div className="lg:m-16 m-4 lg:flex block">
         <div className="flex-1">
           {/* Small Banner Data */}
-          <a href={bannerToShow[1]?.link}>
+          <Link to={`${encodeURIComponent(bannerToShow[0]?.link).replace(/%2F/g, "/")}`} href={bannerToShow[0]?.link}>
             <button className="relative hover:p-4 duration-500">
-              <img src={bannerToShow[1]?.image} alt="picks1" />
+              <img src={bannerToShow[0]?.image} alt="picks1" />
               
             </button>
-          </a>
+          </Link>
         </div>
         
 
@@ -544,22 +544,22 @@ const Home = () => {
 
       <div className="mb-16 ">
         {/* banner editing option */}
-        <a href={bannerToShow[2]?.link}>
+        <Link to={`${encodeURIComponent(bannerToShow[1]?.link).replace(/%2F/g, "/")}`} href={bannerToShow[1]?.link}>
           <button className="relative">
-            <img src={bannerToShow[2]?.image} alt="banner2" />
+            <img src={bannerToShow[1]?.image} alt="banner2" />
             <div className="absolute top-0 left-0 p-12 text-white">
-              {bannerToShow[2]?.offer && (
+              {bannerToShow[1]?.offer && (
                 <button className="bg-red-700 rounded text-xl">
-                  {bannerToShow[2]?.offer}
+                  {bannerToShow[1]?.offer}
                 </button>
               )}
             </div>
           </button>
-        </a>
+        </Link>
 
-        <Link to="/Products">
-          <button className="relative">
-            <img src={banner} alt="banner2" className="w-screen" />
+        <Link to={`${encodeURIComponent(bannerToShow[2]?.link).replace(/%2F/g, "/")}`} >
+          <button className="relative lg:h-[500px] md:h-[300px] sm:[h-250px]" >
+            <img src={bannerToShow[2]?.image}style={{ objectFit: "fill", height:'100%'}} alt="banner2" className="w-screen" />
           </button>
         </Link>
         <div className="bg-gradient-to-br bg-gradient-stops-[2.11%, 34.14%, 68.81%, 105.05%] from-[#ff869f] via-[#fa988a] via-[#f19a73] to-[#ffd0b1] w-screen md:h-72 h-full md:flex block justify-between items-center ">
@@ -589,6 +589,12 @@ const Home = () => {
             <p className="text-xl"> + Years of Experience </p>
           </div>
         </div>
+
+        <Link to={`${encodeURIComponent(bannerToShow[3]?.link).replace(/%2F/g, "/")}`} >
+        <button className="relative lg:h-[500px] md:h-[300px] sm:[h-250px] mt-4" >
+            <img src={bannerToShow[3]?.image}style={{ objectFit: "fill", height:'100%'}} alt="banner2" className="w-screen" />
+          </button>
+        </Link>
         <Form />
         <div className="md:flex m-16 mt-0 justify-between items-center">
           <button
