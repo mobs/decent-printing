@@ -185,7 +185,7 @@ export const navdetails = [
     },
     {
         title: 'Sharjah',
-        details:'Al Wahda Street, Sharjah, United Arab Emirates',
+        details:'Al Wahda Street, Sharjah, UAE',
         icons:'fas fa-map-marked-alt',
         link:'https://www.google.com/maps/search/?api=1&query=Decent Printing Press LLC - Al Wahda Street - Sharjah - United Arab Emirates'
     },

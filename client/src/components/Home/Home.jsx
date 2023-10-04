@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { GrCertificate } from "react-icons/gr";
 import {BsPlayFill} from 'react-icons/bs'
+import Vimeo from '@vimeo/player'
 
 import "./animate.css";
 import {
@@ -26,7 +27,7 @@ const Home = () => {
     setShowPlayer(true);
   };
   const vimeoVideoUrl =
-    "https://player.vimeo.com/video/869555322?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&title=false&byline=false&portrait=false";
+    "https://player.vimeo.com/video/871235724?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&title=false&byline=false&portrait=false";
 
   // const getRandomPosition = () => ({
   //   top: `${Math.random() * 100}%`,
@@ -37,6 +38,23 @@ const Home = () => {
   //   top: `${Math.random() * 100}%`,
   //   right: `${Math.random() * 100}%`,
   // });
+
+  const vimeoIframeRef = useRef(null);
+
+  useEffect(() => {
+    const iframe = vimeoIframeRef.current;
+    var options = {
+      url: vimeoVideoUrl
+    }
+
+   if(iframe) { 
+      const player = new Vimeo (iframe, options);
+      player.on('ended', () => {
+        setShowPlayer(false);
+    })
+   }
+  }, [vimeoIframeRef.current]);
+
 
   const bannerToShow = banners.slice(0, 4);
 
@@ -174,17 +192,19 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="videoBg flex justify-center items-center overflow-hidden h-[500px] bg-gradient-to-br bg-gradient-stops-[2.11%, 34.14%, 68.81%, 105.05%] from-[#ff869f] via-[#fa988a] via-[#f19a73] to-[#ffd0b1]">
+      <div className="videoBg flex justify-center items-center text-center flex-col overflow-hidden h-[500px]">
         {!showPlayer ? (
           <button
             onClick={handlePlayClick}
             className="text-white border-2 border-gray-300 rounded-full p-4"
           >
-            <BsPlayFill className="p-2 hover:scale-150 bg-yellow-500 rounded-full transition-all duration-500 md:text-7xl text-6xl" />
+            <BsPlayFill className="p-2 hover:scale-150 bg-red-700 rounded-full transition-all duration-500 md:text-7xl text-6xl" />
           </button>
         ) : (
-          <div className="md:w-[80%] w-[100%] h-[100%] relative ">
+          <div className="md:w-[80%] w-[100%] h-[100%] relative">
             <iframe
+              id="vimeo"
+              ref={vimeoIframeRef}
               src={vimeoVideoUrl}
               frameborder="0"
               allow="autoplay; fullscreen; picture-in-picture"
@@ -197,7 +217,7 @@ const Home = () => {
               title="Decent2"
             ></iframe>
           </div>
-        )}
+        )} 
       </div>
 
       <div className="mt-8 flex flex-col justify-item items-center gap-6">

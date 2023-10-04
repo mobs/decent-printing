@@ -50,7 +50,7 @@ const Contact = () => {
           <i className="fa-solid fa-location-dot text-5xl text-orange-400"></i>
           <p className='text-lg font-bold'> Address </p>
           <p className='text-gray-500 text-semibold'>Industrial Area 4, Al Qusais, Damascrus Street, Dubai, UAE</p>
-          <p className='text-gray-500 text-semibold'> Al Wahda Street, Sharjah, United Arab Emirates </p>
+          <p className='text-gray-500 text-semibold'> Al Wahda Street, Sharjah, UAE </p>
         </div>
         <div className='flex flex-col gap-4 text-center md:text-left md:mt-0 mt-8'>
             <i className="fa-solid fa-phone-volume text-5xl text-orange-400"></i>
