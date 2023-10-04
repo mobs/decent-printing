@@ -57,7 +57,7 @@ const Navbar = () => {
           >
             <span className="flex">
               <i
-                className={`text-3xl ${d.icons} bg-gradient-to-br bg-gradient-stops-[2.11%, 34.14%, 68.81%, 105.05%] from-[#ff869f] via-[#fa988a] via-[#f19a73] to-[#ffd0b1] bg-[#1a1e5d] text-transparent bg-clip-text text-5xl`}
+                className={`text-3xl ${d.icons} bg-red-600 text-transparent bg-clip-text text-5xl`}
               >
                 {" "}
               </i>
@@ -207,7 +207,7 @@ const Navbar = () => {
                     </Link>
                   ) : (
                     <div className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white">
-                      <span className="peer"> </span>
+                      {/* <span className="peer"> </span>
                       <button className="peer"> {ab.title} </button>
                       <i className="peer pl-24 w-28 fa-solid fa-angle-right "></i>
                       <div className="z-30 ml-48 -my-9 w-56 bg-white hidden absolute peer-hover:flex hover:flex flex-col text-black drop-shadow-lg">
@@ -222,7 +222,7 @@ const Navbar = () => {
                             <button>{crd.title} </button>
                           </a>
                         ))}
-                      </div>
+                      </div> */}
                     </div>
                   )}
                 </>
@@ -259,7 +259,7 @@ const Navbar = () => {
                     <div className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white">
                       <span className="peer"> </span>
                       <button className="peer"> {contact.title} </button>
-                      <i className="peer pl-24 w-28 fa-solid fa-angle-right "></i>
+                      {/* <i className="peer pl-24 w-28 fa-solid fa-angle-right "></i>
                       <div className="z-30 ml-48 -my-9 w-56 bg-white hidden absolute peer-hover:flex hover:flex flex-col text-black drop-shadow-lg">
                         {getInTouch.map((crd, idx) => (
                           <Link
@@ -270,7 +270,7 @@ const Navbar = () => {
                             <button> {crd.title} </button>
                           </Link>
                         ))}
-                      </div>
+                      </div> */}
                     </div>
                   )}
                 </>
@@ -396,7 +396,7 @@ const Navbar = () => {
                       </Link>
                     ) : (
                       <div className="px-5 py-3 text-gray-900 hover:bg-red-500 hover:text-white">
-                        <span className="peer"> </span>
+                        {/* <span className="peer"> </span>
                         <button className="peer"> {ab.title} </button>
                         <i className="peer pl-24 w-28 fa-solid fa-angle-right "></i>
                         <div className="z-30 ml-48 -my-9 w-56 bg-white hidden absolute peer-hover:flex hover:flex flex-col text-black drop-shadow-lg">
@@ -410,7 +410,7 @@ const Navbar = () => {
                               <button>{crd.title} </button>
                             </a>
                           ))}
-                        </div>
+                        </div> */}
                       </div>
                     )}
                   </>
@@ -447,8 +447,8 @@ const Navbar = () => {
                       >
                         <span className="peer"> </span>
                         <button className="peer"> {contact.title} </button>
-                        <i className="peer pl-24 w-28 fa-solid fa-angle-right "></i>
-                        <div className="z-30 ml-48 -my-9 w-56 bg-white hidden absolute peer-hover:flex hover:flex flex-col text-black drop-shadow-lg">
+                        {/* <i className="peer pl-24 w-28 fa-solid fa-angle-right "></i> */}
+                        {/* <div className="z-30 ml-48 -my-9 w-56 bg-white hidden absolute peer-hover:flex hover:flex flex-col text-black drop-shadow-lg">
                           {getInTouch.map((crd, idx) => (
                             <div
                               key={idx}
@@ -457,7 +457,7 @@ const Navbar = () => {
                               <button> {crd.title} </button>
                             </div>
                           ))}
-                        </div>
+                        </div> */}
                       </Link>
                     )}
                   </>

@@ -14,17 +14,15 @@ const Quality = () => {
           Quality Policy
         </p>
 
-        <p className="text-lg text-gray-600 font-semibold md:mt-0 mt-4">
+        <p className="text-lg  md:mt-0 mt-4">
           Decent Printing Press LLC aims to ensure that our products / services
           meet the needs of our customers at all times in accordance with
           customer, statutory and regulatory requirements, as well as our
           policies and procedures.
         </p>
 
-        <p className="text-lg text-gray-600 font-semibold md:mt-0 mt-4">
-          Top management are responsible for the implementation of our Quality
-          Management System and for achieving and maintaining ISO 9001:2008
-          certification. The scope of our Quality Management System covers all
+        <p className="text-lg  md:mt-0 mt-4">
+          The scope of our Quality Management System covers all
           activities stated within our Scope Document and we are committed to
           this.{" "}
         </p>

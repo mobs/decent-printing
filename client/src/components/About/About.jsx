@@ -64,7 +64,7 @@ const About = () => {
       </div>
 
       <div className="md:flex gap-4 justify-between ">
-        <div className="p-4 flex flex-col text-lg font-semibold text-[#854f6c] gap-4 md:w-[50%]">
+        <div className="p-4 flex flex-col text-lg  gap-4 md:w-[50%]">
           <p className=''>
             {" "}
             We take this opportunity to introduce DECENT PRINTING PRESS L.L.C,
@@ -95,7 +95,7 @@ const About = () => {
             safe for both humans and the environment.
           </p>
         </div>
-        <div className="p-4 flex flex-col text-lg font-semibold text-[#854f6c] gap-4 md:w-[50%]">
+        <div className="p-4 flex flex-col text-lg  gap-4 md:w-[50%]">
           <p>
             {" "}
             We, at DECENT PRINTING PRESS have a highly professional team who are

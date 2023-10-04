@@ -45,12 +45,12 @@ const Contact = () => {
         <p>beauties for yourself or someone you love.</p>
       </div>
 
-      <div className='md:flex block md:m-32 md:ml-64 md:mr-64 m-4 justify-between items-center'>
+      <div className='md:flex block md:m-32 md:ml-48 md:mr-48 m-4 gap-6 justify-between items-center'>
         <div className='flex flex-col gap-4 text-center md:text-left'>
           <i className="fa-solid fa-location-dot text-5xl text-orange-400"></i>
           <p className='text-lg font-bold'> Address </p>
           <p className='text-gray-500 text-semibold'>Industrial Area 4, Al Qusais, Damascrus Street, Dubai, UAE</p>
-          <p className='text-gray-500 text-semibold'> AL WAHDA STREET, SHARJAH, UNITED ARAB EMIRATES. </p>
+          <p className='text-gray-500 text-semibold'> Al Wahda Street, Sharjah, United Arab Emirates </p>
         </div>
         <div className='flex flex-col gap-4 text-center md:text-left md:mt-0 mt-8'>
             <i className="fa-solid fa-phone-volume text-5xl text-orange-400"></i>

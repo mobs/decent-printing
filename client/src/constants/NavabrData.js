@@ -1,59 +1,3 @@
-// export const products = [
-//     {
-//         title: 'Popups/Rollups Printing',
-//         link: ''
-//     },
-//     {
-//         title: 'Graphic Design',
-//         link: ''
-//     },
-//     {
-//         title: 'Notepads/Annual Reports',
-//         link: ''
-//     },
-//     {
-//         title: 'Presentation Folders/Booklets',
-//         link: ''
-//     },
-//     {
-//         title: 'Price List / Proposal / Brochures',
-//         link: ''
-//     },
-//     {
-//         title: 'Bussiness Cards / Calendars',
-//         link: ''
-//     },
-//     {
-//         title: 'Fabric Print / Screen Printing',
-//         link: ''
-//     },
-//     {
-//         title: 'Floor Graphics',
-//         link: ''
-//     },
-//     {
-//         title: 'Lamp Posts',
-//         link: ''
-//     },
-//     {
-//         title: 'Exhibitions & Events',
-//         link: ''
-//     },
-//     {
-//         title: 'Display Stands',
-//         link: ''
-//     },
-//     {
-//         title: 'Showroom Glass Branding',
-//         link: ''
-//     },
-//     {
-//         title: 'Billboards',
-//         link: ''
-//     }
-
-// ]
-
 export const products = [
     {
         title: 'Designing Work'
@@ -170,44 +114,44 @@ export const about = [
         title: 'SUCESS FACTORS',
         link: ''
     },
-    {
-        title: 'Credentials',
-        link: ''
-    }
+    // {
+    //     title: 'Credentials',
+    //     link: ''
+    // }
 ]
 
-export const credentials = [
-    {
-        title: 'Trade License',
-        // data: trade
-        data: 'https://drive.google.com/file/d/1SkaUwwKrKrMm3PQbXm9wBVG2tdKGDZ8f/view?usp=drive_link'
-    },
-    {
-        title: 'VAT Certificate',
-        // data: vat
-        data: 'https://drive.google.com/file/d/1giALO44y-Atk4asMgMjxoZDFZRHXE--8/view?usp=drive_link'
-    },
-    {
-        title: 'Profile',
-        data: 'https://drive.google.com/file/d/1FYQMWNz8OaVDwiVpkVfbCbQFbN-hquUE/view?usp=drive_link'
-        // data: "https://drive.google.com/uc?export=download&id=1FYQMWNz8OaVDwiVpkVfbCbQFbN-hquUE"
-    }
-]
+// export const credentials = [
+//     {
+//         title: 'Trade License',
+//         // data: trade
+//         data: 'https://drive.google.com/file/d/1SkaUwwKrKrMm3PQbXm9wBVG2tdKGDZ8f/view?usp=drive_link'
+//     },
+//     {
+//         title: 'VAT Certificate',
+//         // data: vat
+//         data: 'https://drive.google.com/file/d/1giALO44y-Atk4asMgMjxoZDFZRHXE--8/view?usp=drive_link'
+//     },
+//     {
+//         title: 'Profile',
+//         data: 'https://drive.google.com/file/d/1FYQMWNz8OaVDwiVpkVfbCbQFbN-hquUE/view?usp=drive_link'
+//         // data: "https://drive.google.com/uc?export=download&id=1FYQMWNz8OaVDwiVpkVfbCbQFbN-hquUE"
+//     }
+// ]
 
-export const getInTouch = [
-    {
-        title: 'New Enquiry',
-        data: ''
-    },
-    {
-        title: 'Complaint',
-        data: ''
-    },
-    {
-        title: 'Suggestion',
-        data: ''
-    },
-]
+// export const getInTouch = [
+//     {
+//         title: 'New Enquiry',
+//         data: ''
+//     },
+//     {
+//         title: 'Complaint',
+//         data: ''
+//     },
+//     {
+//         title: 'Suggestion',
+//         data: ''
+//     },
+// ]
 
 export const contacts = [
     {

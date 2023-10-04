@@ -39,7 +39,6 @@ const Home = () => {
   // });
 
   const bannerToShow = banners.slice(0, 4);
-  console.log(bannerToShow)
 
   let productsToShow = [];
   let picksProduct = [];

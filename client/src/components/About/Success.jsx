@@ -41,7 +41,7 @@ const Success = () => {
             { data.map((d,idx) => (
                 <li className="m-4 text-lg text-gray-600 font-semibold md:mt-0 mt-4" key={idx}>
                     <i className="mr-4 fa-regular fa-circle-check text-blue-800 bg-green-300 rounded-full"></i>
-                    <span> {d.detail} </span>
+                    <span className='font-normal text-black'> {d.detail} </span>
                 </li>
             ))}
             

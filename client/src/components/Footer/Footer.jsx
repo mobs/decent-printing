@@ -33,7 +33,7 @@ const Footer = () => {
                       <p>
                         {data.title}
                       </p>
-                      <p className="font-Sofia">
+                      <p className="">
                         {data.details}
                       </p>
                     </div>
@@ -61,42 +61,42 @@ const Footer = () => {
         <ul className="">
           <li className="flex mt-2 gap-4">
             <BsArrowRightCircle className="mt-1 text-red-500"/>
-            <Link to='/About' className="font-Sofia hover:text-red-500">
+            <Link to='/About' className=" hover:text-red-500">
               About Us
             </Link>
           </li>
 
           <li className="flex mt-2 gap-4">
             <BsArrowRightCircle className="mt-1 text-red-500"/>
-            <Link to='/Contact' className="font-Sofia hover:text-red-500">
+            <Link to='/Contact' className=" hover:text-red-500">
               Contact Us
             </Link>
           </li>
 
           <li className="flex mt-2 gap-4">
             <BsArrowRightCircle className="mt-1 text-red-500"/>
-            <Link to='/Introduction' className="font-Sofia hover:text-red-500">
+            <Link to='/Introduction' className=" hover:text-red-500">
               Introduction
             </Link>
           </li>
 
           <li className="flex mt-2 gap-4">
             <BsArrowRightCircle className="mt-1 text-red-500"/>
-            <Link to='/Vision,%20Mission%20and%20Values' className="font-Sofia hover:text-red-500">
+            <Link to='/Vision,%20Mission%20and%20Values' className=" hover:text-red-500">
               Vision, Mission & Values
             </Link>
           </li>
 
           <li className="flex mt-2 gap-4">
             <BsArrowRightCircle className="mt-1 text-red-500"/>
-            <Link to='/Quality%20Policy' className="font-Sofia hover:text-red-500">
+            <Link to='/Quality%20Policy' className=" hover:text-red-500">
               Quality Policy
             </Link>
           </li>
 
           <li className="flex mt-2 gap-4">
             <BsArrowRightCircle className="mt-1 text-red-500"/>
-            <Link to='/Environmental%20Policy' className="font-Sofia hover:text-red-500">
+            <Link to='/Environmental%20Policy' className=" hover:text-red-500">
               Environmental Policy
             </Link>
           </li>
@@ -107,23 +107,29 @@ const Footer = () => {
       <div className="mt-8">
       <p className="text-xl font-bold"> Our Services </p>
         <ul className="">
+        <li className="flex mt-2 gap-4 lg:mr-32 md:mr-24 mr-0">
+            <BsArrowRightCircle className="mt-1 text-red-500"/>
+            <Link to='/Designing%20Services' className=" hover:text-red-500">
+              Designing Services
+            </Link>
+          </li>
           <li className="flex mt-2 gap-4">
             <BsArrowRightCircle className="mt-1 text-red-500"/>
-            <Link to='/Offset%20Printing' className="font-Sofia hover:text-red-500">
+            <Link to='/Offset%20Printing' className=" hover:text-red-500">
               Offset Printing
             </Link>
           </li>
 
           <li className="flex mt-2 gap-4">
             <BsArrowRightCircle className="mt-1 text-red-500"/>
-            <Link to='/Digital%20Printing' className="font-Sofia hover:text-red-500">
+            <Link to='/Digital%20Printing' className=" hover:text-red-500">
               Digital Printing
             </Link>
           </li>
 
           <li className="flex mt-2 gap-4 lg:mr-32 md:mr-24 mr-0">
             <BsArrowRightCircle className="mt-1 text-red-500"/>
-            <Link to='/Continuous%20Form%20Printing' className="font-Sofia hover:text-red-500">
+            <Link to='/Continuous%20Form%20Printing' className=" hover:text-red-500">
               Continuous Form Printing
             </Link>
           </li>

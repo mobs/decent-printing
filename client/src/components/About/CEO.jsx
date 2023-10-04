@@ -49,7 +49,7 @@ const CEO = () => {
           Our Vision
         </p>
 
-        <p className="text-lg text-gray-600 font-semibold md:mt-0 mt-4">
+        <p className="text-lg md:mt-0 mt-4">
           With experts from cutting edge printing technology and over long
           experience, We holds the position of being the first printing press
           centrally located in Dubai & Sharjah and a prominent printing
@@ -60,7 +60,7 @@ const CEO = () => {
           Our Mission
         </p>
 
-        <p className="text-lg text-gray-600 font-semibold md:mt-0 mt-4">
+        <p className="text-lg  md:mt-0 mt-4">
           Upholding our reputation as a one-stop destination for all thing
           related to Printing Solution with top-quality products and services
           that ensure smooth functioning of our customer’s business.
